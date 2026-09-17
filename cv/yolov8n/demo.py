@@ -5,20 +5,18 @@ import time
 import cv2
 from ultralytics import YOLO
 
-ABSENCE_THRESHOLD = 15   # soniya
-CONFIRM_FRAMES = 20      # ketma-ket necha frame bir xil natija bersa, holat tasdiqlanadi
+ABSENCE_THRESHOLD = 15   
+CONFIRM_FRAMES = 30      
 
 
 def main(headless: bool):
     model = YOLO("yolov8n.pt")
 
-    # Docker ichida kamera manzili environment orqali beriladi (masalan /dev/video0),
-    # native ishga tushirishda esa standart 0 (laptop kamerasi) ishlatiladi.
     video_source = os.environ.get("VIDEO_SOURCE", 0)
     try:
         video_source = int(video_source)
     except ValueError:
-        pass  # RTSP link yoki fayl yo'li bo'lishi ham mumkin
+        pass 
 
     cap = cv2.VideoCapture(video_source)
     if not cap.isOpened():
@@ -30,7 +28,7 @@ def main(headless: bool):
     pending_present = True
     pending_count = 0
 
-    print(f"Boshlandi (headless={headless}). {'Chiqish uchun q bos.' if not headless else 'To\\'xtatish uchun Ctrl+C.'}")
+    print(f"Boshlandi (headless={headless}). {'Chiqish uchun q bos.' if not headless else 'To\'xtatish uchun Ctrl+C.'}")
 
     try:
         while True:
@@ -48,7 +46,6 @@ def main(headless: bool):
                     x1, y1, x2, y2 = map(int, box.xyxy[0])
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
 
-            # --- Debounce ---
             if raw_present == pending_present:
                 pending_count += 1
             else:
