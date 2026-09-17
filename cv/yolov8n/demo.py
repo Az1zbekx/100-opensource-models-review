@@ -20,7 +20,7 @@ def main(headless: bool):
 
     cap = cv2.VideoCapture(video_source)
     if not cap.isOpened():
-        print(f"Video manbasini ochib bo'lmadi: {video_source}")
+        print(f"Failed to open video source: {video_source}")
         return
 
     state = "PRESENT"
@@ -28,7 +28,7 @@ def main(headless: bool):
     pending_present = True
     pending_count = 0
 
-    print(f"Boshlandi (headless={headless}). {'Chiqish uchun q bos.' if not headless else 'To\'xtatish uchun Ctrl+C.'}")
+    print(f"Started (headless={headless}). {'Press q to exit.' if not headless else 'Press Ctrl+C to stop.'}")
 
     try:
         while True:
@@ -55,20 +55,20 @@ def main(headless: bool):
             if pending_count == CONFIRM_FRAMES:
                 if pending_present:
                     if state != "PRESENT":
-                        print(f"[{time.strftime('%H:%M:%S')}] Odam qaytdi.")
+                        print(f"[{time.strftime('%H:%M:%S')}] Person returned.")
                     state = "PRESENT"
                     absence_start_time = None
                 else:
                     if state == "PRESENT":
                         state = "ABSENT"
                         absence_start_time = now
-                        print(f"[{time.strftime('%H:%M:%S')}] Odam ketdi.")
+                        print(f"[{time.strftime('%H:%M:%S')}] Person left.")
 
             if state == "ABSENT" and absence_start_time:
                 elapsed = now - absence_start_time
                 if elapsed >= ABSENCE_THRESHOLD and state != "ALERTED":
                     state = "ALERTED"
-                    print(f"[{time.strftime('%H:%M:%S')}] ALERT! {elapsed:.0f} soniya yo'q.")
+                    print(f"[{time.strftime('%H:%M:%S')}] ALERT! Absent for {elapsed:.0f} seconds.")
 
             if not headless:
                 cv2.imshow("Presence test", frame)
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--headless",
         action="store_true",
-        help="GUI oynasisiz ishga tushirish (Docker uchun standart)",
+        help="Run without GUI window (standard for Docker)",
     )
     args = parser.parse_args()
     main(headless=args.headless)

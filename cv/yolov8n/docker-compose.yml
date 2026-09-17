@@ -1,7 +1,0 @@
-services:
-  yolo-demo:
-    build: .
-    devices:
-      - "/dev/video0:/dev/video0"   # Linux'da kameraga ruxsat. Mac/Windows'da bu qator ishlamaydi.
-    stdin_open: true
-    tty: true

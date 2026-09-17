@@ -1,9 +1,0 @@
-services:
-  demo:
-    build: .
-    # Agar model faylga natija yozsa (masalan TTS -> audio, STT -> matn),
-    # natijani host'ga chiqarish uchun volume qo'shing:
-    volumes:
-      - ./output:/app/output
-    # Agar kirish fayli (masalan test audio) berilsa:
-    # - ./input:/app/input:ro
