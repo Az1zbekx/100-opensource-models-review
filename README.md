@@ -23,6 +23,7 @@ Bu repo — 100 ta ochiq manbali (open-source) modelni sinab ko'rish, natijalarn
 ```
 100-opensource-models-review/
 ├── README.md              # shu fayl — umumiy indeks
+├── _template/             # yangi model qo'shish uchun shablon fayllar va qoida
 ├── cv/
 │   └── yolov8n/           # har bir model o'z papkasida, o'z README'si bilan
 ├── llm/
@@ -37,8 +38,14 @@ Bu repo — 100 ta ochiq manbali (open-source) modelni sinab ko'rish, natijalarn
 - Loyihada nima qilingani va qanday muammolarga duch kelingani
 - GPU moslik va resurs talabi (CPU'da ishlaydimi, GPU kerakmi)
 - Bulutda ishlatilsa taxminiy oylik xarajat
-- Ishga tushirish yo'riqnomasi (native va Docker orqali)
+- Ishga tushirish yo'riqnomasi
 
 ## Ishga tushirish
 
-Har bir model papkasi mustaqil — o'z `requirements.txt`, `Dockerfile` va `README.md` fayliga ega. Kerakli model papkasiga kirib, o'sha yerdagi README'dagi ko'rsatmalarga amal qiling.
+Har bir model papkasi mustaqil — o'z `Dockerfile`, `docker-compose.yml` va `README.md` fayliga ega.
+
+- **LLM / TTS / STT modellari** — faqat Docker orqali ishga tushiriladi (`docker compose up --build` yoki `./run.sh`), venv yoki qo'lda kutubxona o'rnatish shart emas.
+- **CV modellari** (kamera/GUI kerak bo'lganda) — ikkita rejim beriladi: native (venv, GUI oynasi bilan) va Docker (headless). Sababi shu modelning o'z README'sida tushuntirilgan.
+
+Yangi model qo'shish qoidasi va shablon fayllar — [`_template/HOW_TO_ADD_A_MODEL.md`](_template/HOW_TO_ADD_A_MODEL.md).
+
