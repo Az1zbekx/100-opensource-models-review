@@ -1,33 +1,34 @@
 #!/usr/bin/env python3
 """
 Auto-detect models and generate docker-compose.yml
-Papkalarni avtomatik skanir qiladi va docker-compose.yml ni yaratadi
+Scans folders automatically and generates docker-compose.yml
 Usage: python3 generate-compose.py
 """
 
 import os
+
 import yaml
-from pathlib import Path
+
 
 def find_models():
-    """Papkalarda models ni topadi"""
+    """Finds models in the folders"""
     models = []
     port = 8001
-    # Root papkalarni skanir qil
-    root_dirs = ['cv', 'nlp', 'tts', 'stt', 'llm', 'vision', 'audio', 'models']
+    # Scan root category directories
+    root_dirs = ['nlp', 'tts', 'stt', 'llm', 'vision', 'audio', 'models']
     for category_dir in root_dirs:
         if not os.path.isdir(category_dir):
             continue
-        # Har bir category ichidagi papkalarni skanir qil
+        # Scan each model folder inside the category
         for model_name in os.listdir(category_dir):
             model_path = os.path.join(category_dir, model_name)
-            # Agar papka va Dockerfile/dockerfile bor bo'lsa
+            # Check if it's a directory with a Dockerfile
             if os.path.isdir(model_path):
                 dockerfile_path = os.path.join(model_path, 'Dockerfile')
                 dockerfile_lower = os.path.join(model_path, 'dockerfile')
                 requirements_path = os.path.join(model_path, 'requirements.txt')
                 demo_path = os.path.join(model_path, 'demo.py')
-                # Har biri mavjud bo'lsa model deb hisoblash
+                # Consider it a valid model only if all required files exist
                 has_dockerfile = os.path.exists(dockerfile_path) or os.path.exists(dockerfile_lower)
                 has_requirements = os.path.exists(requirements_path)
                 has_demo = os.path.exists(demo_path)
@@ -36,7 +37,7 @@ def find_models():
                     models.append({
                         'name': model_name,
                         'path': model_path,
-                        'dockerfile_name': dockerfile_name,   # faqat fayl nomi, to'liq yo'l emas
+                        'dockerfile_name': dockerfile_name,   # filename only, not full path
                         'port': port
                     })
                     port += 1
@@ -46,8 +47,8 @@ def generate_compose():
     """Generate docker-compose.yml"""
     models = find_models()
     if not models:
-        print("❌ Hech qanday model topilmadi!")
-        print("📁 Iltimos, quyidagi struktura tuzib fayllarni to'ldiring:")
+        print("❌ No models found!")
+        print("📁 Please set up the following structure and fill in the files:")
         print("""
 category/model-name/
 ├── Dockerfile
@@ -60,8 +61,8 @@ category/model-name/
         service_name = model['name'].replace("-", "_").replace(".", "_").lower()
         services[service_name] = {
             "build": {
-                "context": f"./{model['path']}",      # <-- tuzatildi: model o'z papkasi
-                "dockerfile": model['dockerfile_name']  # <-- tuzatildi: faqat fayl nomi
+                "context": f"./{model['path']}",      # fixed: model's own folder as context
+                "dockerfile": model['dockerfile_name']  # fixed: filename only
             },
             "ports": [f"{model['port']}:8000"],
             "volumes": [
@@ -99,9 +100,9 @@ category/model-name/
     for model in models:
         print(f"  • {model['name']:<30} → http://localhost:{model['port']}")
     print("\n🚀 Run:")
-    print("  docker build -f Dockerfile.base -t ml-base-cpu:latest .   # avval, bir marta")
-    print("  docker compose up <model-name> --build                    # bir modelni ishga tushir")
-    print("  docker compose up --build                                 # hammani ishga tushir")
+    print("  docker build -f Dockerfile.base -t ml-base-cpu:latest .   # once, before anything else")
+    print("  docker compose up <model-name> --build                    # run a single model")
+    print("  docker compose up --build                                 # run all models")
 
 if __name__ == "__main__":
     generate_compose()

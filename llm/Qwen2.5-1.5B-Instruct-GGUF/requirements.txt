@@ -1,2 +1,1 @@
-llama-cpp-python>=0.2.26
-huggingface_hub>=0.20.0
+# All dependencies already provided by the base image (llama-cpp-python, huggingface_hub)

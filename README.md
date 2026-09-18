@@ -1,51 +1,48 @@
 # 100 Open-Source Model Review
 
-Bu repo — 100 ta ochiq manbali (open-source) modelni sinab ko'rish, natijalarni hujjatlashtirish va kelajakdagi loyihalarda tayyor, tekshirilgan model sifatida ishlatish maqsadida yaratilgan.
+This repo exists to test 100 open-source models, document the results, and keep a set of ready, verified models to reuse in future projects.
 
-**Test muhiti:** laptop, NVIDIA GTX 1650 (4GB VRAM) — shuning uchun asosan kichik/kvantlangan modellar sinovdan o'tkaziladi. Bu — kamida GPU resursi cheklangan (O'zbekiston bozoridagi ko'p kichik-o'rta loyihalarga xos) sharoitda qaysi modellar amaliy ishlashini ko'rsatadi.
+**Test environment:** laptop, NVIDIA GTX 1650 (4GB VRAM) — so the tests mostly cover small/quantized models. This shows which models are practically usable under limited GPU resources (typical of many small-to-mid-size projects in the Uzbekistan market).
 
-**Kategoriyalar:** LLM, CV (Computer Vision), TTS (Text-to-Speech), STT (Speech-to-Text) — o'zbek tili qo'llab-quvvatlashiga alohida e'tibor bilan.
+**Categories:** LLM, CV (Computer Vision), TTS (Text-to-Speech), STT (Speech-to-Text) — with special attention to Uzbek language support.
 
 ---
 
-## 📋 Modellar indeksi (PM uchun tezkor ko'rinish)
+## 📋 Model Index (quick overview for PM)
 
-| Model | Kategoriya | Qaysi project ehtiyoji uchun | GPU kerakmi | Oylik xarajat (taxmin) | Backend bilan bitta serverda? | Batafsil |
+| Model | Category | Which project need it fits | GPU required | Estimated monthly cost | Same server as backend? | Details |
 |---|---|---|---|---|---|---|
-| YOLOv8n | CV | Kamera orqali kuzatuv, hozirlik aniqlash, obyekt sanash | Yo'q | $0 (mavjud serverda) | ✅ Ha | [README](cv/yolov8n/README.md) |
+| YOLOv8n | CV | Camera-based monitoring, presence detection, object counting | No | $0 (runs on existing server) | ✅ Yes | [README](cv/yolov8n/README.md) |
 
-*(Yangi model qo'shilgan sayin shu jadvalga bitta qator qo'shiladi.)*
+*(A new row is added to this table each time a new model is added.)*
 
 ---
 
-## Repo tuzilishi
+## Repo structure
 
-```
 100-opensource-models-review/
-├── README.md              # shu fayl — umumiy indeks
-├── _template/             # yangi model qo'shish uchun shablon fayllar va qoida
+├── README.md # this file — overall index
+├── _template/ # template files and rules for adding a new model
 ├── cv/
-│   └── yolov8n/           # har bir model o'z papkasida, o'z README'si bilan
+│ └── yolov8n/ # each model lives in its own folder, with its own README
 ├── llm/
 ├── tts/
 ├── stt/
-└── benchmark_scripts/     # kategoriya bo'yicha umumiy test skriptlari
-```
+└── benchmark_scripts/ # shared benchmark scripts per category
 
-## Har bir model README'sida nima bor
+## What's in each model's README
 
-- Model haqida texnik ma'lumot (arxitektura, parametrlar, versiyalar)
-- Loyihada nima qilingani va qanday muammolarga duch kelingani
-- GPU moslik va resurs talabi (CPU'da ishlaydimi, GPU kerakmi)
-- Bulutda ishlatilsa taxminiy oylik xarajat
-- Ishga tushirish yo'riqnomasi
+- Technical info about the model (architecture, parameters, versions)
+- What was done in the project and what issues were encountered
+- GPU compatibility and resource requirements (CPU-only or GPU-required)
+- Estimated monthly cost if run in the cloud
+- How to run it
 
-## Ishga tushirish
+## Running the models
 
-Har bir model papkasi mustaqil — o'z `Dockerfile`, `docker-compose.yml` va `README.md` fayliga ega.
+Each model folder is self-contained — it has its own `Dockerfile`, `docker-compose.yml`, and `README.md`.
 
-- **LLM / TTS / STT modellari** — faqat Docker orqali ishga tushiriladi (`docker compose up --build` yoki `./run.sh`), venv yoki qo'lda kutubxona o'rnatish shart emas.
-- **CV modellari** (kamera/GUI kerak bo'lganda) — ikkita rejim beriladi: native (venv, GUI oynasi bilan) va Docker (headless). Sababi shu modelning o'z README'sida tushuntirilgan.
+- **LLM / TTS / STT models** — run only through Docker (`docker compose up --build` or `./run.sh`), no venv or manual package installation needed.
+- **CV models** (when a camera/GUI is needed) — two modes are provided: native (venv, with a GUI window) and Docker (headless). The reason is explained in that model's own README.
 
-Yangi model qo'shish qoidasi va shablon fayllar — [`_template/HOW_TO_ADD_A_MODEL.md`](_template/HOW_TO_ADD_A_MODEL.md).
-
+Rules and template files for adding a new model — [`_template/HOW_TO_ADD_A_MODEL.md`](_template/HOW_TO_ADD_A_MODEL.md).

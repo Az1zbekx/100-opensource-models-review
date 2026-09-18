@@ -1,29 +1,11 @@
 version: '3.9'
 services:
-  yolov8n:
-    build:
-      context: .
-      dockerfile: cv/yolov8n/Dockerfile
-    ports:
-    - 8001:8000
-    volumes:
-    - ./cv/yolov8n:/app
-    - ./models/yolov8n:/app/models
-    environment:
-      MODEL_NAME: yolov8n
-      PORT: '8000'
-    restart: unless-stopped
-    container_name: model-yolov8n
-    stdin_open: true
-    tty: true
-    networks:
-    - models-network
   mms_tts_uzb:
     build:
-      context: .
-      dockerfile: tts/mms-tts-uzb/Dockerfile
+      context: ./tts/mms-tts-uzb
+      dockerfile: Dockerfile
     ports:
-    - 8002:8000
+    - 8001:8000
     volumes:
     - ./tts/mms-tts-uzb:/app
     - ./models/mms-tts-uzb:/app/models
@@ -38,10 +20,10 @@ services:
     - models-network
   fasterwhisper:
     build:
-      context: .
-      dockerfile: stt/FasterWhisper/dockerfile
+      context: ./stt/FasterWhisper
+      dockerfile: Dockerfile
     ports:
-    - 8003:8000
+    - 8002:8000
     volumes:
     - ./stt/FasterWhisper:/app
     - ./models/FasterWhisper:/app/models
@@ -56,10 +38,10 @@ services:
     - models-network
   qwen2_5_1_5b_instruct_gguf:
     build:
-      context: .
-      dockerfile: llm/Qwen2.5-1.5B-Instruct-GGUF/dockerfile
+      context: ./llm/Qwen2.5-1.5B-Instruct-GGUF
+      dockerfile: Dockerfile
     ports:
-    - 8004:8000
+    - 8003:8000
     volumes:
     - ./llm/Qwen2.5-1.5B-Instruct-GGUF:/app
     - ./models/Qwen2.5-1.5B-Instruct-GGUF:/app/models

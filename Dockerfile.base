@@ -16,7 +16,10 @@ RUN pip install --no-cache-dir \
 # Build other dependencies
 RUN pip install --no-cache-dir \
     transformers scipy numpy opencv-python ultralytics \
-    faster-whisper huggingface_hub llama-cpp-python
+    faster-whisper huggingface_hub
+
+RUN pip install --no-cache-dir llama-cpp-python \
+    --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
 # Final stage - slim runtime
 FROM python:3.10-slim

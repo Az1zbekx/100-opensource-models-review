@@ -1,0 +1,1 @@
+# All dependencies already provided by the base image (ultralytics)
