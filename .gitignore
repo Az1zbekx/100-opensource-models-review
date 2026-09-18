@@ -4,8 +4,14 @@ venv/
 __pycache__/
 *.pyc
 
-# YOLO auto-downloaded weights (og'ir, gitga tushmasin)
-*.pt
+# Model weights (og'ir, gitga tushmasin — barcha yo'nalishlar uchun)
+*.pt          # YOLO / PyTorch
+*.gguf        # LLM (llama.cpp)
+*.bin         # HuggingFace transformers
+*.safetensors # HuggingFace (yangi format)
+*.onnx        # ONNX modellar
+*.ckpt        # checkpoint fayllar
+models/       # agar alohida "models" papkasi bo'lsa (docker-compose'dagi volume shunga ishora qiladi)
 
 # OS / IDE
 .DS_Store
