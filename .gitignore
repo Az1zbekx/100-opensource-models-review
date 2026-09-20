@@ -19,6 +19,8 @@ __pycache__/
 **/*.onnx
 *.ckpt
 **/*.ckpt
+*.weights
+**/*.weights
 models/
 **/models/
 
