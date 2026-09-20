@@ -1,1 +1,8 @@
-# All dependencies already provided by the base image (ultralytics)
+torch>=2.0.0
+torchvision>=0.15.0
+opencv-python>=4.8.0
+pandas>=2.0.0
+scipy>=1.10.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+setuptools>=65.0.0
