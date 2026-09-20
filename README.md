@@ -12,9 +12,29 @@ This repo exists to test 100 open-source models, document the results, and keep 
 
 | Model | Category | Which project need it fits | GPU required | Estimated monthly cost | Same server as backend? | Details |
 |---|---|---|---|---|---|---|
-| YOLOv8n | CV | Camera-based monitoring, presence detection, object counting | No | $0 (runs on existing server) | ✅ Yes | [README](cv/yolov8n/README.md) |
+| **YOLOv8n** | CV | Camera-based monitoring, presence detection, object counting | No | $0 (runs on existing server) | ✅ Yes | [README](cv/yolov8n/README.md) |
+| **YOLO11n** | CV | Smart Desk Focus & Distraction Monitor (Workplace ergonomics) | No | $0 (CPU / edge-ready) | ✅ Yes | [README](cv/yolo11n/README.md) |
+| **YOLO11s** | CV | Retail & Checkout Queue Length Monitor (Retail flow analytics) | No | $0 (CPU / low-cost VPS) | ✅ Yes | [README](cv/yolo11s/README.md) |
+| **YOLO11m** | CV | Industrial Hazard & Heavy Machinery Guardian (Workplace safety) | Recommended | $15–$30 (entry GPU) | ⚠️ Dedicated recommended | [README](cv/yolo11m/README.md) |
+| **YOLOv10n** | CV | Perimeter Intrusion & Tripwire Guardian (NMS-free security) | No | $0 (runs on existing server) | ✅ Yes | [README](cv/yolov10n/README.md) |
+| **YOLOv10s** | CV | Smart Parking Bay & Loitering Patrol (Smart cities & surveillance) | No | $0 (CPU / low-cost VPS) | ✅ Yes | [README](cv/yolov10s/README.md) |
+| **YOLOv9t** | CV | Highway Traffic Flow Counter (PGI dual-head speed & volume) | No | $0 (CPU / edge SBC) | ✅ Yes | [README](cv/yolov9t/README.md) |
+| **YOLOv9s** | CV | Pedestrian Crosswalk & Jaywalking Guardian (Vision Zero alerts) | No | $0 (CPU / edge node) | ✅ Yes | [README](cv/yolov9s/README.md) |
+| **YOLOv8s** | CV | Retail Loss Prevention Baggage Tracker (Anti-theft shopper audit) | No | $0 (CPU / edge server) | ✅ Yes | [README](cv/yolov8s/README.md) |
+| **YOLOv8m** | CV | Crowd Spatial Density & Cluster Analyzer (Public event safety) | Recommended | $15–$30 (entry GPU) | ⚠️ Dedicated recommended | [README](cv/yolov8m/README.md) |
+| **YOLOv7-tiny** | CV | Commercial Facility Foot-Traffic Counter (Doorway flow monitor) | No | $0 (runs on existing server) | ✅ Yes | [README](cv/yolov7-tiny/README.md) |
+| **YOLOv6n** | CV | Warehouse Conveyor Belt Throughput Monitor (Industrial sorting) | No | $0 (CPU / embedded device) | ✅ Yes | [README](cv/yolov6n/README.md) |
+| **YOLOv6s** | CV | Freight Terminal Dock Bay Occupancy Inspector (Intermodal audit) | No | $0 (CPU / low-cost VPS) | ✅ Yes | [README](cv/yolov6s/README.md) |
+| **YOLOv5n** | CV | Smart Office Energy Occupancy Guardian (HVAC / lighting savings) | No | $0 (CPU / edge IoT) | ✅ Yes | [README](cv/yolov5n/README.md) |
+| **YOLOv5s** | CV | Urban Intersection Safety Analyzer (Vehicle/pedestrian risk) | No | $0 (CPU / edge box) | ✅ Yes | [README](cv/yolov5s/README.md) |
+| **YOLOv5m** | CV | Commercial Fleet & Logistics Yard Dispatcher (Heavy transport) | Recommended | $15–$30 (entry GPU) | ⚠️ Dedicated recommended | [README](cv/yolov5m/README.md) |
+| **YOLOv4-tiny** | CV | Edge Micro-UAV Aerial Target Recon (Low-power drone SAR) | No | $0 (pure OpenCV DNN CPU) | ✅ Yes | [README](cv/yolov4-tiny/README.md) |
+| **YOLOv3-tiny** | CV | Legacy CPU Vehicle Parking Gate Actuator (Boom barrier trigger) | No | $0 (runs on legacy x86/Atom) | ✅ Yes | [README](cv/yolov3-tiny/README.md) |
+| **Qwen2.5-1.5B** | LLM | Local generative assistant, FAQ bot, structured data extractor | No | $0 (runs on CPU / 4GB GPU) | ✅ Yes | [README](llm/Qwen2.5-1.5B-Instruct-GGUF/README.md) |
+| **FasterWhisper** | STT | Fast audio transcription & voice command parsing (Uzbek & Multi) | Optional | $0–$10 (CTranslate2 on CPU) | ✅ Yes | [README](stt/FasterWhisper/README.md) |
+| **MMS-TTS-UZB** | TTS | Uzbek language text-to-speech audio synthesizer (Voice bots) | No | $0 (VITS architecture on CPU) | ✅ Yes | [README](tts/mms-tts-uzb/README.md) |
 
-*(A new row is added to this table each time a new model is added.)*
+*(21 of 100 models reviewed and verified)*
 
 ---
 
