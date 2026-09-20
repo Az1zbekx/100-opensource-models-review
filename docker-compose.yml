@@ -12,7 +12,7 @@ services:
     environment:
       MODEL_NAME: mms-tts-uzb
       PORT: '8000'
-    restart: unless-stopped
+    restart: 'no'
     container_name: model-mms-tts-uzb
     stdin_open: true
     tty: true
@@ -30,7 +30,7 @@ services:
     environment:
       MODEL_NAME: FasterWhisper
       PORT: '8000'
-    restart: unless-stopped
+    restart: 'no'
     container_name: model-FasterWhisper
     stdin_open: true
     tty: true
@@ -48,7 +48,7 @@ services:
     environment:
       MODEL_NAME: Qwen2.5-1.5B-Instruct-GGUF
       PORT: '8000'
-    restart: unless-stopped
+    restart: 'no'
     container_name: model-Qwen2.5-1.5B-Instruct-GGUF
     stdin_open: true
     tty: true

@@ -1,1 +1,4 @@
-# All dependencies already provided by the base image (ultralytics)
+ultralytics>=8.3.0
+opencv-python>=4.8.0
+torch>=2.0.0
+numpy>=1.23.0
