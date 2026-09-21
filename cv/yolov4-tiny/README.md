@@ -75,16 +75,14 @@ Micro-unmanned aerial vehicles (UAVs), tactical drones, and battery-constrained 
 cv/yolov4-tiny/
 ├── data/
 │   └── test_aerial.jpg          # Aerial drone landscape with road & surroundings
-├── demo.py                      # Pure OpenCV DNN target reconnaissance pipeline
-├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual└── yolov4-tiny.onnx             # Model weights (auto-downloaded on first run)
+├── demo.py                      # Pure OpenCV DNN target reconnaissance pipeline├── README.md                    # In-depth architectural & deployment manual└── yolov4-tiny.onnx             # Model weights (auto-downloaded on first run)
 ```
 
 ---
 
 ## 4. Installation & Environment Setup
 
-### Method A: Local Virtual Environment (Recommended)
+### Environment Setup (cv/venv-cv)
 ```bash
 # Navigate to repository root
 cd /home/az1z6ekx/100-opensource-models-review
@@ -94,13 +92,6 @@ source cv/venv-cv/bin/activate
 
 # Install exact requirements (no torch required!)
 pip install -r cv/requirements.txt
-```
-
-### Method B: Docker Container
-```bash
-cd cv/yolov4-tiny
-docker build -t yolov4-tiny-skywatch .
-docker run --rm -it -v $(pwd):/workspace yolov4-tiny-skywatch
 ```
 
 ---

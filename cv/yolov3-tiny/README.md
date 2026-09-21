@@ -74,15 +74,13 @@ Automating boom-barrier gates for gated residential communities, employee parkin
 cv/yolov3-tiny/
 ├── data/
 │   └── test_gate.jpg            # Approaching passenger car at security threshold
-├── demo.py                      # Production gatekeeper & barrier relay pipeline
-├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual```
+├── demo.py                      # Production gatekeeper & barrier relay pipeline├── README.md                    # In-depth architectural & deployment manual```
 
 ---
 
 ## 4. Installation & Environment Setup
 
-### Method A: Local Virtual Environment (Recommended)
+### Environment Setup (cv/venv-cv)
 ```bash
 # Navigate to repository root
 cd /home/az1z6ekx/100-opensource-models-review
@@ -92,13 +90,6 @@ source cv/venv-cv/bin/activate
 
 # Install exact requirements
 pip install -r cv/requirements.txt
-```
-
-### Method B: Docker Container
-```bash
-cd cv/yolov3-tiny
-docker build -t yolov3-tiny-gatekeeper .
-docker run --gpus all --rm -it -v $(pwd):/workspace yolov3-tiny-gatekeeper
 ```
 
 ---

@@ -73,15 +73,13 @@ Modern commercial properties, university campuses, and co-working environments w
 cv/yolov5n/
 ├── data/
 │   └── test_office.jpg          # Real-world conference room / office test scene
-├── demo.py                      # Production occupancy sensor & energy telemetry script
-├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual```
+├── demo.py                      # Production occupancy sensor & energy telemetry script├── README.md                    # In-depth architectural & deployment manual```
 
 ---
 
 ## 4. Installation & Environment Setup
 
-### Method A: Local Virtual Environment (Recommended)
+### Environment Setup (cv/venv-cv)
 ```bash
 # Navigate to repository root
 cd /home/az1z6ekx/100-opensource-models-review
@@ -91,13 +89,6 @@ source cv/venv-cv/bin/activate
 
 # Install exact requirements
 pip install -r cv/requirements.txt
-```
-
-### Method B: Docker Container
-```bash
-cd cv/yolov5n
-docker build -t yolov5n-ecosensor .
-docker run --gpus all --rm -it -v $(pwd):/workspace yolov5n-ecosensor
 ```
 
 ---

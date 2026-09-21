@@ -75,15 +75,13 @@ Intermodal freight terminals, port container yards, and distribution centers fac
 cv/yolov5m/
 ├── data/
 │   └── test_yard.jpg            # High-resolution freight terminal with commercial transport
-├── demo.py                      # Production fleet dispatch & safety monitoring pipeline
-├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual```
+├── demo.py                      # Production fleet dispatch & safety monitoring pipeline├── README.md                    # In-depth architectural & deployment manual```
 
 ---
 
 ## 4. Installation & Environment Setup
 
-### Method A: Local Virtual Environment (Recommended)
+### Environment Setup (cv/venv-cv)
 ```bash
 # Navigate to repository root
 cd /home/az1z6ekx/100-opensource-models-review
@@ -93,13 +91,6 @@ source cv/venv-cv/bin/activate
 
 # Install exact requirements
 pip install -r cv/requirements.txt
-```
-
-### Method B: Docker Container
-```bash
-cd cv/yolov5m
-docker build -t yolov5m-fleetvision .
-docker run --gpus all --rm -it -v $(pwd):/workspace yolov5m-fleetvision
 ```
 
 ---

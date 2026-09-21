@@ -80,7 +80,7 @@ This repo exists to test 100 open-source models, document the results, and keep 
 
 Each model folder is self-contained — it has its own `Dockerfile`, `docker-compose.yml`, and `README.md`.
 
-- **LLM / TTS / STT models** — run only through Docker (`docker compose up --build` or `./run.sh`), no venv or manual package installation needed.
-- **CV models** (when a camera/GUI is needed) — two modes are provided: native (venv, with a GUI window) and Docker (headless). The reason is explained in that model's own README.
+- **CV models**: Run directly in the dedicated, shared `cv/venv-cv` virtual environment (`pip install -r cv/requirements.txt`) with full local webcam (`--source 0`), GUI preview, or `--headless` batch processing.
+- **LLM / TTS / STT models**: Run through Docker (`docker compose up --build` or `./run.sh`).
 
 Rules and template files for adding a new model — [`_template/HOW_TO_ADD_A_MODEL.md`](_template/HOW_TO_ADD_A_MODEL.md).
