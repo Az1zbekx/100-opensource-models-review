@@ -76,9 +76,7 @@ cv/yolov3-tiny/
 │   └── test_gate.jpg            # Approaching passenger car at security threshold
 ├── demo.py                      # Production gatekeeper & barrier relay pipeline
 ├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual
-└── requirements.txt             # Strict Python package dependencies
-```
+├── README.md                    # In-depth architectural & deployment manual```
 
 ---
 
@@ -93,7 +91,7 @@ cd /home/az1z6ekx/100-opensource-models-review
 source cv/venv-cv/bin/activate
 
 # Install exact requirements
-pip install -r cv/yolov3-tiny/requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ### Method B: Docker Container

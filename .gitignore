@@ -27,6 +27,7 @@ models/
 # Test output artifacts
 output_*.jpg
 **/output_*.jpg
+!cv/*/data/output_*.jpg
 result.wav
 **/result.wav
 

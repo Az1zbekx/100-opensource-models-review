@@ -166,7 +166,7 @@ Use the existing, verified project virtual environment:
 ### Install / Verify Dependencies
 ```bash
 cd /home/az1z6ekx/100-opensource-models-review/cv/yolo11s
-../venv-cv/bin/pip install -r requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ---

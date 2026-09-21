@@ -169,7 +169,7 @@ Configured natively for the dedicated virtual environment:
 ### Install Dependencies
 ```bash
 cd /home/az1z6ekx/100-opensource-models-review/cv/yolov8s
-../venv-cv/bin/pip install -r requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ---

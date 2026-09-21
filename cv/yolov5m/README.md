@@ -77,9 +77,7 @@ cv/yolov5m/
 │   └── test_yard.jpg            # High-resolution freight terminal with commercial transport
 ├── demo.py                      # Production fleet dispatch & safety monitoring pipeline
 ├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual
-└── requirements.txt             # Strict Python package dependencies
-```
+├── README.md                    # In-depth architectural & deployment manual```
 
 ---
 
@@ -94,7 +92,7 @@ cd /home/az1z6ekx/100-opensource-models-review
 source cv/venv-cv/bin/activate
 
 # Install exact requirements
-pip install -r cv/yolov5m/requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ### Method B: Docker Container

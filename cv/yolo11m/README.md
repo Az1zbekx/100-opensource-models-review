@@ -166,7 +166,7 @@ All tests execute inside the project's dedicated virtual environment:
 ### Dependency Setup
 ```bash
 cd /home/az1z6ekx/100-opensource-models-review/cv/yolo11m
-../venv-cv/bin/pip install -r requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ---

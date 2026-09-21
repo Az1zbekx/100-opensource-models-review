@@ -44,7 +44,25 @@ This repo exists to test 100 open-source models, document the results, and keep 
 ├── README.md # this file — overall index
 ├── _template/ # template files and rules for adding a new model
 ├── cv/
-│ └── yolov8n/ # each model lives in its own folder, with its own README
+│   ├── requirements.txt # unified master dependencies for all 18 CV models
+│   ├── yolo11n/         # each model has demo.py, data/ (3 inputs & 3 outputs), and README.md
+│   ├── yolo11s/
+│   ├── yolo11m/
+│   ├── yolov10n/
+│   ├── yolov10s/
+│   ├── yolov9t/
+│   ├── yolov9s/
+│   ├── yolov8n/
+│   ├── yolov8s/
+│   ├── yolov8m/
+│   ├── yolov7-tiny/
+│   ├── yolov6n/
+│   ├── yolov6s/
+│   ├── yolov5n/
+│   ├── yolov5s/
+│   ├── yolov5m/
+│   ├── yolov4-tiny/
+│   └── yolov3-tiny/
 ├── llm/
 ├── tts/
 ├── stt/

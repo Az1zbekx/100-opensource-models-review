@@ -77,9 +77,7 @@ cv/yolov4-tiny/
 │   └── test_aerial.jpg          # Aerial drone landscape with road & surroundings
 ├── demo.py                      # Pure OpenCV DNN target reconnaissance pipeline
 ├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual
-├── requirements.txt             # Strict Python package dependencies
-└── yolov4-tiny.onnx             # Model weights (auto-downloaded on first run)
+├── README.md                    # In-depth architectural & deployment manual└── yolov4-tiny.onnx             # Model weights (auto-downloaded on first run)
 ```
 
 ---
@@ -95,7 +93,7 @@ cd /home/az1z6ekx/100-opensource-models-review
 source cv/venv-cv/bin/activate
 
 # Install exact requirements (no torch required!)
-pip install -r cv/yolov4-tiny/requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ### Method B: Docker Container

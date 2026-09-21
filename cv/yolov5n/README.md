@@ -75,9 +75,7 @@ cv/yolov5n/
 │   └── test_office.jpg          # Real-world conference room / office test scene
 ├── demo.py                      # Production occupancy sensor & energy telemetry script
 ├── Dockerfile                   # Isolated containerized environment specification
-├── README.md                    # In-depth architectural & deployment manual
-└── requirements.txt             # Strict Python package dependencies
-```
+├── README.md                    # In-depth architectural & deployment manual```
 
 ---
 
@@ -92,7 +90,7 @@ cd /home/az1z6ekx/100-opensource-models-review
 source cv/venv-cv/bin/activate
 
 # Install exact requirements
-pip install -r cv/yolov5n/requirements.txt
+pip install -r cv/requirements.txt
 ```
 
 ### Method B: Docker Container
