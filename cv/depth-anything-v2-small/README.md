@@ -15,7 +15,6 @@ This project implements a real-time **Monocular 3D Depth Estimation System** pow
 - [Test Data & Verification Artifacts](#test-data--verification-artifacts)
 - [Installation and Environment](#installation-and-environment)
 - [Running Locally & Webcam Guide](#running-locally--webcam-guide)
-- [Docker Deployment](#docker-deployment)
 - [Hardware Requirements & Benchmark Verdict](#hardware-requirements--benchmark-verdict)
 - [Server and GPU Recommendations](#server-and-gpu-recommendations)
 - [Cloud GPU Providers & Cost Economics](#cloud-gpu-providers--cost-economics)
@@ -146,8 +145,8 @@ cd cv/depth-anything-v2-small
 # Activate existing CV virtual environment (or create a new one)
 source ../venv-cv/bin/activate
 
-# Install requirements
-pip install -r requirements.txt
+# Install shared CV requirements
+pip install -r ../requirements.txt
 ```
 
 ---
@@ -176,26 +175,6 @@ To launch the real-time webcam feed with interactive HUD on your laptop display:
 
 # Select different colormaps (turbo, magma, plasma, gray)
 ../venv-cv/bin/python demo.py --source data/test_2_road.jpg --output data/output_2_turbo.jpg --colormap turbo --headless
-```
-
----
-
-## Docker Deployment
-
-This project includes a production-ready container definition.
-
-### Build Docker Image
-```bash
-docker build -t depth-anything-v2-small:latest .
-```
-
-### Run Static Inference in Container
-```bash
-docker run --rm \
-  --gpus all \
-  -v $(pwd)/data:/app/data \
-  depth-anything-v2-small:latest \
-  --source data/test_1_office.jpg --output data/output_docker.jpg --headless
 ```
 
 ---
