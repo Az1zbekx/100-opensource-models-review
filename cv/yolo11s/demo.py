@@ -14,7 +14,7 @@ def is_point_in_box(point, box):
     return bx1 <= px <= bx2 and by1 <= py <= by2
 
 
-def process_image(model, image_path: str, conf: float, queue_limit: int, headless: bool):
+def process_image(model, image_path: str, conf: float, queue_limit: int, headless: bool, output_path: str = None):
     """Analyze queue count in a static image."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -22,49 +22,82 @@ def process_image(model, image_path: str, conf: float, queue_limit: int, headles
         return
 
     h, w = frame.shape[:2]
-    # Define default checkout ROI: middle 60% of frame width and bottom 70% of height
-    roi = (int(w * 0.15), int(h * 0.20), int(w * 0.85), int(h * 0.95))
+    # Designated queue corridor ROI (central 80% horizontal, bottom 80% vertical)
+    roi = (int(w * 0.10), int(h * 0.15), int(w * 0.90), int(h * 0.95))
 
     results = model(frame, conf=conf, classes=[CLASS_PERSON], verbose=False)
     boxes = results[0].boxes
 
     queue_count = 0
+    bystander_count = 0
+    persons_info = []
+
+    # First pass: classify persons inside vs outside queue ROI
     for box in boxes:
         x1, y1, x2, y2 = map(int, box.xyxy[0])
         score = float(box.conf[0])
         foot_point = (int((x1 + x2) / 2), y2)
-
         in_queue = is_point_in_box(foot_point, roi)
         if in_queue:
             queue_count += 1
-            color = (0, 0, 255) if queue_count > queue_limit else (0, 255, 0)
-            label = f"Queue #{queue_count}"
+            persons_info.append({"coords": (x1, y1, x2, y2), "foot": foot_point, "in_queue": True, "score": score, "q_idx": queue_count})
         else:
-            color = (200, 200, 200)
-            label = "Shopper"
+            bystander_count += 1
+            persons_info.append({"coords": (x1, y1, x2, y2), "foot": foot_point, "in_queue": False, "score": score, "q_idx": 0})
 
-        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
-        cv2.circle(frame, foot_point, 4, color, -1)
-        cv2.putText(frame, f"{label} ({score:.2f})", (x1, y1 - 8),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 1)
+    is_congested = queue_count > queue_limit
 
     # Draw ROI Box
     rx1, ry1, rx2, ry2 = roi
-    roi_color = (0, 0, 255) if queue_count > queue_limit else (0, 255, 0)
+    roi_color = (0, 0, 255) if is_congested else (0, 220, 100)
     cv2.rectangle(frame, (rx1, ry1), (rx2, ry2), roi_color, 2)
-    cv2.putText(frame, "CHECKOUT QUEUE ZONE", (rx1 + 10, ry1 + 25),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.6, roi_color, 2)
+    cv2.putText(frame, "CHECKOUT QUEUE ZONE (MONITORED ROI)", (rx1 + 12, ry1 + 25),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.55, roi_color, 2, cv2.LINE_AA)
 
-    # Dashboard Banner
-    status = "ALERT: QUEUE CONGESTION! OPEN NEW REGISTER" if queue_count > queue_limit else "STATUS: NORMAL QUEUE FLOW"
-    cv2.rectangle(frame, (10, 10), (550, 75), (20, 20, 20), -1)
-    cv2.putText(frame, f"YOLO11s Queue Analytics | Count: {queue_count} (Max: {queue_limit})",
-                (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
-    cv2.putText(frame, status, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.55, roi_color, 2)
+    # Draw persons
+    for p in persons_info:
+        x1, y1, x2, y2 = p["coords"]
+        foot_point = p["foot"]
+        score = p["score"]
 
-    output_path = "output_queue.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"Result saved to {output_path}")
+        if p["in_queue"]:
+            color = (0, 0, 255) if is_congested else (0, 255, 0)
+            label = f"Queue #{p['q_idx']} ({score:.2f})"
+        else:
+            color = (180, 185, 190)
+            label = f"Shopper ({score:.2f})"
+
+        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
+        cv2.circle(frame, foot_point, 4, color, -1)
+
+        (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.42, 1)
+        tag_y1 = max(0, y1 - th - 6)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tw + 6, tag_y1 + th + 6), (15, 18, 22), -1)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tw + 6, tag_y1 + th + 6), color, 1)
+        cv2.putText(frame, label, (x1 + 3, tag_y1 + th + 2),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.42, (255, 255, 255), 1)
+
+    # Dashboard HUD Banner
+    status = "ALERT: QUEUE CONGESTION! DISPATCH BACKUP REGISTER" if is_congested else "STATUS: NORMAL QUEUE FLOW (CAPACITY NOMINAL)"
+    status_color = (0, 0, 255) if is_congested else (0, 255, 0)
+
+    hud_w = 680
+    hud_h = 82
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 10 + hud_h), (15, 18, 22), -1)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 10 + hud_h), (60, 64, 72), 1)
+
+    cv2.putText(frame, "YOLO11s RETAIL & SERVICE QUEUE MONITOR",
+                (22, 32), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (0, 220, 255), 1, cv2.LINE_AA)
+    
+    cv2.putText(frame, f"Queue Occupancy: {queue_count} (Limit: {queue_limit})  |  Bystanders: {bystander_count}  |  Total: {len(boxes)}",
+                (22, 54), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (200, 205, 215), 1, cv2.LINE_AA)
+    
+    cv2.putText(frame, status,
+                (22, 76), cv2.FONT_HERSHEY_SIMPLEX, 0.46, status_color, 1, cv2.LINE_AA)
+
+    out_file = output_path if output_path else "output_queue.jpg"
+    cv2.imwrite(out_file, frame)
+    print(f"Result saved to {out_file}")
     print(f"People in Queue: {queue_count} (Threshold: {queue_limit}) | {status}")
 
     if not headless:
@@ -201,6 +234,12 @@ def main():
         help="Max recommended persons in queue before alert (default: 3)",
     )
     parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Path to save output visualization image (default: output_queue.jpg)",
+    )
+    parser.add_argument(
         "--headless",
         action="store_true",
         help="Run without GUI display (suitable for headless servers)",
@@ -212,7 +251,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.queue_limit, args.headless)
+        process_image(model, args.source, args.conf, args.queue_limit, args.headless, output_path=args.output)
     else:
         process_stream(model, args.source, args.conf, args.queue_limit, args.headless)
 

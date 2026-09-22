@@ -18,7 +18,7 @@ VEHICLE_LABELS = {
 }
 
 
-def process_image(model, image_path: str, conf: float, headless: bool):
+def process_image(model, image_path: str, conf: float, headless: bool, output_path: str = "output_highway.jpg"):
     """Analyze static highway image for vehicle distribution."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -54,13 +54,14 @@ def process_image(model, image_path: str, conf: float, headless: bool):
     density_color = (0, 0, 255) if total_vehicles >= 8 else ((0, 165, 255) if total_vehicles >= 4 else (0, 255, 0))
 
     # Dashboard HUD
-    cv2.rectangle(frame, (10, 10), (620, 85), (20, 20, 20), -1)
+    hud_w = min(w - 20, 660)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 85), (20, 22, 25), -1)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 85), (55, 60, 65), 1)
     cv2.putText(frame, f"YOLOv9t Highway Traffic Flow | Density: {traffic_density}",
                 (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.55, density_color, 2)
     breakdown_text = f"Total: {total_vehicles} | Cars: {counts['Car']} | Trucks: {counts['Truck']} | Buses: {counts['Bus']} | Moto: {counts['Motorcycle']}"
     cv2.putText(frame, breakdown_text, (20, 65), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (220, 220, 220), 1)
 
-    output_path = "output_highway.jpg"
     cv2.imwrite(output_path, frame)
     print(f"Result saved to {output_path}")
     print(f"Vehicle Count Summary: {breakdown_text}")
@@ -180,6 +181,12 @@ def main():
         help="Confidence threshold for vehicle detection (default: 0.40)",
     )
     parser.add_argument(
+        "--output",
+        type=str,
+        default="output_highway.jpg",
+        help="Path to save output visualization image (default: output_highway.jpg)",
+    )
+    parser.add_argument(
         "--headless",
         action="store_true",
         help="Run without GUI (for server / background runs)",
@@ -191,7 +198,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.headless)
+        process_image(model, args.source, args.conf, args.headless, args.output)
     else:
         process_stream(model, args.source, args.conf, args.headless)
 

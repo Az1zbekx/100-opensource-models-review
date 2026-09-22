@@ -7,7 +7,7 @@ from ultralytics import YOLO
 CLASS_PERSON = 0
 
 
-def process_image(model, image_path: str, conf: float, line_ratio: float, headless: bool):
+def process_image(model, image_path: str, conf: float, line_ratio: float, headless: bool, output_path: str = None):
     """Process a single image with tripwire boundary evaluation."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -31,10 +31,10 @@ def process_image(model, image_path: str, conf: float, line_ratio: float, headle
         is_breach = foot_y >= tripwire_y
         if is_breach:
             intruders += 1
-            color = (0, 0, 255)
+            color = (50, 70, 255)
             label = f"INTRUDER ({score:.2f})"
         else:
-            color = (0, 255, 0)
+            color = (80, 255, 120)
             label = f"Authorized ({score:.2f})"
 
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
@@ -43,23 +43,25 @@ def process_image(model, image_path: str, conf: float, line_ratio: float, headle
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
     # Draw Tripwire
-    line_color = (0, 0, 255) if intruders > 0 else (0, 255, 255)
+    line_color = (50, 70, 255) if intruders > 0 else (0, 230, 255)
     cv2.line(frame, (0, tripwire_y), (w, tripwire_y), line_color, 3)
     cv2.putText(frame, "PERIMETER SECURITY TRIPWIRE (RESTRICTED BELOW)",
-                (20, tripwire_y - 12), cv2.FONT_HERSHEY_SIMPLEX, 0.6, line_color, 2)
+                (20, tripwire_y - 12), cv2.FONT_HERSHEY_SIMPLEX, 0.58, line_color, 2)
 
-    # Status Banner
+    # Status Banner - Solid dark panel for high contrast readability
     status = f"CRITICAL: {intruders} PERIMETER BREACH(ES) DETECTED!" if intruders > 0 else "STATUS: PERIMETER CLEAR"
-    banner_color = (0, 0, 255) if intruders > 0 else (0, 255, 0)
+    banner_color = (50, 70, 255) if intruders > 0 else (80, 255, 120)
 
-    cv2.rectangle(frame, (10, 10), (580, 75), (20, 20, 20), -1)
-    cv2.putText(frame, f"YOLOv10n Tripwire Guardian | NMS-Free End-to-End",
-                (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1)
-    cv2.putText(frame, status, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.55, banner_color, 2)
+    cv2.rectangle(frame, (10, 10), (620, 80), (20, 22, 25), -1)
+    cv2.rectangle(frame, (10, 10), (620, 80), banner_color, 2)
+    cv2.putText(frame, "YOLOv10n Tripwire Guardian | NMS-Free End-to-End",
+                (22, 36), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 240, 240), 1)
+    cv2.putText(frame, status, (22, 64), cv2.FONT_HERSHEY_SIMPLEX, 0.55, banner_color, 2)
 
-    output_path = "output_tripwire.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"Result saved to {output_path}")
+    save_path = output_path if output_path else "output_tripwire.jpg"
+    os.makedirs(os.path.dirname(os.path.abspath(save_path)), exist_ok=True)
+    cv2.imwrite(save_path, frame)
+    print(f"Result saved to {save_path}")
     print(f"Perimeter Status: {status}")
 
     if not headless:
@@ -212,6 +214,12 @@ def main():
         action="store_true",
         help="Run without GUI (headless server/docker)",
     )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default="output_tripwire.jpg",
+        help="Output image path for static image verification",
+    )
     args = parser.parse_args()
 
     print("Loading YOLOv10n model (yolov10n.pt)...")
@@ -219,7 +227,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.line_ratio, args.headless)
+        process_image(model, args.source, args.conf, args.line_ratio, args.headless, args.output)
     else:
         process_stream(model, args.source, args.conf, args.line_ratio, args.headless)
 

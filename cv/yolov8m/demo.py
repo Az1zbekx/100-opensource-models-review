@@ -16,7 +16,7 @@ def get_feet(box):
     return (int((box[0] + box[2]) / 2), int(box[3]))
 
 
-def process_image(model, image_path: str, conf: float, cluster_radius: int, headless: bool):
+def process_image(model, image_path: str, conf: float, cluster_radius: int, headless: bool, output_path: str = None):
     """Analyze static image for dense crowd clusters and inter-person proximity."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -48,52 +48,70 @@ def process_image(model, image_path: str, conf: float, cluster_radius: int, head
                 clustered_indices.add(i)
                 clustered_indices.add(j)
 
-    # Draw proximity links
+    # Draw proximity links between feet
     for p1, p2, dist in proximity_lines:
         cv2.line(frame, p1, p2, (0, 0, 255), 2)
+        mid_pt = ((p1[0] + p2[0]) // 2, (p1[1] + p2[1]) // 2)
+        cv2.circle(frame, mid_pt, 3, (0, 255, 255), -1)
 
     # Draw persons
     for idx, p in enumerate(persons):
         x1, y1, x2, y2 = p["coords"]
-        is_clustered = idx in clustered_indices and p["cluster_neighbors"] >= 2
+        is_high_dense = idx in clustered_indices and p["cluster_neighbors"] >= 2
+        is_pair = idx in clustered_indices
 
-        if is_clustered:
-            color = (0, 0, 255)
-            label = f"Crowd Node ({p['cluster_neighbors']} adj)"
-        elif idx in clustered_indices:
-            color = (0, 165, 255)
-            label = "Proximity Pair"
+        if is_high_dense:
+            color = (0, 0, 255)       # Red: dense cluster node
+            label = f"Cluster Node ({p['cluster_neighbors']} adj)"
+        elif is_pair:
+            color = (0, 165, 255)     # Amber/Orange: proximity pair
+            label = f"Proximity ({p['conf']:.2f})"
         else:
-            color = (0, 255, 0)
+            color = (0, 255, 0)       # Green: isolated pedestrian
             label = f"Person ({p['conf']:.2f})"
 
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
         cv2.circle(frame, p["feet"], 4, color, -1)
-        cv2.putText(frame, label, (x1, y1 - 6),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 1)
 
-    # Density status
+        # Draw clean background for label text
+        (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.42, 1)
+        tag_y1 = max(0, y1 - th - 6)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tw + 6, tag_y1 + th + 6), (15, 18, 22), -1)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tw + 6, tag_y1 + th + 6), color, 1)
+        cv2.putText(frame, label, (x1 + 3, tag_y1 + th + 2),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.42, (255, 255, 255), 1)
+
+    # Density status evaluation
     high_density_nodes = sum(1 for p in persons if p["cluster_neighbors"] >= 2)
     if high_density_nodes >= 3:
-        status_msg = f"CRITICAL: {high_density_nodes} INDIVIDUALS IN DENSE CROWD CONGESTION CLUSTER!"
+        status_msg = f"CRITICAL: {high_density_nodes} INDIVIDUALS IN DENSE CROWD SURGE CLUSTER"
         status_color = (0, 0, 255)
     elif len(clustered_indices) > 0:
-        status_msg = f"MODERATE: {len(clustered_indices)} INDIVIDUALS IN CLOSE PROXIMITY"
+        status_msg = f"ADVISORY: {len(clustered_indices)} INDIVIDUALS IN CLOSE PROXIMITY"
         status_color = (0, 165, 255)
     else:
-        status_msg = "CROWD STATUS NORMAL: NO CONGESTION CLUSTERS"
+        status_msg = "NORMAL: SPATIALLY DISPERSED PEDESTRIAN FLOW"
         status_color = (0, 255, 0)
 
-    # Dashboard Banner
-    cv2.rectangle(frame, (10, 10), (620, 75), (20, 20, 20), -1)
-    cv2.putText(frame, f"YOLOv8m Crowd Spatial Analyzer | Total People: {n}",
-                (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (255, 255, 255), 1)
-    cv2.putText(frame, status_msg, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.50, status_color, 2)
+    # Dashboard HUD Banner
+    hud_w = 680
+    hud_h = 82
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 10 + hud_h), (15, 18, 22), -1)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 10 + hud_h), (60, 64, 72), 1)
 
-    output_path = "output_crowd.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"Result saved to {output_path}")
-    print(f"Crowd Analysis: {status_msg}")
+    cv2.putText(frame, "YOLOv8m CROWD SPATIAL DENSITY & PROXIMITY ANALYZER",
+                (22, 32), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (0, 220, 255), 1, cv2.LINE_AA)
+    
+    cv2.putText(frame, f"Pedestrians: {n}  |  In Proximity: {len(clustered_indices)}  |  Dense Nodes: {high_density_nodes}  |  Radius: {cluster_radius}px",
+                (22, 54), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (200, 205, 215), 1, cv2.LINE_AA)
+    
+    cv2.putText(frame, f"STATUS: {status_msg}",
+                (22, 76), cv2.FONT_HERSHEY_SIMPLEX, 0.46, status_color, 1, cv2.LINE_AA)
+
+    out_file = output_path if output_path else "output_crowd.jpg"
+    cv2.imwrite(out_file, frame)
+    print(f"Result saved to {out_file}")
+    print(f"Crowd Analysis: {status_msg} (People: {n}, Clustered: {len(clustered_indices)}, Dense: {high_density_nodes})")
 
     if not headless:
         cv2.imshow("YOLOv8m - Crowd Spatial Density Analyzer", frame)
@@ -227,6 +245,12 @@ def main():
         help="Proximity distance threshold in pixels for crowd clustering (default: 120)",
     )
     parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Path to save output visualization image (default: output_crowd.jpg)",
+    )
+    parser.add_argument(
         "--headless",
         action="store_true",
         help="Run without GUI (for server execution)",
@@ -238,7 +262,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.cluster_radius, args.headless)
+        process_image(model, args.source, args.conf, args.cluster_radius, args.headless, output_path=args.output)
     else:
         process_stream(model, args.source, args.conf, args.cluster_radius, args.headless)
 

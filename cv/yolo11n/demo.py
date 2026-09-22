@@ -6,14 +6,18 @@ from ultralytics import YOLO
 
 # Target COCO classes
 CLASS_PERSON = 0
+CLASS_CHAIR = 56
+CLASS_TV = 62
 CLASS_LAPTOP = 63
+CLASS_MOUSE = 64
+CLASS_KEYBOARD = 66
 CLASS_PHONE = 67
 CLASS_BOOK = 73
 
 DISTRACTION_CONFIRM_SECONDS = 3.0
 
 
-def process_image(model, image_path: str, conf: float, headless: bool):
+def process_image(model, image_path: str, conf: float, headless: bool, output_path: str = None):
     """Process a single image and save/display the result."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -25,6 +29,7 @@ def process_image(model, image_path: str, conf: float, headless: bool):
 
     person_detected = False
     phone_detected = False
+    work_tools = []
 
     for box in boxes:
         cls_id = int(box.cls[0])
@@ -33,38 +38,67 @@ def process_image(model, image_path: str, conf: float, headless: bool):
 
         if cls_id == CLASS_PERSON:
             person_detected = True
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 200, 0), 2)
-            cv2.putText(frame, f"Person {score:.2f}", (x1, y1 - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 200, 0), 2)
+            color = (0, 220, 255)
+            label = f"Person ({score:.2f})"
         elif cls_id == CLASS_PHONE:
             phone_detected = True
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
-            cv2.putText(frame, f"PHONE DETECTED! {score:.2f}", (x1, y1 - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
-        elif cls_id in (CLASS_LAPTOP, CLASS_BOOK):
-            label = "Laptop" if cls_id == CLASS_LAPTOP else "Book"
-            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-            cv2.putText(frame, f"{label} {score:.2f}", (x1, y1 - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            color = (0, 0, 255)
+            label = f"PHONE DETECTED! ({score:.2f})"
+        elif cls_id in (CLASS_LAPTOP, CLASS_BOOK, CLASS_TV):
+            tool_name = "Laptop" if cls_id == CLASS_LAPTOP else ("Monitor" if cls_id == CLASS_TV else "Book")
+            work_tools.append(tool_name)
+            color = (0, 255, 0)
+            label = f"{tool_name} ({score:.2f})"
+        elif cls_id in (CLASS_KEYBOARD, CLASS_MOUSE, CLASS_CHAIR):
+            tool_name = model.names[cls_id].title()
+            color = (180, 160, 100)
+            label = f"{tool_name} ({score:.2f})"
+        else:
+            continue
+
+        # Draw bounding box
+        thickness = 3 if cls_id == CLASS_PHONE else 2
+        cv2.rectangle(frame, (x1, y1), (x2, y2), color, thickness)
+
+        # Draw clean label tag
+        (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.45, 1)
+        tag_y1 = max(0, y1 - th - 6)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tw + 6, tag_y1 + th + 6), (15, 18, 22), -1)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tw + 6, tag_y1 + th + 6), color, 1)
+        cv2.putText(frame, label, (x1 + 3, tag_y1 + th + 2),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1)
 
     if phone_detected:
         status_text = "STATUS: DISTRACTED (Smartphone in use)"
         status_color = (0, 0, 255)
     elif person_detected:
-        status_text = "STATUS: FOCUSED (Productive work)"
+        status_text = "STATUS: FOCUSED (Productive workstation activity)"
         status_color = (0, 255, 0)
     else:
-        status_text = "STATUS: EMPTY DESK (No person detected)"
-        status_color = (200, 200, 200)
+        status_text = "STATUS: EMPTY WORKSTATION (No occupant detected)"
+        status_color = (200, 205, 215)
 
-    # Draw Status Banner
-    cv2.rectangle(frame, (10, 10), (520, 65), (0, 0, 0), -1)
-    cv2.putText(frame, status_text, (20, 45),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.65, status_color, 2)
+    # Draw Top Dashboard HUD Banner
+    hud_w = 680
+    hud_h = 82
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 10 + hud_h), (15, 18, 22), -1)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 10 + hud_h), (60, 64, 72), 1)
 
-    output_path = "output_desk.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"Result successfully saved to '{output_path}'")
+    cv2.putText(frame, "YOLO11n SMART DESK FOCUS & DISTRACTION MONITOR",
+                (22, 32), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (0, 220, 255), 1, cv2.LINE_AA)
+    
+    occupant_str = "Present" if person_detected else "Absent"
+    phone_str = "ACTIVE DISTRACTION" if phone_detected else "None"
+    tools_str = ", ".join(set(work_tools)) if work_tools else "Peripherals/None"
+    cv2.putText(frame, f"Occupant: {occupant_str}  |  Phone: {phone_str}  |  Tools: {tools_str}",
+                (22, 54), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (200, 205, 215), 1, cv2.LINE_AA)
+    
+    cv2.putText(frame, status_text,
+                (22, 76), cv2.FONT_HERSHEY_SIMPLEX, 0.46, status_color, 1, cv2.LINE_AA)
+
+    out_file = output_path if output_path else "output_desk.jpg"
+    cv2.imwrite(out_file, frame)
+    print(f"Result successfully saved to '{out_file}'")
     print(f"Assessment: {status_text}")
 
     if not headless:
@@ -200,6 +234,12 @@ def main():
         help="Detection confidence threshold (default: 0.35)",
     )
     parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Path to save output visualization image (default: output_desk.jpg)",
+    )
+    parser.add_argument(
         "--headless",
         action="store_true",
         help="Run without GUI window (for server or background runs)",
@@ -211,7 +251,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.headless)
+        process_image(model, args.source, args.conf, args.headless, output_path=args.output)
     else:
         process_stream(model, args.source, args.conf, args.headless)
 

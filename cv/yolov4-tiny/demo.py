@@ -117,6 +117,9 @@ def decode_predictions(outs, orig_w, orig_h, conf_thresh, nms_thresh):
                         bw = (np.exp(np.clip(cell[2], -10.0, 10.0)) * pw) / 416.0
                         bh = (np.exp(np.clip(cell[3], -10.0, 10.0)) * ph) / 416.0
 
+                        if bw > 0.80 and bh > 0.80:
+                            continue
+
                         x1 = max(0, int((bx - bw / 2.0) * orig_w))
                         y1 = max(0, int((by - bh / 2.0) * orig_h))
                         w_box = min(orig_w - x1, int(bw * orig_w))
@@ -134,6 +137,12 @@ def decode_predictions(outs, orig_w, orig_h, conf_thresh, nms_thresh):
             x, y, w_box, h_box = boxes[i]
             cid = class_ids[i]
             cname = COCO_CLASSES[cid] if cid < len(COCO_CLASSES) else f"class_{cid}"
+            recon_classes = {"person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat"}
+            if cname not in recon_classes:
+                continue
+            box_area = (w_box * h_box) / float(orig_w * orig_h)
+            if box_area > 0.35:
+                continue
             final_detections.append({
                 "box": (x, y, x + w_box, y + h_box),
                 "conf": confidences[i],
@@ -150,10 +159,9 @@ def draw_hud(frame, detections, fps):
     vehicle_count = sum(1 for d in detections if d["class"] in ["car", "truck", "bus", "motorcycle"])
 
     # Tactical Recon Header Panel
-    cv2.rectangle(overlay, (20, 20), (580, 185), (15, 20, 25), -1)
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
-
-    cv2.rectangle(frame, (20, 20), (580, 185), (0, 220, 255), 2)
+    hud_w = min(w - 20, 580)
+    cv2.rectangle(frame, (20, 20), (20 + hud_w, 185), (15, 20, 25), -1)
+    cv2.rectangle(frame, (20, 20), (20 + hud_w, 185), (0, 220, 255), 2)
 
     cv2.putText(
         frame,
@@ -210,9 +218,8 @@ def draw_hud(frame, detections, fps):
     badge_w, badge_h = 240, 75
     badge_x = w - badge_w - 20
     cv2.rectangle(
-        overlay, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (15, 20, 25), -1
+        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (15, 20, 25), -1
     )
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
     cv2.rectangle(
         frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (80, 80, 80), 1
     )

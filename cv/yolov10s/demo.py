@@ -26,7 +26,7 @@ def is_point_in_box(point, box):
     return bx1 <= px <= bx2 and by1 <= py <= by2
 
 
-def process_image(model, image_path: str, conf: float, headless: bool):
+def process_image(model, image_path: str, conf: float, headless: bool, output_path: str = None):
     """Analyze static image for vehicles parked in restricted zones."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -56,10 +56,10 @@ def process_image(model, image_path: str, conf: float, headless: bool):
         is_violation = is_point_in_box(center_pt, restricted_zone)
         if is_violation:
             violator_count += 1
-            color = (0, 0, 255)
+            color = (50, 70, 255)
             label = f"PARKING VIOLATION: {v_name} ({score:.2f})"
         else:
-            color = (0, 255, 0)
+            color = (80, 255, 120)
             label = f"Legal: {v_name} ({score:.2f})"
 
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
@@ -68,23 +68,25 @@ def process_image(model, image_path: str, conf: float, headless: bool):
                     cv2.FONT_HERSHEY_SIMPLEX, 0.48, color, 2)
 
     # Draw Restricted Zone
-    zone_color = (0, 0, 255) if violator_count > 0 else (0, 165, 255)
+    zone_color = (50, 70, 255) if violator_count > 0 else (0, 230, 255)
     cv2.rectangle(frame, (rx1, ry1), (rx2, ry2), zone_color, 2)
     cv2.putText(frame, "RESTRICTED FIRE LANE / NO PARKING ZONE", (rx1 + 10, ry1 + 25),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.55, zone_color, 2)
 
-    # Status Banner
+    # Status Banner - Solid dark panel for high contrast readability
     status = f"CRITICAL: {violator_count} VEHICLE(S) ILLEGALLY PARKED!" if violator_count > 0 else "STATUS: RESTRICTED LANE CLEAR"
-    banner_color = (0, 0, 255) if violator_count > 0 else (0, 255, 0)
+    banner_color = (50, 70, 255) if violator_count > 0 else (80, 255, 120)
 
-    cv2.rectangle(frame, (10, 10), (600, 75), (20, 20, 20), -1)
+    cv2.rectangle(frame, (10, 10), (620, 80), (20, 22, 25), -1)
+    cv2.rectangle(frame, (10, 10), (620, 80), banner_color, 2)
     cv2.putText(frame, f"YOLOv10s Parking Patrol | Total Vehicles: {total_vehicles}",
-                (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1)
-    cv2.putText(frame, status, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.55, banner_color, 2)
+                (22, 36), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (240, 240, 240), 1)
+    cv2.putText(frame, status, (22, 64), cv2.FONT_HERSHEY_SIMPLEX, 0.55, banner_color, 2)
 
-    output_path = "output_parking.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"Result saved to {output_path}")
+    save_path = output_path if output_path else "output_parking.jpg"
+    os.makedirs(os.path.dirname(os.path.abspath(save_path)), exist_ok=True)
+    cv2.imwrite(save_path, frame)
+    print(f"Result saved to {save_path}")
     print(f"Parking Assessment: {status}")
 
     if not headless:
@@ -228,6 +230,12 @@ def main():
         action="store_true",
         help="Run headless without GUI (for server execution)",
     )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default="output_parking.jpg",
+        help="Output image path for static image execution",
+    )
     args = parser.parse_args()
 
     print("Loading YOLOv10s model (yolov10s.pt)...")
@@ -235,7 +243,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.headless)
+        process_image(model, args.source, args.conf, args.headless, args.output)
     else:
         process_stream(model, args.source, args.conf, args.headless)
 

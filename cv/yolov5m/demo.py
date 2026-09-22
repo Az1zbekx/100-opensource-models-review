@@ -69,11 +69,11 @@ def draw_hud(frame, counts, total_vehicles, crew_count, max_bays, fps, device_st
     free_bays = max(0, max_bays - total_vehicles)
 
     # Top Control Dashboard Panel
-    cv2.rectangle(overlay, (20, 20), (580, 185), (20, 25, 30), -1)
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
+    hud_w = min(w - 20, 580)
+    cv2.rectangle(frame, (20, 20), (20 + hud_w, 185), (20, 25, 30), -1)
 
     border_color = (0, 140, 255) if crew_count > 0 else (0, 220, 180)
-    cv2.rectangle(frame, (20, 20), (580, 185), border_color, 2)
+    cv2.rectangle(frame, (20, 20), (20 + hud_w, 185), border_color, 2)
 
     cv2.putText(
         frame,
@@ -138,9 +138,8 @@ def draw_hud(frame, counts, total_vehicles, crew_count, max_bays, fps, device_st
     badge_w, badge_h = 240, 75
     badge_x = w - badge_w - 20
     cv2.rectangle(
-        overlay, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (20, 25, 30), -1
+        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (20, 25, 30), -1
     )
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
     cv2.rectangle(
         frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (80, 80, 80), 1
     )

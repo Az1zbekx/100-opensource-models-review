@@ -23,51 +23,100 @@ def load_yolov7_tiny(weights_path):
     return model
 
 
-def process_image(model, image_path: str, conf: float, headless: bool):
-    """Analyze static doorway image for pedestrian presence."""
+def process_image(model, image_path: str, conf: float, output_path: str = None, headless: bool = False):
+    """Analyze static doorway image for pedestrian presence, ingress, and egress."""
     frame = cv2.imread(image_path)
     if frame is None:
         print(f"Error: Could not read image from {image_path}")
         return
 
     h, w = frame.shape[:2]
-    doorway_line_y = int(h * 0.55)
+    doorway_line_y = int(h * 0.58)
 
     model.conf = conf
-    # class 0 is person in COCO
+    t_start = time.time()
     results = model(frame)
-    df = results.pandas().xyxy[0]
-    person_df = df[df["class"] == 0]
+    infer_ms = (time.time() - t_start) * 1000
 
-    count = len(person_df)
+    df = results.pandas().xyxy[0]
+    person_df = df[df["name"] == "person"]
+    bags_df = df[df["name"].isin(["backpack", "handbag", "suitcase"])]
+
+    inside_count = 0
+    approaching_count = 0
+
+    # Draw persons
     for _, row in person_df.iterrows():
         x1, y1, x2, y2 = int(row["xmin"]), int(row["ymin"]), int(row["xmax"]), int(row["ymax"])
         score = float(row["confidence"])
         foot_y = y2
 
-        color = (0, 255, 0) if foot_y < doorway_line_y else (0, 165, 255)
-        status_lbl = "Inside" if foot_y < doorway_line_y else "Approaching"
+        if foot_y < doorway_line_y:
+            inside_count += 1
+            color = (0, 230, 100)  # Green: Inside facility
+            status_lbl = "INSIDE"
+        else:
+            approaching_count += 1
+            color = (0, 165, 255)  # Amber: Approaching threshold
+            status_lbl = "APPROACHING"
 
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
-        cv2.putText(frame, f"Person {score:.2f} ({status_lbl})", (x1, y1 - 8),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 1)
+        
+        # Tag badge
+        label_text = f"Person ({score:.2f}) [{status_lbl}]"
+        tag_size, _ = cv2.getTextSize(label_text, cv2.FONT_HERSHEY_SIMPLEX, 0.40, 1)
+        tag_w, tag_h = tag_size
+        tag_y1 = max(0, y1 - tag_h - 4)
+        cv2.rectangle(frame, (x1, tag_y1), (x1 + tag_w + 4, y1), (15, 18, 22), -1)
+        cv2.putText(frame, label_text, (x1 + 2, y1 - 3),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.40, color, 1, cv2.LINE_AA)
 
-    # Draw doorway demarcation line
-    cv2.line(frame, (0, doorway_line_y), (w, doorway_line_y), (0, 255, 255), 2)
-    cv2.putText(frame, "DOORWAY COUNTING THRESHOLD", (15, doorway_line_y - 8),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 255), 2)
+    # Draw personal carrying assets (backpacks, suitcases)
+    for _, row in bags_df.iterrows():
+        bx1, by1, bx2, by2 = int(row["xmin"]), int(row["ymin"]), int(row["xmax"]), int(row["ymax"])
+        bscore = float(row["confidence"])
+        bname = str(row["name"]).capitalize()
+        cv2.rectangle(frame, (bx1, by1), (bx2, by2), (255, 190, 0), 1)
+        cv2.putText(frame, f"{bname} {bscore:.2f}", (bx1, by1 - 4),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.35, (255, 190, 0), 1, cv2.LINE_AA)
 
-    # Dashboard HUD
-    cv2.rectangle(frame, (10, 10), (580, 75), (20, 20, 20), -1)
-    cv2.putText(frame, f"YOLOv7-tiny Doorway Gatekeeper | Persons in View: {count}",
-                (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1)
-    cv2.putText(frame, f"STATUS: {count} ACTIVE PEDESTRIANS MONITORED",
-                (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (0, 255, 0), 2)
+    # Draw Doorway Demarcation Line
+    cv2.line(frame, (0, doorway_line_y), (w, doorway_line_y), (0, 230, 255), 2)
+    threshold_label = "DOORWAY PASSAGE THRESHOLD [ ZONE A: INSIDE <---> ZONE B: APPROACHING ]"
+    cv2.putText(frame, threshold_label, (15, doorway_line_y - 8),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.48, (0, 230, 255), 1, cv2.LINE_AA)
 
-    output_path = "output_doorway.jpg"
+    # Dashboard HUD Header
+    hud_w = min(680, w - 190)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 75), (15, 18, 22), -1)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 75), (0, 230, 255), 1)
+
+    total_persons = len(person_df)
+    total_bags = len(bags_df)
+
+    cv2.putText(frame, "YOLOv7-tiny Doorway Gatekeeper | Academia Sinica E-ELAN",
+                (20, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.48, (255, 255, 255), 1, cv2.LINE_AA)
+    cv2.putText(frame, f"PASSAGE AUDIT: {inside_count} INSIDE FACILITY | {approaching_count} APPROACHING THRESHOLD",
+                (20, 48), cv2.FONT_HERSHEY_SIMPLEX, 0.44, (0, 230, 100), 1, cv2.LINE_AA)
+    cv2.putText(frame, f"TOTAL MONITORED: {total_persons} Pedestrians ({total_bags} Bags/Luggage) | FLOW: ACTIVE",
+                (20, 66), cv2.FONT_HERSHEY_SIMPLEX, 0.40, (180, 210, 220), 1, cv2.LINE_AA)
+
+    # Top-Right Performance Badge
+    badge_w = 180
+    if w >= 800:
+        cv2.rectangle(frame, (w - badge_w - 10, 10), (w - 10, 65), (15, 18, 22), -1)
+        cv2.rectangle(frame, (w - badge_w - 10, 10), (w - 10, 65), (70, 75, 80), 1)
+        device_name = "cuda:0" if torch.cuda.is_available() else "cpu"
+        cv2.putText(frame, "Inference: YOLOv7-tiny", (w - badge_w, 28),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.42, (255, 255, 255), 1, cv2.LINE_AA)
+        cv2.putText(frame, f"Device: {device_name} | {infer_ms:.1f}ms", (w - badge_w, 48),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.40, (0, 230, 255), 1, cv2.LINE_AA)
+
+    if output_path is None:
+        output_path = "output_doorway.jpg"
     cv2.imwrite(output_path, frame)
     print(f"Result saved to {output_path}")
-    print(f"Doorway Audit: {count} pedestrian(s) detected.")
+    print(f"Doorway Audit: {total_persons} pedestrians ({inside_count} inside, {approaching_count} approaching), {total_bags} transit bags.")
 
     if not headless:
         cv2.imshow("YOLOv7-tiny - Doorway Foot-Traffic Counter", frame)
@@ -114,12 +163,12 @@ def process_stream(model, video_source, conf: float, headless: bool):
                 fps_start = now
 
             h, w = frame.shape[:2]
-            line_y = int(h * 0.55)
+            line_y = int(h * 0.58)
 
             # PyTorch inference
             results = model(frame)
             df = results.pandas().xyxy[0]
-            person_df = df[df["class"] == 0]
+            person_df = df[df["name"] == "person"]
 
             current_positions = {}
             for idx, row in person_df.iterrows():
@@ -147,13 +196,13 @@ def process_stream(model, video_source, conf: float, headless: bool):
 
             if not headless:
                 # Draw Doorway Threshold Line
-                cv2.line(frame, (0, line_y), (w, line_y), (0, 255, 255), 2)
+                cv2.line(frame, (0, line_y), (w, line_y), (0, 230, 255), 2)
                 cv2.putText(frame, "DOORWAY PASSAGE LINE", (15, line_y - 8),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 230, 255), 1)
 
                 # Dashboard HUD
                 net_occupancy = max(0, in_count - out_count)
-                cv2.rectangle(frame, (10, 10), (580, 85), (20, 20, 20), -1)
+                cv2.rectangle(frame, (10, 10), (580, 85), (15, 18, 22), -1)
                 cv2.putText(frame, f"YOLOv7-tiny Foot-Traffic | FPS: {fps:.1f}", (20, 32),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1)
                 cv2.putText(frame, f"IN: {in_count} | OUT: {out_count} | Net Occupancy: {net_occupancy}",
@@ -188,8 +237,14 @@ def main():
     parser.add_argument(
         "--conf",
         type=float,
-        default=0.40,
-        help="Confidence threshold for person detection (default: 0.40)",
+        default=0.35,
+        help="Confidence threshold for person detection (default: 0.35)",
+    )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Path to save annotated output image",
     )
     parser.add_argument(
         "--headless",
@@ -203,7 +258,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.headless)
+        process_image(model, args.source, args.conf, args.output, args.headless)
     else:
         process_stream(model, args.source, args.conf, args.headless)
 

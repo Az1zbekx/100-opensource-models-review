@@ -199,6 +199,20 @@ cd /home/az1z6ekx/100-opensource-models-review/cv/yolov10n
 
 ---
 
+## Verification & Test Results (Real Perimeter Fence & Track Surveillance CCTV Data)
+
+Inference testing was conducted using authentic security CCTV feeds covering restricted downtown perimeters, subway platform edge clearance, and industrial wire fence boundaries.
+
+| Test Image | Surveillance Environment | Intruders / Persons | Perimeter Security Status | Tripwire Zone Evaluation | Output Artifact |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `test_tripwire.jpg` | **Urban Restricted Zone CCTV**: Pedestrians entering restricted street barrier enclosure | 6 | `CRITICAL: 6 PERIMETER BREACH(ES)` | Line Crossed (Restricted) | `data/output_1.jpg` |
+| `test_tripwire_2.jpg` | **Subway Platform CCTV**: Commuters seated on platform safely behind the warning line | 2 | `STATUS: PERIMETER CLEAR` | Authorized Zone (Safe) | `data/output_2.jpg` |
+| `test_tripwire_3.jpg` | **Perimeter Security Fence**: Secured industrial wire mesh barrier perimeter | 0 | `STATUS: PERIMETER CLEAR` | Zero Boundary Intrusion | `data/output_3.jpg` |
+
+> **Audit Summary:** YOLOv10n end-to-end NMS-free inference accurately differentiated unauthorized individuals breaching virtual barrier boundaries from authorized subjects resting safely behind platform safety perimeters, generating crisp, real-time intrusion flags.
+
+---
+
 ## Hardware Requirements & Benchmark Verdict
 
 ### Test Rig: Acer Aspire 7 (Laptop)

@@ -167,11 +167,12 @@ Our implementation in [`demo.py`](file:///home/az1z6ekx/100-opensource-models-re
 
 ## Test Data
 
-A sample test image representing a worker seated at a study desk with a smartphone is provided in:
-```text
-cv/yolo11n/data/test_desk.jpg
-```
-This image can be evaluated immediately without requiring an active webcam.
+Three real-world desk study, mobile distraction, and empty workstation camera captures are provided in `data/`:
+1. `data/test_desk.jpg`: Student studying and writing at a desk with an open laptop and study materials (Productive focus state).
+2. `data/test_desk_2.jpg`: Workstation desk occupant holding and checking a smartphone over their planner and laptop (Distracted state).
+3. `data/test_desk_3.jpg`: Unoccupied home/office workstation computer desk with monitor, ergonomic keyboard, mouse pad, and chair (Empty desk state).
+
+Immediate offline verification can be executed without requiring an active webcam.
 
 ---
 
@@ -192,12 +193,12 @@ pip install -r cv/requirements.txt
 
 ## Running Locally
 
-### 1. Test Using the Provided Sample Image
+### 1. Test Static Desk Image
 ```bash
 cd /home/az1z6ekx/100-opensource-models-review/cv/yolo11n
-../venv-cv/bin/python demo.py --source data/test_desk.jpg
+../venv-cv/bin/python demo.py --source data/test_desk.jpg --output data/output_1.jpg --headless
 ```
-*Output image with bounding boxes and focus assessment is automatically saved to `output_desk.jpg`.*
+*Output image with bounding boxes and focus assessment is automatically saved to `data/output_1.jpg`.*
 
 ### 2. Run Real-Time Webcam Stream (Default)
 ```bash
@@ -214,6 +215,16 @@ cd /home/az1z6ekx/100-opensource-models-review/cv/yolo11n
 ```bash
 ../venv-cv/bin/python demo.py --source 0 --headless
 ```
+
+### 5. Verification & Test Results (Real Desk & Workstation Camera Data)
+
+The focus and distraction detection pipeline was verified across 3 genuine workstation environments:
+
+| Test Input File | Resolution | Operational Context | Detections & Workstation Focus Metrics | Status | Verified Output Artifact |
+| :--- | :--- | :--- | :--- | :---: | :--- |
+| `data/test_desk.jpg` | 1280x960 | Student studying and writing at dorm room desk | **Person** (0.87), **Laptop** (0.86); No mobile phone detected | PASS | `data/output_1.jpg`<br>(`STATUS: FOCUSED`) |
+| `data/test_desk_2.jpg` | 1280x854 | Desk occupant holding smartphone over workspace planner | **Phone Detected!** (0.71), **Person** (0.69), **Chair** (0.58); Active distraction alarm armed | PASS | `data/output_2.jpg`<br>(`STATUS: DISTRACTED`) |
+| `data/test_desk_3.jpg` | 1280x853 | Unoccupied computer workstation desk | **Monitor** (0.86), **Keyboard** (0.76), **Mouse** (0.50), **Chair** (0.50); Occupant absent | PASS | `data/output_3.jpg`<br>(`STATUS: EMPTY WORKSTATION`) |
 
 ---
 

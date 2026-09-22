@@ -25,7 +25,7 @@ def get_center(box):
     return (int((box[0] + box[2]) / 2), int((box[1] + box[3]) / 2))
 
 
-def process_image(model, image_path: str, conf: float, headless: bool):
+def process_image(model, image_path: str, conf: float, headless: bool, output_path: str = None):
     """Analyze static retail image for shoppers carrying large baggage."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -89,22 +89,24 @@ def process_image(model, image_path: str, conf: float, headless: bool):
         cv2.putText(frame, label, (sx1, sy1 - 8),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.48, color, 2)
 
-    # Status Banner
+    # Status Banner - Solid dark panel for maximum readability
     if flagged_shoppers > 0:
         status_msg = f"LOSS PREVENTION: {flagged_shoppers} SHOPPER(S) CARRYING LARGE BAGGAGE"
-        status_color = (0, 0, 255)
+        status_color = (50, 70, 255)
     else:
         status_msg = "STATUS: NO CONCEALMENT BAGGAGE DETECTED"
-        status_color = (0, 255, 0)
+        status_color = (80, 255, 120)
 
-    cv2.rectangle(frame, (10, 10), (620, 75), (20, 20, 20), -1)
+    cv2.rectangle(frame, (10, 10), (640, 80), (20, 22, 25), -1)
+    cv2.rectangle(frame, (10, 10), (640, 80), status_color, 2)
     cv2.putText(frame, f"YOLOv8s Loss Prevention | Shoppers: {len(shoppers)} | Baggage: {len(bags)}",
-                (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (255, 255, 255), 1)
-    cv2.putText(frame, status_msg, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.52, status_color, 2)
+                (22, 36), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (240, 240, 240), 1)
+    cv2.putText(frame, status_msg, (22, 64), cv2.FONT_HERSHEY_SIMPLEX, 0.52, status_color, 2)
 
-    output_path = "output_shopper.jpg"
-    cv2.imwrite(output_path, frame)
-    print(f"Result saved to {output_path}")
+    save_path = output_path if output_path else "output_shopper.jpg"
+    os.makedirs(os.path.dirname(os.path.abspath(save_path)), exist_ok=True)
+    cv2.imwrite(save_path, frame)
+    print(f"Result saved to {save_path}")
     print(f"Baggage Audit: {status_msg}")
 
     if not headless:
@@ -245,6 +247,12 @@ def main():
         action="store_true",
         help="Run without GUI (for server execution)",
     )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default="output_shopper.jpg",
+        help="Output image path for static image mode",
+    )
     args = parser.parse_args()
 
     print("Loading YOLOv8s model (yolov8s.pt)...")
@@ -252,7 +260,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.headless)
+        process_image(model, args.source, args.conf, args.headless, args.output)
     else:
         process_stream(model, args.source, args.conf, args.headless)
 

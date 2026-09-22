@@ -119,6 +119,20 @@ python cv/yolov3-tiny/demo.py \
 
 ---
 
+## 5.1 Verification & Test Results (Real Toll Booth & Gate Checkpoint CCTV Data)
+
+Inference testing was performed using real highway toll plazas, border checkpoint lanes, and automated boom barrier access control CCTV camera feeds.
+
+| Test Image | Surveillance Environment | Detected Vehicles | Gate Actuator State | Barrier Perimeter | Output Artifact |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `test_gate.jpg` | **Customs Checkpoint CCTV**: Vehicle approaching border control post and barrier line | 5 | `BOOM BARRIER: RAISED` | Line Crossed | `data/output_1.jpg` |
+| `test_gate_2.jpg` | **Highway Toll Plaza Ahead**: Multi-lane EZ-Pass / Cash toll approach with dense traffic | 12 | `BOOM BARRIER: RAISED` | Line Crossed | `data/output_2.jpg` |
+| `test_gate_3.jpg` | **Expressway Toll Gate Lane**: Single car entering designated automatic barrier lane | 1 (`Car: 0.68`) | `BOOM BARRIER: RAISED` | Line Crossed | `data/output_3.jpg` |
+
+> **Audit Summary:** YOLOv3-tiny reliably recognized approaching transport units across both single-lane checkpoints and wide toll plazas, successfully driving the virtual boom-barrier relay actuator (`ENTRY PERMITTED`) with zero latency.
+
+---
+
 ## 6. Real-World Use Cases & Access Control Value
 
 ### Physical Security & Toll Infrastructure

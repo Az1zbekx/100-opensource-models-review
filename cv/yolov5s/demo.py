@@ -71,11 +71,10 @@ def draw_hud(frame, vehicles, pedestrians, hazard_pairs, fps, device_str):
         density_label = "CONGESTION: FLUID"
         density_color = (0, 255, 100)
 
-    # Top Dashboard Panel
-    cv2.rectangle(overlay, (20, 20), (560, 180), (20, 25, 30), -1)
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
+    # Top Dashboard Panel - Solid dark panel for high contrast readability
+    cv2.rectangle(frame, (20, 20), (560, 180), (20, 22, 25), -1)
 
-    border_color = (0, 0, 255) if has_hazard else (0, 200, 255)
+    border_color = (0, 0, 255) if has_hazard else (0, 220, 100)
     cv2.rectangle(frame, (20, 20), (560, 180), border_color, 2)
 
     cv2.putText(
@@ -90,18 +89,18 @@ def draw_hud(frame, vehicles, pedestrians, hazard_pairs, fps, device_str):
     )
 
     if has_hazard:
-        alert_text = f"COLLISION HAZARD ALERT: {len(hazard_pairs)} PAIR(S) IN PROXIMITY"
-        alert_color = (0, 0, 255)
+        alert_text = f"COLLISION HAZARD ALERT: {len(hazard_pairs)} PAIR(S)"
+        alert_color = (50, 70, 255)  # Bright Red/Orange-red
     else:
         alert_text = "CROSSWALK STATUS: SAFE DIVERGENCE"
-        alert_color = (0, 255, 100)
+        alert_color = (80, 255, 120)  # Bright green
 
     cv2.putText(
         frame,
         alert_text,
-        (35, 75),
+        (35, 76),
         cv2.FONT_HERSHEY_SIMPLEX,
-        0.52,
+        0.54,
         alert_color,
         2,
         cv2.LINE_AA,
@@ -109,17 +108,17 @@ def draw_hud(frame, vehicles, pedestrians, hazard_pairs, fps, device_str):
     cv2.putText(
         frame,
         f"Vehicles: {total_vehicles} | Crossing Pedestrians: {total_pedestrians}",
-        (35, 102),
+        (35, 104),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.50,
-        (220, 220, 220),
+        (240, 240, 240),
         1,
         cv2.LINE_AA,
     )
     cv2.putText(
         frame,
         f"Traffic Density: {density_label}",
-        (35, 128),
+        (35, 130),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.50,
         density_color,
@@ -129,23 +128,22 @@ def draw_hud(frame, vehicles, pedestrians, hazard_pairs, fps, device_str):
     cv2.putText(
         frame,
         "Signal Advisory: EXTEND PEDESTRIAN CLEARANCE" if has_hazard else "Signal Advisory: OPTIMAL CYCLE",
-        (35, 154),
+        (35, 156),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.48,
-        (255, 220, 100) if has_hazard else (200, 240, 200),
-        1,
+        (0, 215, 255) if has_hazard else (120, 255, 180),
+        2 if has_hazard else 1,
         cv2.LINE_AA,
     )
 
-    # Telemetry badge top-right
+    # Telemetry badge top-right - solid dark background
     badge_w, badge_h = 240, 75
     badge_x = w - badge_w - 20
     cv2.rectangle(
-        overlay, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (20, 25, 30), -1
+        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (20, 22, 25), -1
     )
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
     cv2.rectangle(
-        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (80, 80, 80), 1
+        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (100, 100, 100), 1
     )
     cv2.putText(
         frame,
@@ -153,8 +151,8 @@ def draw_hud(frame, vehicles, pedestrians, hazard_pairs, fps, device_str):
         (badge_x + 12, 45),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.50,
-        (0, 255, 255),
-        1,
+        (0, 230, 255),
+        2,
         cv2.LINE_AA,
     )
     cv2.putText(
@@ -163,7 +161,7 @@ def draw_hud(frame, vehicles, pedestrians, hazard_pairs, fps, device_str):
         (badge_x + 12, 72),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.48,
-        (200, 200, 200),
+        (230, 230, 230),
         1,
         cv2.LINE_AA,
     )

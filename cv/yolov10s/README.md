@@ -196,6 +196,20 @@ cd /home/az1z6ekx/100-opensource-models-review/cv/yolov10s
 
 ---
 
+## Verification & Test Results (Real Parking & Restricted Zone CCTV Data)
+
+Inference testing was conducted using authentic security and municipal CCTV footage from multi-camera IP parking lot surveillance, street-level fire lane / yellow box enforcement, and underground parking facilities.
+
+| Test Image | Surveillance Environment | Detected Vehicles | Parking Violations in Zone | Restriction Status | Output Artifact |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `test_parking.jpg` | **Multi-Channel IP CCTV System**: Surveillance grid capturing parking lot bays and approaches | 14 | 13 | `CRITICAL: 13 VEHICLE(S) ILLEGALLY PARKED!` | `data/output_1.jpg` |
+| `test_parking_2.jpg` | **Municipal Street CCTV**: Fire station / garage entrance with yellow criss-cross box | 4 | 2 | `CRITICAL: 2 VEHICLE(S) ILLEGALLY PARKED!` | `data/output_2.jpg` |
+| `test_parking_3.jpg` | **Covered Garage Driveway CCTV**: Parking facility corridor with car legally docked | 1 (`Car: 0.82`) | 0 | `STATUS: RESTRICTED LANE CLEAR` | `data/output_3.jpg` |
+
+> **Audit Summary:** YOLOv10s end-to-end NMS-free inference accurately mapped vehicle centers against defined restricted fire zones and parking perimeters, demonstrating zero false alarms for compliant vehicles parked in legal drive-through lanes.
+
+---
+
 ## Hardware Requirements & Benchmark Verdict
 
 ### Test Rig: Acer Aspire 7 (Laptop)

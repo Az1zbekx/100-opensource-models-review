@@ -60,8 +60,8 @@ def draw_hud(frame, person_count, state, elapsed_absence, fps, device_str):
         status_color = (0, 165, 255)
         status_text = f"AWAY: DWELL {elapsed_absence:.0f}s"
 
-    cv2.rectangle(overlay, (20, 20), (560, 175), (20, 25, 30), -1)
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
+    # Top Dashboard Bar - Solid dark panel for high contrast
+    cv2.rectangle(frame, (20, 20), (560, 175), (20, 22, 25), -1)
 
     cv2.rectangle(frame, (20, 20), (560, 175), status_color, 2)
 
@@ -91,7 +91,7 @@ def draw_hud(frame, person_count, state, elapsed_absence, fps, device_str):
         (35, 102),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.50,
-        (220, 220, 220),
+        (240, 240, 240),
         1,
         cv2.LINE_AA,
     )
@@ -101,29 +101,28 @@ def draw_hud(frame, person_count, state, elapsed_absence, fps, device_str):
         (35, 128),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.48,
-        (100, 220, 255),
+        (0, 220, 255),
         1,
         cv2.LINE_AA,
     )
     cv2.putText(
         frame,
-        "Station Security: LOCKED" if state == "ALERTED" else "Station Security: OPERATIONAL",
+        "Station Security: LOCKED" if state == "ALERTED" or state == "ABSENT" else "Station Security: OPERATIONAL",
         (35, 154),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.48,
-        (0, 255, 100) if state != "ALERTED" else (0, 0, 255),
-        1,
+        (50, 70, 255) if (state == "ALERTED" or state == "ABSENT") else (80, 255, 120),
+        2,
         cv2.LINE_AA,
     )
 
     badge_w, badge_h = 240, 75
     badge_x = w - badge_w - 20
     cv2.rectangle(
-        overlay, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (20, 25, 30), -1
+        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (20, 22, 25), -1
     )
-    cv2.addWeighted(overlay, 0.85, frame, 0.15, 0, frame)
     cv2.rectangle(
-        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (80, 80, 80), 1
+        frame, (badge_x, 20), (badge_x + badge_w, 20 + badge_h), (100, 100, 100), 1
     )
     cv2.putText(
         frame,
@@ -131,8 +130,8 @@ def draw_hud(frame, person_count, state, elapsed_absence, fps, device_str):
         (badge_x + 12, 45),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.50,
-        (0, 255, 255),
-        1,
+        (0, 230, 255),
+        2,
         cv2.LINE_AA,
     )
     cv2.putText(
@@ -141,7 +140,7 @@ def draw_hud(frame, person_count, state, elapsed_absence, fps, device_str):
         (badge_x + 12, 72),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.48,
-        (200, 200, 200),
+        (230, 230, 230),
         1,
         cv2.LINE_AA,
     )

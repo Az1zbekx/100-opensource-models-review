@@ -24,7 +24,7 @@ def is_point_in_box(point, box):
     return bx1 <= px <= bx2 and by1 <= py <= by2
 
 
-def process_image(model, image_path: str, conf: float, conflict_dist: int, headless: bool):
+def process_image(model, image_path: str, conf: float, conflict_dist: int, headless: bool, output_path: str = "output_crosswalk.jpg"):
     """Analyze static street image for crosswalk safety and jaywalking."""
     frame = cv2.imread(image_path)
     if frame is None:
@@ -124,12 +124,13 @@ def process_image(model, image_path: str, conf: float, conflict_dist: int, headl
         overall_status = "INTERSECTION SAFE: CROSSWALK PROTOCOLS NORMAL"
         banner_color = (0, 255, 0)
 
-    cv2.rectangle(frame, (10, 10), (620, 75), (20, 20, 20), -1)
+    hud_w = min(w - 20, 680)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 75), (20, 22, 25), -1)
+    cv2.rectangle(frame, (10, 10), (10 + hud_w, 75), (55, 60, 65), 1)
     cv2.putText(frame, f"YOLOv9s Crosswalk Guardian | Pedestrians: {len(pedestrians)} | Vehicles: {len(vehicles)}",
                 (20, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.52, (255, 255, 255), 1)
-    cv2.putText(frame, overall_status, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.52, banner_color, 2)
+    cv2.putText(frame, overall_status, (20, 62), cv2.FONT_HERSHEY_SIMPLEX, 0.50, banner_color, 2)
 
-    output_path = "output_crosswalk.jpg"
     cv2.imwrite(output_path, frame)
     print(f"Result saved to {output_path}")
     print(f"Crosswalk Safety Assessment: {overall_status}")
@@ -295,6 +296,12 @@ def main():
         help="Proximity distance threshold in pixels between pedestrian and vehicle (default: 160)",
     )
     parser.add_argument(
+        "--output",
+        type=str,
+        default="output_crosswalk.jpg",
+        help="Path to save output visualization image (default: output_crosswalk.jpg)",
+    )
+    parser.add_argument(
         "--headless",
         action="store_true",
         help="Run without GUI (for server / background runs)",
@@ -306,7 +313,7 @@ def main():
 
     image_extensions = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
     if os.path.isfile(args.source) and args.source.lower().endswith(image_extensions):
-        process_image(model, args.source, args.conf, args.conflict_dist, args.headless)
+        process_image(model, args.source, args.conf, args.conflict_dist, args.headless, args.output)
     else:
         process_stream(model, args.source, args.conf, args.conflict_dist, args.headless)
 
