@@ -34,8 +34,10 @@ This repo exists to test 100 open-source models, document the results, and keep 
 | **FasterWhisper** | STT | Fast audio transcription & voice command parsing (Uzbek & Multi) | Optional | $0–$10 (CTranslate2 on CPU) | ✅ Yes | [README](stt/FasterWhisper/README.md) |
 | **MMS-TTS-UZB** | TTS | Uzbek language text-to-speech audio synthesizer (Voice bots) | No | $0 (VITS architecture on CPU) | ✅ Yes | [README](tts/mms-tts-uzb/README.md) |
 | **Depth-Anything-V2** | CV | Monocular 3D Depth Estimation, LiDAR-free spatial distance | Optional | $0 (CPU / edge-ready) | ✅ Yes | [README](cv/depth-anything-v2-small/README.md) |
+| **YOLO11n-Pose** | CV | 17-Keypoint Human Skeleton & Workplace Posture / Fitness Tracker | No | $0 (CPU / edge-ready) | ✅ Yes | [README](cv/yolo11n-pose/README.md) |
+| **YOLO11n-Seg** | CV | Multi-Class Instance Segmentation & Pixel-Accurate Object Masking | No | $0 (CPU / edge-ready) | ✅ Yes | [README](cv/yolo11n-seg/README.md) |
 
-*(22 of 100 models reviewed and verified)*
+*(24 of 100 models reviewed and verified)*
 
 ---
 
@@ -45,10 +47,12 @@ This repo exists to test 100 open-source models, document the results, and keep 
 ├── README.md # this file — overall index
 ├── _template/ # template files and rules for adding a new model
 ├── cv/
-│   ├── requirements.txt # unified master dependencies for all 18 CV models
+│   ├── requirements.txt # unified master dependencies for all 21 CV models
 │   ├── yolo11n/         # each model has demo.py, data/ (3 inputs & 3 outputs), and README.md
 │   ├── yolo11s/
 │   ├── yolo11m/
+│   ├── yolo11n-pose/
+│   ├── yolo11n-seg/
 │   ├── yolov10n/
 │   ├── yolov10s/
 │   ├── yolov9t/
