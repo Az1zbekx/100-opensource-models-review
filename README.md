@@ -33,8 +33,9 @@ This repo exists to test 100 open-source models, document the results, and keep 
 | **Qwen2.5-1.5B** | LLM | Local generative assistant, FAQ bot, structured data extractor | No | $0 (runs on CPU / 4GB GPU) | ✅ Yes | [README](llm/Qwen2.5-1.5B-Instruct-GGUF/README.md) |
 | **FasterWhisper** | STT | Fast audio transcription & voice command parsing (Uzbek & Multi) | Optional | $0–$10 (CTranslate2 on CPU) | ✅ Yes | [README](stt/FasterWhisper/README.md) |
 | **MMS-TTS-UZB** | TTS | Uzbek language text-to-speech audio synthesizer (Voice bots) | No | $0 (VITS architecture on CPU) | ✅ Yes | [README](tts/mms-tts-uzb/README.md) |
+| **Depth-Anything-V2** | CV | Monocular 3D Depth Estimation, LiDAR-free spatial distance | Optional | $0 (CPU / edge-ready) | ✅ Yes | [README](cv/depth-anything-v2-small/README.md) |
 
-*(21 of 100 models reviewed and verified)*
+*(22 of 100 models reviewed and verified)*
 
 ---
 
@@ -62,7 +63,8 @@ This repo exists to test 100 open-source models, document the results, and keep 
 │   ├── yolov5s/
 │   ├── yolov5m/
 │   ├── yolov4-tiny/
-│   └── yolov3-tiny/
+│   ├── yolov3-tiny/
+│   └── depth-anything-v2-small/
 ├── llm/
 ├── tts/
 ├── stt/
