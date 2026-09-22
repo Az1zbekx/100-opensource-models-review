@@ -1,0 +1,8 @@
+Audio File: data/test_1_independence.wav
+Detected Language: uz (100.0%)
+Duration: 8.45s | Latency: 3.49s | RTF: 0.413
+Segments:
+  [00:00.00 -> 00:08.40] Salam, mening isnom. Azizvek, khasano pidita, unilersitete da ikkinchkus talabasimen.
+
+Full Transcription:
+Salam, mening isnom. Azizvek, khasano pidita, unilersitete da ikkinchkus talabasimen.

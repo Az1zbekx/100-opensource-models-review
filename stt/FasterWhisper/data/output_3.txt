@@ -1,0 +1,8 @@
+Audio File: data/test_3_navigation.wav
+Detected Language: uz (100.0%)
+Duration: 6.67s | Latency: 3.44s | RTF: 0.515
+Segments:
+  [00:00.00 -> 00:06.72] Tashkin tshakhra amar, teymur qiyabanige ing tiz yun alishni korsatin.
+
+Full Transcription:
+Tashkin tshakhra amar, teymur qiyabanige ing tiz yun alishni korsatin.

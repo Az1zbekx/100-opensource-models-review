@@ -1,0 +1,9 @@
+Audio File: data/test_2_banking.wav
+Detected Language: uz (100.0%)
+Duration: 9.60s | Latency: 4.09s | RTF: 0.426
+Segments:
+  [00:00.08 -> 00:05.08] As-salamu alaykum, mening plastic, kertamdan puli çelda.
+  [00:05.08 -> 00:10.08] Lekhen tol olamalgi oşmada. Iltimas tekşirib berim.
+
+Full Transcription:
+As-salamu alaykum, mening plastic, kertamdan puli çelda. Lekhen tol olamalgi oşmada. Iltimas tekşirib berim.
