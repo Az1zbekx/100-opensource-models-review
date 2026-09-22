@@ -1,0 +1,3 @@
+Quyidagi matndan kompaniya, vakansiya nomi, taklif qilingan oylik maosh va ofis joylashuvini ajratib olib, faqat toza JSON formatida chiqaring:
+
+"TechCorp kompaniyasi Toshkent shahri Yunusobod tumanidagi yangi ofisi uchun Senior Backend Developer qidirmoqda. Muvaffaqiyatli nomzodga oyiga $2800 dan $3500 gacha maosh va tibbiy sug'urta paketi taklif qilinadi."

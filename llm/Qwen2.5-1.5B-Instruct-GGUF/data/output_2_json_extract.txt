@@ -1,0 +1,9 @@
+```json
+{
+  "company": "TechCorp",
+  "job_title": "Senior Backend Developer",
+  "salary_range": "$2800 - $3500",
+  "location": "Toshkent shahri Yunusobod tumanidagi yangi ofisi",
+  "offering": "Tibbiy sug'urta paketi"
+}
+```

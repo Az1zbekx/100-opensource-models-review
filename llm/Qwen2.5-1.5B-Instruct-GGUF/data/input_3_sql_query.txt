@@ -1,0 +1,7 @@
+Write an optimal PostgreSQL query to retrieve the top 5 highest-spending customers over the last 30 days.
+
+Database schema:
+- users (id INT PRIMARY KEY, full_name VARCHAR(100), email VARCHAR(100), registered_at TIMESTAMP)
+- orders (id INT PRIMARY KEY, user_id INT REFERENCES users(id), amount DECIMAL(10,2), status VARCHAR(20), created_at TIMESTAMP)
+
+Only include completed orders (status = 'completed'). Return columns: user_id, full_name, total_spent.

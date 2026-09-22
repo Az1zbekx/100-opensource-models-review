@@ -1,0 +1,20 @@
+To retrieve the top 5 highest-spending customers over the last 30 days, you can use the following PostgreSQL query:
+
+```sql
+SELECT u.id, u.full_name, SUM(o.amount) AS total_spent
+FROM users u
+JOIN orders o ON u.id = o.user_id
+WHERE o.status = 'completed'
+AND o.created_at >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY u.id, u.full_name
+ORDER BY total_spent DESC
+LIMIT 5;
+```
+
+### Explanation:
+1. **JOIN**: We join the `users` table with the `orders` table on the `user_id` to get the full name of the customer.
+2. **WHERE Clause**: We filter orders to include only those with `status` = 'completed'.
+3. **ORDER BY**: We order the results by `total_spent` in descending order to get the top spending customers first.
+4. **LIMIT**: We limit the result to the top 5 customers with the highest spending.
+
+This query will give you the top 5 customers based on the total spending over the last 30 days.
