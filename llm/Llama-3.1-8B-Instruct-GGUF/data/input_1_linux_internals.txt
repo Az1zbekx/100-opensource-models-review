@@ -1,0 +1,6 @@
+Explain the step-by-step memory lifecycle of a packet arriving at a 100GbE network interface card (NIC) using Linux eBPF/XDP driver mode compared to standard socket buffers (sk_buff).
+Highlight:
+1. DMA ring buffer allocation.
+2. CPU cache locality and page pool recycling.
+3. Why sk_buff allocation overhead drops throughput by 4x.
+Keep the analysis highly technical and thorough.

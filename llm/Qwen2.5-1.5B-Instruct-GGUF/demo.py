@@ -83,6 +83,48 @@ def main(prompt: str, input_file: str, output_file: str, max_tokens: int, temper
         print(f"Output saved to: {output_file}")
 
 
+def interactive_chat(max_tokens: int = 1024, temperature: float = 0.7):
+    """Start interactive terminal session."""
+    print("==================================================")
+    print("  Qwen2.5-1.5B-Instruct Terminal Chat")
+    print("==================================================")
+    model_repo = "Qwen/Qwen2.5-1.5B-Instruct-GGUF"
+    model_file = "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    llm = Llama.from_pretrained(
+        repo_id=model_repo,
+        filename=model_file,
+        n_ctx=2048,
+        n_threads=6,
+        verbose=False
+    )
+    history = "<|im_start|>system\nYou are a helpful AI assistant.<|im_end|>\n"
+    while True:
+        try:
+            user_input = input("\n👤 User: ").strip()
+            if not user_input:
+                continue
+            if user_input.lower() in ["exit", "quit"]:
+                break
+            history += f"<|im_start|>user\n{user_input}<|im_end|>\n<|im_start|>assistant\n"
+            t0 = time.time()
+            res = llm(
+                history,
+                max_tokens=max_tokens,
+                temperature=temperature,
+                stop=["<|im_end|>", "<|endoftext|>"],
+                echo=False
+            )
+            dur = time.time() - t0
+            reply = res["choices"][0]["text"].strip()
+            toks = res["usage"]["completion_tokens"]
+            speed = toks / dur if dur > 0 else 0
+            print(f"\n🤖 Qwen2.5:\n{reply}\n")
+            print(f"[⏱️ {dur:.2f}s | ⚡ {speed:.1f} tok/s | 🔢 {toks} tokens]")
+            history += f"{reply}<|im_end|>\n"
+        except (KeyboardInterrupt, EOFError):
+            break
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Qwen2.5-1.5B-Instruct Offline GGUF Inference Engine")
     parser.add_argument("--prompt", type=str, default="Explain what MLOps is in 3 sentences.", help="Input prompt string")
@@ -90,6 +132,10 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=str, default="", help="Path to save generated output")
     parser.add_argument("--tokens", type=int, default=256, help="Maximum completion tokens")
     parser.add_argument("--temperature", type=float, default=0.7, help="Sampling temperature")
+    parser.add_argument("--chat", action="store_true", help="Launch interactive multi-turn chat")
     args = parser.parse_args()
 
-    main(args.prompt, args.input, args.output, args.tokens, args.temperature)
+    if args.chat:
+        interactive_chat(max_tokens=args.tokens, temperature=args.temperature)
+    else:
+        main(args.prompt, args.input, args.output, args.tokens, args.temperature)

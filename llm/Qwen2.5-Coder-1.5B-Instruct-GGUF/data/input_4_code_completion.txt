@@ -1,0 +1,14 @@
+O'zbek tilidagi matnlardan turli formatdagi ma'lumotlarni qidiruvchi va tozalovchi professional Python yordamchi moduli yozing.
+
+Funksiya nomi: `extract_contact_info(text: str) -> dict`
+
+Quyidagi ma'lumotlarni to'g'ri regex orqali ajratib olishi kerak:
+1. O'zbekiston telefon raqamlari: `+998` bilan boshlanuvchi barcha formatlar (`+998901234567`, `+998 (90) 123-45-67`, `998931112233` kabilar). Natijada raqamlarni toza `+998XXXXXXXXX` ko'rinishiga normalizatsiya qilsin.
+2. Elektron pochta manzillari (`user@example.com`).
+3. Sanalar: `YYYY-MM-DD` yoki `DD.MM.YYYY` formatlarida.
+
+Talablar:
+- Toza type hinting (`dict[str, list[str]]`).
+- Xatoliklarga chidamlilik (Exception handling / edge cases).
+- `unittest` yoki `pytest` orqali 3 ta test holati.
+- O'zbek tilidagi toza docstringlar.

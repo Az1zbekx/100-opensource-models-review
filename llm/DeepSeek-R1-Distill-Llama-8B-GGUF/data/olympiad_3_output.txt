@@ -1,0 +1,187 @@
+=== KIRUVCHI SO'ROV ===
+Solve the following Number Theory problem from the MATH Benchmark (Level 5):
+
+Find the least positive integer n such that the decimal representation of n! (n factorial) ends in exactly 100 zeroes.
+
+Show your step-by-step analysis using Legendre's Formula for counting factors of 5 in n!, compute the exact values, and state the final integer answer inside \boxed{...}.
+
+=== FIKRLASH JARAYONI (<think>) ===
+Alright, so I have this problem where I need to find the smallest positive integer n such that n! (n factorial) ends with exactly 100 zeros. Hmm, okay, I remember that the number of trailing zeros in a factorial is related to how many times the number 5 is a factor in the numbers from 1 to n. Because every multiple of 5 contributes at least one zero, and multiples of higher powers of 5 contribute more. 
+
+I think Legendre's Formula is involved here. Let me recall what that says. Legendre's Formula gives the exponent of a prime p in the factorization of n!. The formula is the sum of floor(n/p^k) for k from 1 to infinity, until p^k is larger than n. So, for prime p=5, the number of times 5 appears as a factor in n! is the sum of floor(n/5) + floor(n/25) + floor(n/125) + ... until 5^k exceeds n.
+
+So, I need to find the smallest n where this sum equals 100. That is, I need to solve for n in the equation:
+
+floor(n/5) + floor(n/25) + floor(n/125) + ... = 100.
+
+Since 125 is 5^3, and for n less than 125, the terms beyond floor(n/25) would be zero. So, for smaller n, the number of zeros is just floor(n/5) + floor(n/25). When n is larger than or equal to 125, we'll have an additional term, floor(n/125). So, I guess I need to figure out if n is less than 125 or more than 125.
+
+Let me try to approximate. Let's say the number of trailing zeros is roughly n/5 + n/25 + n/125. If I ignore the floors for a moment, that's a geometric series. The sum is n/5 + n/25 + n/125 = n/5 * (1 + 1/5 + 1/25) = n/5 * (1.24) = 0.248n. So, approximately, 0.248n = 100, which would give n ≈ 100 / 0.248 ≈ 403. So, n is around 403.
+
+But since we have to take the floor function each time, the actual number might be a bit higher or lower. So, perhaps I should start checking around 400 or so.
+
+Let me start by computing the number of factors of 5 in 400!.
+
+Compute floor(400/5) = 80.
+
+Compute floor(400/25) = 16.
+
+Compute floor(400/125) = 3.
+
+Compute floor(400/625) = 0, since 625 > 400.
+
+So, the total number of 5s is 80 + 16 + 3 = 99.
+
+Hmm, 99 zeros. That's just one short of 100. So, 400! has 99 trailing zeros.
+
+So, we need a larger n. Let's try n=401.
+
+Compute floor(401/5) = 80.
+
+floor(401/25) = 16.
+
+floor(401/125) = 3.
+
+floor(401/625) = 0.
+
+Total: 80 +16 +3=99.
+
+Same as 400. So, still 99. So, n=401 also has 99 zeros.
+
+Wait, so when does the number of zeros increase? It must be when n crosses a multiple of 5. So, when n is a multiple of 5, the number of trailing zeros increases. So, let's check n=405.
+
+Wait, but 405 is 5*81. Let me compute for 405.
+
+floor(405/5)=81.
+
+floor(405/25)=16.
+
+floor(405/125)=3.
+
+Total:81+16+3=100.
+
+Okay, so 405! has exactly 100 trailing zeros. But is 405 the smallest such n?
+
+Wait, let's check n=400:99, n=401:99, n=402:99, n=403:99, n=404:99, n=405:100.
+
+So, from 400 to 404, the number of trailing zeros remains 99. At n=405, it becomes 100. Therefore, 405 is the minimal n such that n! ends with exactly 100 zeros.
+
+But wait, let me confirm. Let's compute for n=400, 401, 402, etc., to see if any of them might have 100 zeros.
+
+Wait, for n=400:
+
+floor(400/5)=80
+
+floor(400/25)=16
+
+floor(400/125)=3
+
+Total=80+16+3=99.
+
+Same for 401, as 401 divided by 5 is 80.2, floor is 80.
+
+Same for 402, 403, 404. So, same.
+
+At n=405:
+
+floor(405/5)=81
+
+floor(405/25)=16 (since 25*16=400, 405-400=5, so floor(405/25)=16)
+
+floor(405/125)=3
+
+So, total 81+16+3=100.
+
+So, 405! has exactly 100 trailing zeros. So, is 405 the minimal n? Because 400 to 404 are all giving 99. So, yes, 405 is the minimal n.
+
+Wait, but let me check for n=405: is that accurate?
+
+Wait, 405 divided by 5 is 81.
+
+But 405 divided by 25 is 16.2, which floors to 16.
+
+405 divided by 125 is 3.24, which floors to 3.
+
+So, 81+16+3=100.
+
+Yes, that seems correct.
+
+But let me check n=404.
+
+404 divided by 5 is 80.8, which floors to 80.
+
+404 divided by 25 is 16.16, which floors to 16.
+
+404 divided by 125 is 3.232, which floors to 3.
+
+So, 80+16+3=99. So, yes, 404 has 99 zeros.
+
+Similarly, n=400:99, same as above.
+
+So, the minimal n is 405.
+
+Wait, but wait, is 405 the minimal n where the number of trailing zeros is exactly 100? Or is there a smaller n?
+
+Wait, maybe I made a mistake in the approximation. Let me think.
+
+Wait, Legendre's formula counts the number of times 5 is a factor. Each multiple of 5 contributes at least one 5, each multiple of 25 contributes an extra 5, each multiple of 125 contributes yet another, and so on.
+
+So, when n crosses a multiple of 5, the number of trailing zeros increases by 1.
+
+But sometimes, when n crosses a multiple of 25, it can increase by 2, and crossing 125 can increase by 3.
+
+Wait, no, actually, Legendre's formula is the sum of floor(n/5) + floor(n/25) + floor(n/125) + ... So, each time n crosses a multiple of 5, the total number of 5s increases by 1.
+
+But if n is a multiple of 25, then floor(n/25) increases by 1 as well, so the total number of 5s increases by 2.
+
+Similarly, crossing a multiple of 125, the total increases by 3.
+
+Therefore, the number of trailing zeros can sometimes increase by more than 1.
+
+But in this case, at n=405, is it just crossing 405, which is a multiple of 5, so the number of trailing zeros increases by 1.
+
+Wait, but n=405 is 5*81, so it's a multiple of 5 but not of 25, right? Because 405 divided by 25 is 16.2, which is not an integer.
+
+So, when n=405, floor(n/5)=81, floor(n/25)=16, floor(n/125)=3.
+
+So, 81+16+3=100.
+
+But for n=404, floor(n/5)=80, floor(n/25)=16, floor(n/125)=3. So, 80+16+3=99.
+
+Therefore, n=405 is the first n where the number of trailing zeros is 100.
+
+So, is 405 the minimal n? It seems so. Because 405 is the first n where the count reaches 100.
+
+Wait, but let me check n=405, 404, 403, etc., one by one.
+
+At n=400:99.
+
+n=401: same as 400 because 401 isn't a multiple of 5.
+
+n=402: same.
+
+n=403: same.
+
+n=404: same.
+
+n=405: crosses into a multiple of 5, so the count goes up by 1 to 100.
+
+Therefore, 405 is the minimal n.
+
+Wait, but is there a way to compute this without checking each n? Maybe using some inequalities or something.
+
+Well, if I know that the number of trailing zeros is approximately n/5 + n/25 + n/125, which is 0.2n + 0.04n + 0.008n = 0.248n.
+
+So, 0.248n ≈ 100 => n ≈ 403.
+
+So, around 403, which is 400, so we can check 400 and above.
+
+But as we saw, 400 gives 99, so 403 is around 99
+
+=== YAKUNIY JAVOB ===
+(Model fikrlash bosqichida token limitiga yetdi)
+
+=== STATISTIKA ===
+Vaqt: 332.53s
+Tokenlar: 2048
+Tezlik: 6.16 tok/s

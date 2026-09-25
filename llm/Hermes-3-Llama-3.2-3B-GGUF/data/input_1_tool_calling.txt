@@ -1,0 +1,30 @@
+<tools>
+[
+  {
+    "name": "search_database",
+    "description": "Search customer transactions in PostgreSQL",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "customer_id": {"type": "integer", "description": "Customer ID"},
+        "status": {"type": "string", "enum": ["PENDING", "COMPLETED", "FAILED"]}
+      },
+      "required": ["customer_id"]
+    }
+  },
+  {
+    "name": "trigger_sms_alert",
+    "description": "Send urgent SMS notification via Twilio",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "phone_number": {"type": "string"},
+        "message": {"type": "string"}
+      },
+      "required": ["phone_number", "message"]
+    }
+  }
+]
+</tools>
+
+User request: Customer #9421 noticed an unexpected deduction. Check their failed transactions, and if any failure exists, alert them on +998901234567. What tool calls should be dispatched first?

@@ -1,0 +1,1 @@
+Locate the main foreground objects in this image and provide approximate bounding box coordinates or spatial positions (e.g. top-left, bottom-center) along with their estimated depth or prominence.

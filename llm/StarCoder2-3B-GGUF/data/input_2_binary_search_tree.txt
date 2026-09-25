@@ -1,0 +1,21 @@
+// Complete the implementation of a thread-safe Binary Search Tree in Go:
+package main
+
+import (
+	"sync"
+)
+
+type Node struct {
+	Key   int
+	Value string
+	Left  *Node
+	Right *Node
+}
+
+type ThreadSafeBST struct {
+	root *Node
+	mu   sync.RWMutex
+}
+
+// Insert adds a key-value pair into the BST
+func (t *ThreadSafeBST) Insert(key int, val string) {

@@ -1,0 +1,80 @@
+=== KIRUVCHI SO'ROV ===
+Write an advanced, optimized PostgreSQL / BigQuery analytical SQL query for an enterprise e-commerce platform.
+
+Tables schema:
+1. `users` (`user_id`, `region`, `created_at`)
+2. `orders` (`order_id`, `user_id`, `order_date`, `total_amount`, `status`)
+
+Requirements:
+1. Filter only orders with status = 'COMPLETED'.
+2. Calculate each user's:
+   - Total lifetime spend (`SUM(total_amount)`).
+   - Rolling 7-day average spend per user over their order dates using window functions (`AVG(...) OVER (...)`).
+   - Regional rank by total lifetime spend using `DENSE_RANK() OVER (PARTITION BY region ORDER BY total_spend DESC)`.
+3. Use Common Table Expressions (CTEs) for clean modular structure.
+4. Filter only the top 10% highest spenders per region using `NTILE(10)` or regional percentiles.
+5. Add explanatory SQL comments explaining the execution plan optimizations and indexing recommendations.
+
+=== YAKUNIY JAVOB ===
+This query is a complex one, and it's important to note that it may not perform well on large datasets due to the use of window functions and CTEs. However, it should give you a good starting point.
+
+```sql
+WITH completed_orders AS (
+    SELECT user_id, order_date, total_amount
+    FROM orders
+    WHERE status = 'COMPLETED'
+),
+user_spend AS (
+    SELECT user_id, SUM(total_amount) AS total_spend
+    FROM completed_orders
+    GROUP BY user_id
+),
+region_spend AS (
+    SELECT region, SUM(total_spend) AS total_spend
+    FROM user_spend
+    GROUP BY region
+),
+rolling_avg_spend AS (
+    SELECT user_id, region, AVG(total_spend) OVER (PARTITION BY region ORDER BY order_date) AS rolling_avg_spend
+    FROM user_spend
+),
+top_spenders AS (
+    SELECT region, total_spend, DENSE_RANK() OVER (PARTITION BY region ORDER BY total_spend DESC) AS region_rank
+    FROM region_spend
+),
+filtered_top_spenders AS (
+    SELECT region, total_spend, region_rank
+    FROM top_spenders
+    WHERE region_rank <= NTILE(10) OVER (PARTITION BY region ORDER BY total_spend DESC)
+)
+SELECT region, total_spend, rolling_avg_spend, region_rank
+FROM filtered_top_spenders
+ORDER BY region_rank;
+```
+
+### Explanation of Execution Plan Optimizations and Index Recommendations:
+
+1. **Common Table Expressions (CTEs)**:
+   - CTEs are used to break down the query into smaller, more manageable parts. This can make the query easier to read and maintain. However, they can also increase the query execution time if not used properly.
+
+2. **Window Functions**:
+   - Window functions are used to perform calculations on a set of rows that are related to the current row. They are particularly useful for calculating rolling averages, but they can also be used for other calculations such as ranking.
+
+3. **Indexing Recommendations**:
+   - To improve the performance of the query, you should create indexes on the columns used in the `WHERE` clause, `GROUP BY` clause, and `ORDER BY` clause. In this case, the columns used are `user_id`, `order_date`, `total_amount`, `status`, `region`, and `region_rank`. 
+
+   ```sql
+   CREATE INDEX idx_user_id ON users(user_id);
+   CREATE INDEX idx_order_date ON orders(order_date);
+   CREATE INDEX idx_total_amount ON orders(total_amount);
+   CREATE INDEX idx_status ON orders(status);
+   CREATE INDEX idx_region ON orders(region);
+   CREATE INDEX idx_region_rank ON filtered_top_spenders(region_rank);
+   ```
+
+Remember, the performance of the query can also depend on the specific hardware and database configuration. It's always a good practice to monitor the query execution time and adjust the query accordingly.
+
+=== STATISTIKA ===
+Vaqt: 25.19s
+Tokenlar: 608
+Tezlik: 24.13 tok/s

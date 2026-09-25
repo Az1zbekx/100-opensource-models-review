@@ -1,0 +1,1 @@
+Explain the differences between PostgreSQL B-Tree index, GIN index, and BRIN index with use-cases for each in a markdown table.

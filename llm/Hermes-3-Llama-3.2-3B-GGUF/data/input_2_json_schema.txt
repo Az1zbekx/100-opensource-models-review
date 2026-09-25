@@ -1,0 +1,13 @@
+Extract all order entities from this customer message into strictly valid JSON matching this schema:
+Schema:
+{
+  "order_intent": "BUY" | "CANCEL" | "INQUIRY",
+  "items": [
+    {"name": string, "quantity": integer, "specs": string | null}
+  ],
+  "urgency": "LOW" | "MEDIUM" | "HIGH",
+  "payment_method": string | null
+}
+
+Message: "Assalomu alaykum! Menga zudlik bilan 3 ta MacBook Air M2 16GB va 2 dona Apple Magic Mouse kerak, Click orqali to'layman. Bugun kechgacha yetkazib bera olasizmi?"
+Respond with JSON only. No explanations.

@@ -1,0 +1,1 @@
+Summarize the architectural differences between Event Sourcing and Traditional CRUD in a clean Markdown table with 4 comparison criteria: State Storage, Auditability, Performance Trade-offs, and Complexity.

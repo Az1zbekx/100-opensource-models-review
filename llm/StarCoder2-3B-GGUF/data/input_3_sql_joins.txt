@@ -1,0 +1,6 @@
+-- Write a performant PostgreSQL query to calculate 30-day customer retention rate and average lifetime value (LTV) per acquisition channel:
+-- Schema:
+-- customers(id, created_at, acquisition_channel)
+-- orders(id, customer_id, total_amount, order_date)
+
+WITH customer_first_order AS (

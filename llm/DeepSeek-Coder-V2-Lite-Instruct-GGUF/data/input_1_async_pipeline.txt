@@ -1,0 +1,7 @@
+Write a high-throughput, asynchronous streaming pipeline in Python using `asyncio` and `asyncio.Queue`.
+
+Requirements:
+1. Implement a producer-consumer pattern with 3 producer tasks and 5 worker consumer tasks.
+2. Graceful shutdown handling using cancellation tokens / `asyncio.Event`.
+3. Backpressure handling with bounded queue (`maxsize=100`).
+4. Type annotations, clean error handling, and performance logging.

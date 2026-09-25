@@ -1,0 +1,4 @@
+You are an autonomous incident response agent.
+Alert received: "Production Redis cache latency spiked from 1.2ms to 450ms. Memory usage is 98.4%."
+
+Formulate a concise, prioritized 4-step diagnostic and remediation plan. For each step, specify the exact CLI commands (redis-cli, top, dmesg) to execute.

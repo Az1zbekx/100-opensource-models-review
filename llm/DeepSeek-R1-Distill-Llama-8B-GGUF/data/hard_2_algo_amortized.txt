@@ -1,0 +1,27 @@
+Analyze the following algorithm problem:
+Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence. The algorithm must run in O(N) time and O(N) space.
+
+Here is the standard HashSet approach:
+```python
+def longest_consecutive(nums: list[int]) -> int:
+    num_set = set(nums)
+    longest_streak = 0
+    
+    for num in num_set:
+        if num - 1 not in num_set:
+            current_num = num
+            current_streak = 1
+            
+            while current_num + 1 in num_set:
+                current_num += 1
+                current_streak += 1
+                
+            longest_streak = max(longest_streak, current_streak)
+            
+    return longest_streak
+```
+
+Please answer:
+1. Why does naive sorting fail the requirements?
+2. A junior developer argues: "There is a while loop nested inside the for loop, and in the worst case the while loop can run N times. Therefore, the worst-case time complexity is O(N^2)." Disprove this developer's argument using rigorous amortized analysis. Exactly how many times is each number visited across all operations?
+3. What happens if the `num - 1 not in num_set` check is omitted? What would the time complexity degrade to, and why?

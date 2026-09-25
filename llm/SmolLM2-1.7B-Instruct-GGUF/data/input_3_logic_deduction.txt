@@ -1,0 +1,4 @@
+Alice, Bob, and Charlie are sitting in a row.
+Alice is to the left of Bob.
+Charlie is to the right of Bob.
+Who is in the middle? Explain your answer in one single sentence.

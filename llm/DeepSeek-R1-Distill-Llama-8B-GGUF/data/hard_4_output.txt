@@ -1,0 +1,200 @@
+=== KIRUVCHI SO'ROV ===
+Quyidagi mantiqiy masalani qadamma-qadam, qat'iy deduksiya zanjiri bilan yeching:
+
+5 nafar do'st (Anvar, Bobur, Charos, Dilshod, Eldor) yugurish musobaqasida qatnashdi. Marraga hech kim bir vaqtda kelmadi (o'rinlar 1 dan 5 gacha aniq taqsimlangan).
+
+Quyidagi shartlar ma'lum:
+1. Anvar musobaqa g'olibi bo'ldi (1-o'rin).
+2. Bobur marraga Charosdan oldinroq yetib keldi, biroq u Dilshoddan keyin marraga yetib kelgan.
+3. Eldor marraga Boburdan keyin yetib keldi, lekin u oxirgi o'rinda (5-o'rin) emas.
+
+Vazifa:
+1. Har bir ishtirokchining 1-dan 5-gacha bo'lgan aniq o'rnini aniqlang.
+2. Har bir o'rinni aniqlashda qanday ziddiyatlar chetlatilganini va nima uchun yagona to'g'ri tartib aynan shunday bo'lishini mantiqiy isbotlang.
+
+=== FIKRLASH JARAYONI (<think>) ===
+O'zbekiston mantiqiy masalасı'nda 5 nafар do'st (Anvar, Bobur, Charos, Dilshod, Eldor) musobaqa o'rnlarında qatnاشib. Marraga hech kim bir vaқтта кельмади, o'rinler 1 ден 5 гөйекке қоллай отгарақ. 
+
+Shарттар:
+1. Anvar – 1-o'рин.
+2. Bobur marraga Charosdan old인roq yetib кeldi, biroқ у Dilshoddан keyin кельген.
+3. Eldor marraga Boburdan keyin yetib кeldi, lekin u oxirgi o'рин (5-o'рин) емес.
+
+Vазифa:
+1. Har bir ishtiroкчining 1-dан 5-гө қоллай отгарақ bo'lgan aniq o'рini aniqlанг.
+2. Aniqlashда qандay ziddiyatlar chetлатilganini va nima uchun yagona to'g'ri tartиб aynан шunday bo'lishini mантиqiy isbotlang.
+
+Aзір, Anvar 1-o'рінде, Eldor 5-o'рінде. Bobur, Charos, Dilshod 2, 3, 4 о'ріндерінде қалсақ. 
+
+Bobur marraga Charosdan oldинroq yetиб келген, үссін Charos Dilshoddан keyin кельген. Eldor Bobурдан keyin кельген. Қоллай қаласақ, Bobур 2, Charos 3, Dilshod 4 о'ріндерінде қалсақ. Eldор 5 о'рінде қалсақ.
+
+Қоллай қаласақ:
+Anvar – 1
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+Қоллай қаласақ:
+Bobur – 2
+Charos – 3
+Dilshod – 4
+Eldor – 5
+Anvar – 1
+
+=== YAKUNIY JAVOB ===
+<|end_of_text|>
+
+**Jawonlar:**
+- Anvar
+- Bobur
+- Charos
+- Dilshod
+- Eldor
+
+**O'rinler:** 1, 2, 3, 4, 5
+
+**Shарттар:**
+1. Anvar – 1-o'рин.
+2. Bobur marraga Charosdan oldинroq yetib келген.
+3. Eldor marraga Boburdan keyin yetиб келген, oxirgi 5-o'рінде емес.
+
+**Vазифа
+
+=== STATISTIKA ===
+Vaqt: 268.69s
+Tokenlar: 1536
+Tezlik: 5.72 tok/s

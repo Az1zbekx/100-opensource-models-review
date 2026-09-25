@@ -1,0 +1,4 @@
+Implement an Interval Tree data structure in Python that supports:
+1. `insert(start, end)`: inserts an interval [start, end].
+2. `find_overlapping(start, end)`: returns all stored intervals that overlap with the query interval.
+Ensure that each tree node tracks the maximum endpoint in its subtree to enable O(log N) average overlap searches. Include clean type annotations and docstrings.

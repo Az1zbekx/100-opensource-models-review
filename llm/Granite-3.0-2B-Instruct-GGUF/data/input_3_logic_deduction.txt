@@ -1,0 +1,1 @@
+A server cluster requires at least 3 nodes to maintain quorum. There are currently 5 nodes online. Two nodes lose power simultaneously, and one node experiences high network latency (ping 800ms) but remains connected. Is quorum maintained? Explain why.

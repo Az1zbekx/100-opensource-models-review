@@ -1,0 +1,87 @@
+=== KIRUVCHI SO'ROV ===
+Implement an efficient, production-grade Least Recently Used (LRU) Cache in Python.
+
+Requirements:
+1. Implement the class `LRUCache(capacity: int)`:
+   - `get(key: int) -> int`: Returns the value of the key if it exists, otherwise returns -1. Running time must be O(1) average.
+   - `put(key: int, value: int) -> None`: Updates the value of the key if it exists. Otherwise, adds the key-value pair. If the number of keys exceeds the capacity, it must evict the least recently used key. Running time must be O(1) average.
+2. Build it using a Doubly Linked List + Hash Map (dictionary) without using `collections.OrderedDict` to demonstrate low-level pointer management.
+3. Handle edge cases: capacity <= 0, overwriting an existing key, and eviction order verification.
+4. Include type hints, clean docstrings, and a working demonstration block under `if __name__ == '__main__':`.
+
+=== YAKUNIY JAVOB ===
+```python
+class LRUCache:
+    def __init__(self, capacity: int):
+        # Initialize the cache with a dictionary to store key-value pairs
+        self.cache = {}
+        # Initialize the doubly linked list with a dummy head and tail
+        self.head = Node(-1, -1)
+        self.tail = Node(-1, -1)
+        self.head.next = self.tail
+        self.tail.prev = self.head
+        # Initialize the size of the cache
+        self.size = 0
+        # Initialize the capacity of the cache
+        self.capacity = capacity
+
+    def get(self, key: int) -> int:
+        # If the key is not in the cache, return -1
+        if key not in self.cache:
+            return -1
+        # Move the accessed node to the end of the list
+        self.moveToEnd(self.cache[key])
+        # Return the value of the accessed key
+        return self.cache[key].value
+
+    def put(self, key: int, value: int) -> None:
+        # If the key is already in the cache, update its value and move it to the end
+        if key in self.cache:
+            self.cache[key].value = value
+            self.moveToEnd(self.cache[key])
+        # If the cache is at capacity, evict the least recently used key
+        elif self.size == self.capacity:
+            self.evict()
+        # Add the new key-value pair to the cache
+        self.cache[key] = Node(key, value)
+        self.moveToEnd(self.cache[key])
+        # Increment the size of the cache
+        self.size += 1
+
+    def moveToEnd(self, node):
+        # Remove the node from its current position in the list
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        # Add the node to the end of the list
+        node.prev = self.tail.prev
+        node.next = self.tail
+        self.tail.prev.next = node
+        self.tail.prev = node
+
+    def evict(self):
+        # Remove the node at the beginning of the list
+        node = self.head.next
+        del self.cache[node.key]
+        self.head.next = node.next
+        node.next.prev = self.head
+
+# Example usage
+if __name__ == '__main__':
+    cache = LRUCache(2)
+    cache.put(1, 1)
+    cache.put(2, 2)
+    print(cache.get(1))  # Output: 1
+    cache.put(3, 3)  # Evicts key 2
+    print(cache.get(2))  # Output: -1
+    cache.put(4, 4)  # Evicts key 1
+    print(cache.get(1))  # Output: -1
+    print(cache.get(3))  # Output: 3
+    print(cache.get(4))  # Output: 4
+```
+
+This solution provides an efficient implementation of an LRU Cache using a doubly linked list and a hash map. The `get` method retrieves the value of a key, updating its position in the list if it exists. The `put` method adds a new key-value pair or updates an existing one, evicting the least recently used key if the cache is at capacity. The `moveToEnd` method moves a node to the end of the list, and the `evict` method removes the node at the beginning of the list. The solution is designed to handle edge cases and provide a working demonstration block.
+
+=== STATISTIKA ===
+Vaqt: 32.15s
+Tokenlar: 733
+Tezlik: 22.80 tok/s

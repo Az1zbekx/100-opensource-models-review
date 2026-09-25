@@ -1,0 +1,155 @@
+--- Fikrlash Jarayoni (<think>) ---
+Alright, so I have this problem where I need to find the smallest positive integer n such that n! (n factorial) ends with exactly 100 zeros. Hmm, okay, factorials and trailing zeros... That sounds like it relates to prime factors, specifically the number of times 5 is a factor in the numbers from 1 up to n because each zero at the end is created by multiplying 2 and 5. Since there are usually more 2s than 5s, the number of trailing zeros depends on how many times 5 is a factor.
+
+I remember Legendre's Formula can be used here. It helps find the exponent of a prime p in the factorization of n!. The formula is:
+
+\[ \text{Exponent of } p \text{ in } n! = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor \]
+
+In this case, p is 5. So I need to compute the exponent of 5 in n! and set it equal to 100.
+
+Let me write down the formula for the exponent of 5:
+
+\[ Z(n) = \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{25} \right\rfloor + \left\lfloor \frac{n}{125} \right\rfloor + \dots \]
+
+I need to find the smallest n such that Z(n) = 100.
+
+Since this is a bit involved, maybe I can approach it step by step. First, let's estimate where n might be. Since each multiple of 5 contributes at least one zero, but multiples of higher powers contribute more. So roughly, every 5 numbers add at least one, and every 25 adds an extra, etc.
+
+To approximate, we can say that Z(n) is roughly n/5 + n/25 + n/125 + ... which sums to n/4 approximately because it's a geometric series with ratio 1/5. So if Z(n) ≈ n/4 = 100, then n ≈ 400.
+
+But since this is an approximation, we need to check around that area.
+
+Let me test n=390:
+
+Z(390) = floor(390/5) + floor(390/25) + floor(390/125) + floor(390/625)
+
+Compute each term:
+
+floor(390/5)=78
+
+floor(390/25)=15 (since 390 ÷ 25 = 15.6, floor is 15)
+
+floor(390/125)=3 (390 ÷ 125=3.12, floor is 3)
+
+floor(390/625)=0
+
+So total Z(390) =78+15+3=96.
+
+Hmm, that's only 96 zeros. So we need more.
+
+Let me try n=400:
+
+Z(400)= floor(400/5)+floor(400/25)+floor(400/125)+floor(400/625)
+
+Compute each term:
+
+floor(400/5)=80
+
+floor(400/25)=16
+
+floor(400/125)=3 (since 400 ÷125=3.2, floor is 3)
+
+floor(400/625)=0
+
+Total Z(400)=80+16+3=99.
+
+Still just 99 zeros. Hmm, we need 100, so n must be higher than 400? Wait, but wait a second.
+
+Wait, when I estimated n≈400, but the exact value gave me Z(n)=99. So perhaps my initial estimate was slightly off because of that.
+
+Wait, maybe let's try n=395:
+
+Z(395)= floor(395/5)+floor(395/25)+floor(395/125)+floor(395/625)
+
+Compute each term:
+
+floor(395/5)=79
+
+floor(395/25)=15 (since 395 ÷25=15.8, floor is 15)
+
+floor(395/125)=3 (395 ÷125≈3.16, floor is 3)
+
+floor(395/625)=0
+
+Total Z(395)=79+15+3=97.
+
+Still less than 100. Hmm, so maybe n needs to be higher than 400? Wait, but when I tried 400, it was 99. Let's try n=405:
+
+Z(405)= floor(405/5)+floor(405/25)+floor(405/125)+floor(405/625)
+
+Compute each term:
+
+floor(405/5)=81
+
+floor(405/25)=16 (since 405 ÷25=16.2, floor is16)
+
+floor(405/125)=3 (405 ÷125≈3.24, floor is3)
+
+floor(405/625)=0
+
+Total Z(405)=81+16+3=100.
+
+Wow, okay, so n=405 gives exactly 100 zeros. But wait, let me check if n=404 gives how many zeros:
+
+Z(404)= floor(404/5)+floor(404/25)+floor(404/125)+floor(404/625)
+
+Compute each term:
+
+floor(404/5)=80
+
+floor(404/25)=16 (since 404 ÷25=16.16, floor is16)
+
+floor(404/125)=3 (404 ÷125≈3.232, floor is3)
+
+floor(404/625)=0
+
+Total Z(404)=80+16+3=99.
+
+So 404 gives 99 zeros and 405 gives exactly 100. So the minimal n such that n! ends with exactly 100 zeros is 405? Wait, but hold on: let me confirm with n=400:
+
+Z(400)=99 as we saw.
+
+n=401 to 404 give 99, and n=405 gives 100. So the minimal n is 405 because it's the first one that hits exactly 100 zeros.
+
+Wait, but hold on: let me check if there's a number between 395 and 405 which might give more than 100? Wait, no, since we saw at 400 it was 99. So the next number gives exactly 100. Hence n=405.
+
+But wait another thought: is there a smaller n where Z(n)=100?
+
+Wait, maybe I made an error in my calculations for higher numbers? Let me check again:
+
+Compute Z(395): floor(395/5)=79, floor(395/25)=15, floor(395/125)=3. Total 79+15+3=97.
+
+Z(400)=99
+
+Z(405)=100
+
+So the progression is:
+
+n=395:97,
+
+n=400:99,
+
+n=405:100.
+
+Therefore, n must be 405 to get exactly 100 zeros. So I think that's the answer.
+
+But wait, hold on a second thought: is there an n less than 405 where Z(n)=100? Because sometimes when you increase n, some higher powers of 5 might contribute more, but since we're just adding floor division by increasing powers of 5, which are non-decreasing.
+
+Wait, no. Each time n crosses a multiple of 25, it adds an extra zero, and so on. So if I have n=400: Z(n)=99,
+
+Then when n increases to 401-404:
+
+Each of these numbers would add floor(401/5) which is still 80, but wait no.
+
+Wait, perhaps my initial approach was wrong because Legendre's formula adds each time. Wait, actually, for Z(n), it's the sum over k>=1 of floor(n/(5^k)). So when n increases beyond a multiple of 25, say from 399 to 400:
+
+At n=399: floor(399/5)=79,
+
+floor(399/25)=15,
+
+floor(399/125)=3.
+
+Total Z(n)=79+
+
+--- Yakuniy Javob ---
+(Model fikrlash bosqichida token limitiga yetdi)

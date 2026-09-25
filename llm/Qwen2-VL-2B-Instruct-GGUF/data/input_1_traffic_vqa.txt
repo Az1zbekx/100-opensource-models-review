@@ -1,0 +1,4 @@
+Analyze the traffic scene in this image:
+1. Count the visible vehicles (cars, buses, trucks).
+2. Describe road conditions and lighting.
+3. Identify any pedestrians or safety risks.

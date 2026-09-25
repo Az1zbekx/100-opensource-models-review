@@ -1,0 +1,7 @@
+You are a compliance auditor. Read the following policy clause and answer the question:
+
+"Policy Section 4.8.2 (Data Retention & Key Revocation):
+Customer personally identifiable data (PII) must be stored in encrypted volumes using customer-managed encryption keys (CMEK). Upon contract termination, automated cryptographic erasure must occur within 72 hours by permanently destroying the key material in the HSM. Raw physical drive overwriting (DoD 5220.22-M) is not mandatory if key destruction is mathematically provable and logged in the immutable audit ledger with SHA-256 signatures."
+
+Question:
+If an enterprise customer terminates their service, is a 3-pass physical hard drive wipe required under section 4.8.2? Cite the exact conditions and time constraints.

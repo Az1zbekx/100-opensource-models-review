@@ -1,0 +1,8 @@
+Stol ustida 3 ta quti bor:
+1-quti: "Faqat Olmalar" deb yozilgan.
+2-quti: "Faqat Apelsinlar" deb yozilgan.
+3-quti: "Olma va Apelsinlar (Aralash)" deb yozilgan.
+
+Sizga ma'lumki, BARCHA 3 ta qutidagi yorliqlar 100% NOTO'G'RI yopishtirilgan.
+Siz faqat bitta qutini tanlab, uning ichiga qaramasdan, faqat BITTA dona meva olib ko'rishingiz mumkin.
+Qaysi qutidan meva olish kerak va qanday mantiqiy xulosalar bilan barcha qutilardagi mevalarni 100% aniqlab bo'ladi?

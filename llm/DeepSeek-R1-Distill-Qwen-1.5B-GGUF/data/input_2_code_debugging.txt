@@ -1,0 +1,10 @@
+Quyidagi Python kodida qanday xatolik bor?
+```python
+def add_item(item, item_list=[]):
+    item_list.append(item)
+    return item_list
+
+print(add_item("olma"))
+print(add_item("anor"))
+```
+Nega ikkinchi chaqiriqda ro'yxatda ikkala meva ham chiqib qoladi va buni production darajasida qanday to'g'rilash kerak?

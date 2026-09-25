@@ -9,6 +9,7 @@ services:
     volumes:
     - ./tts/mms-tts-uzb:/app
     - ./models/mms-tts-uzb:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: mms-tts-uzb
       PORT: '8000'
@@ -27,6 +28,7 @@ services:
     volumes:
     - ./stt/FasterWhisper:/app
     - ./models/FasterWhisper:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: FasterWhisper
       PORT: '8000'
@@ -36,20 +38,401 @@ services:
     tty: true
     networks:
     - models-network
+  gemma_2_2b_instruct_gguf:
+    build:
+      context: ./llm/Gemma-2-2B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8003:8000
+    volumes:
+    - ./llm/Gemma-2-2B-Instruct-GGUF:/app
+    - ./models/Gemma-2-2B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Gemma-2-2B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Gemma-2-2B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  qwen2_vl_2b_instruct_gguf:
+    build:
+      context: ./llm/Qwen2-VL-2B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8004:8000
+    volumes:
+    - ./llm/Qwen2-VL-2B-Instruct-GGUF:/app
+    - ./models/Qwen2-VL-2B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Qwen2-VL-2B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Qwen2-VL-2B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  qwen2_5_coder_1_5b_instruct_gguf:
+    build:
+      context: ./llm/Qwen2.5-Coder-1.5B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8005:8000
+    volumes:
+    - ./llm/Qwen2.5-Coder-1.5B-Instruct-GGUF:/app
+    - ./models/Qwen2.5-Coder-1.5B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Qwen2.5-Coder-1.5B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Qwen2.5-Coder-1.5B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  smollm2_1_7b_instruct_gguf:
+    build:
+      context: ./llm/SmolLM2-1.7B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8006:8000
+    volumes:
+    - ./llm/SmolLM2-1.7B-Instruct-GGUF:/app
+    - ./models/SmolLM2-1.7B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: SmolLM2-1.7B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-SmolLM2-1.7B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  bge_m3:
+    build:
+      context: ./llm/bge-m3
+      dockerfile: Dockerfile
+    ports:
+    - 8007:8000
+    volumes:
+    - ./llm/bge-m3:/app
+    - ./models/bge-m3:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: bge-m3
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-bge-m3
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  deepseek_r1_distill_llama_8b_gguf:
+    build:
+      context: ./llm/DeepSeek-R1-Distill-Llama-8B-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8008:8000
+    volumes:
+    - ./llm/DeepSeek-R1-Distill-Llama-8B-GGUF:/app
+    - ./models/DeepSeek-R1-Distill-Llama-8B-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: DeepSeek-R1-Distill-Llama-8B-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-DeepSeek-R1-Distill-Llama-8B-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  qwen2_5_3b_instruct_gguf:
+    build:
+      context: ./llm/Qwen2.5-3B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8009:8000
+    volumes:
+    - ./llm/Qwen2.5-3B-Instruct-GGUF:/app
+    - ./models/Qwen2.5-3B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Qwen2.5-3B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Qwen2.5-3B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  moondream2_gguf:
+    build:
+      context: ./llm/Moondream2-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8010:8000
+    volumes:
+    - ./llm/Moondream2-GGUF:/app
+    - ./models/Moondream2-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Moondream2-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Moondream2-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  llama_guard_3_1b_gguf:
+    build:
+      context: ./llm/Llama-Guard-3-1B-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8011:8000
+    volumes:
+    - ./llm/Llama-Guard-3-1B-GGUF:/app
+    - ./models/Llama-Guard-3-1B-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Llama-Guard-3-1B-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Llama-Guard-3-1B-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  deepseek_r1_distill_qwen_1_5b_gguf:
+    build:
+      context: ./llm/DeepSeek-R1-Distill-Qwen-1.5B-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8012:8000
+    volumes:
+    - ./llm/DeepSeek-R1-Distill-Qwen-1.5B-GGUF:/app
+    - ./models/DeepSeek-R1-Distill-Qwen-1.5B-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: DeepSeek-R1-Distill-Qwen-1.5B-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-DeepSeek-R1-Distill-Qwen-1.5B-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  deepseek_coder_v2_lite_instruct_gguf:
+    build:
+      context: ./llm/DeepSeek-Coder-V2-Lite-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8013:8000
+    volumes:
+    - ./llm/DeepSeek-Coder-V2-Lite-Instruct-GGUF:/app
+    - ./models/DeepSeek-Coder-V2-Lite-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: DeepSeek-Coder-V2-Lite-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-DeepSeek-Coder-V2-Lite-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  mistral_7b_instruct_v0_3_gguf:
+    build:
+      context: ./llm/Mistral-7B-Instruct-v0.3-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8014:8000
+    volumes:
+    - ./llm/Mistral-7B-Instruct-v0.3-GGUF:/app
+    - ./models/Mistral-7B-Instruct-v0.3-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Mistral-7B-Instruct-v0.3-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Mistral-7B-Instruct-v0.3-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  hermes_3_llama_3_2_3b_gguf:
+    build:
+      context: ./llm/Hermes-3-Llama-3.2-3B-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8015:8000
+    volumes:
+    - ./llm/Hermes-3-Llama-3.2-3B-GGUF:/app
+    - ./models/Hermes-3-Llama-3.2-3B-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Hermes-3-Llama-3.2-3B-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Hermes-3-Llama-3.2-3B-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
   qwen2_5_1_5b_instruct_gguf:
     build:
       context: ./llm/Qwen2.5-1.5B-Instruct-GGUF
       dockerfile: Dockerfile
     ports:
-    - 8003:8000
+    - 8016:8000
     volumes:
     - ./llm/Qwen2.5-1.5B-Instruct-GGUF:/app
     - ./models/Qwen2.5-1.5B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Qwen2.5-1.5B-Instruct-GGUF
       PORT: '8000'
     restart: 'no'
     container_name: model-Qwen2.5-1.5B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  nllb_200_distilled_600m:
+    build:
+      context: ./llm/NLLB-200-Distilled-600M
+      dockerfile: Dockerfile
+    ports:
+    - 8017:8000
+    volumes:
+    - ./llm/NLLB-200-Distilled-600M:/app
+    - ./models/NLLB-200-Distilled-600M:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: NLLB-200-Distilled-600M
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-NLLB-200-Distilled-600M
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  granite_3_0_2b_instruct_gguf:
+    build:
+      context: ./llm/Granite-3.0-2B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8018:8000
+    volumes:
+    - ./llm/Granite-3.0-2B-Instruct-GGUF:/app
+    - ./models/Granite-3.0-2B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Granite-3.0-2B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Granite-3.0-2B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  starcoder2_3b_gguf:
+    build:
+      context: ./llm/StarCoder2-3B-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8019:8000
+    volumes:
+    - ./llm/StarCoder2-3B-GGUF:/app
+    - ./models/StarCoder2-3B-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: StarCoder2-3B-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-StarCoder2-3B-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  phi_3_5_mini_instruct_gguf:
+    build:
+      context: ./llm/Phi-3.5-mini-instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8020:8000
+    volumes:
+    - ./llm/Phi-3.5-mini-instruct-GGUF:/app
+    - ./models/Phi-3.5-mini-instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Phi-3.5-mini-instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Phi-3.5-mini-instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  llama_3_1_8b_instruct_gguf:
+    build:
+      context: ./llm/Llama-3.1-8B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8021:8000
+    volumes:
+    - ./llm/Llama-3.1-8B-Instruct-GGUF:/app
+    - ./models/Llama-3.1-8B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Llama-3.1-8B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Llama-3.1-8B-Instruct-GGUF
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  bge_reranker_v2_m3:
+    build:
+      context: ./llm/bge-reranker-v2-m3
+      dockerfile: Dockerfile
+    ports:
+    - 8022:8000
+    volumes:
+    - ./llm/bge-reranker-v2-m3:/app
+    - ./models/bge-reranker-v2-m3:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: bge-reranker-v2-m3
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-bge-reranker-v2-m3
+    stdin_open: true
+    tty: true
+    networks:
+    - models-network
+  llama_3_2_1b_instruct_gguf:
+    build:
+      context: ./llm/Llama-3.2-1B-Instruct-GGUF
+      dockerfile: Dockerfile
+    ports:
+    - 8023:8000
+    volumes:
+    - ./llm/Llama-3.2-1B-Instruct-GGUF:/app
+    - ./models/Llama-3.2-1B-Instruct-GGUF:/app/models
+    - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: Llama-3.2-1B-Instruct-GGUF
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-Llama-3.2-1B-Instruct-GGUF
     stdin_open: true
     tty: true
     networks:

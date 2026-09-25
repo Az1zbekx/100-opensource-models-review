@@ -1,0 +1,12 @@
+Analyze this slow query on a 50M row PostgreSQL table:
+```sql
+SELECT c.id, c.email, COUNT(o.id) as order_count, SUM(o.amount) as total_spent
+FROM customers c
+LEFT JOIN orders o ON c.id = o.customer_id
+WHERE c.created_at >= '2023-01-01' AND o.status = 'COMPLETED'
+GROUP BY c.id, c.email
+HAVING SUM(o.amount) > 5000
+ORDER BY total_spent DESC
+LIMIT 50;
+```
+Identify 2 indexing bottlenecks and write the optimized query/indexes.

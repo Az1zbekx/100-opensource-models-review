@@ -1,0 +1,6 @@
+Design an API Gateway architecture for an e-commerce platform processing 50,000 requests/sec.
+Detail:
+1. Rate limiting strategy (token bucket vs sliding window counter with Redis).
+2. JWT authentication verification and token revocation handling.
+3. Circuit breaker implementation to prevent cascading downstream failures.
+Provide concrete architecture decisions without filler text.

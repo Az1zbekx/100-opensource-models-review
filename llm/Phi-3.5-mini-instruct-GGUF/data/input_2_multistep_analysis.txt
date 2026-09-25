@@ -1,0 +1,6 @@
+Compare two distributed database consensus algorithms: Raft and Paxos.
+Structure your analysis into:
+1. Leader election mechanics and split-brain resolution.
+2. Log replication and state machine safety under network partitions.
+3. Practical implementation trade-offs (why Etcd chose Raft instead of Multi-Paxos).
+Keep the explanation rigorous, technical, and concise.

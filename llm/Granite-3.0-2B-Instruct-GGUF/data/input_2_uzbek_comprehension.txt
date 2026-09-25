@@ -1,0 +1,2 @@
+Quyidagi audit talabini o'zbek tilida bayon qiling:
+"Enterprise software must maintain tamper-evident audit logs of all privileged access actions, including timestamp, user identity, IP address, and changed resource states."

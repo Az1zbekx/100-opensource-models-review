@@ -219,6 +219,12 @@ def run_pipeline(args):
         print(f"Room Occupancy Audit: {occupant_count} occupants, {laptop_count} active workstations.")
         return
 
+    source_val = int(args.source) if is_webcam else args.source
+    cap = cv2.VideoCapture(source_val)
+    if not cap.isOpened():
+        print(f"Error: Unable to open video source '{args.source}'")
+        sys.exit(1)
+
     prev_time = time.time()
     empty_duration = 0.0
     last_occupied_time = time.time()

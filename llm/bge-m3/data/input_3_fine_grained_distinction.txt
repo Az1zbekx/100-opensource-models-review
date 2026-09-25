@@ -1,0 +1,7 @@
+Pair A:
+Sentence 1: "The company reported record quarterly net revenue of 10 million dollars."
+Sentence 2: "The company reported a devastating quarterly net loss of 10 million dollars."
+
+Pair B:
+Sentence 1: "User authentication succeeded and an access token was generated."
+Sentence 2: "User authentication failed and an access denied error was logged."

@@ -1,0 +1,3 @@
+Traduisez et expliquez précisément ce concept d'ingénierie logicielle en anglais:
+"Le modèle CQRS (Command Query Responsibility Segregation) sépare les opérations de lecture et d'écriture pour optimiser les performances et la scalabilité des bases de données distribuées."
+Provide both the precise technical translation and a 2-sentence explanation of its real-world benefits.

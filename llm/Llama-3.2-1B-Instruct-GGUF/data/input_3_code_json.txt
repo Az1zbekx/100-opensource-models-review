@@ -1,0 +1,12 @@
+Convert the following plain English reminder into a JSON payload:
+"Schedule a team sync on Friday at 4 PM in room 302 with Alice and Bob to review Q3 sprint metrics."
+
+JSON format:
+{
+  "event": string,
+  "day": string,
+  "time": string,
+  "location": string,
+  "attendees": [string],
+  "objective": string
+}

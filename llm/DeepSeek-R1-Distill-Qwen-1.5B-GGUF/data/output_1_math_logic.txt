@@ -1,0 +1,105 @@
+--- Fikrlash Jarayoni (<think>) ---
+Alright, so I've got this problem about chickens and rabbits on a farm. There are 35 heads in total and 94 legs. I need to figure out how many of each animal there are. Let me think through this step by step.
+
+First, I know that both chickens and rabbits have one head each. So if there are 35 heads in total, that means there are 35 animals altogether—chickens plus rabbits. That seems straightforward enough.
+
+Now, moving on to the legs. Chickens have two legs each, and rabbits have four legs each. Let me denote the number of chickens as C and the number of rabbits as R. So, according to this setup:
+
+1. The total number of animals is 35:
+   C + R = 35
+
+2. The total number of legs is 94. Since each chicken has 2 legs and each rabbit has 4, I can write another equation:
+   2C + 4R = 94
+
+So now I have a system of two equations with two variables:
+
+1. C + R = 35
+2. 2C + 4R = 94
+
+I need to solve this system to find the values of C and R.
+
+One common method for solving such systems is substitution or elimination. Let me try the elimination method since it might be simpler here.
+
+First, I can simplify the second equation by dividing all terms by 2 to make the numbers smaller:
+
+(2C + 4R) / 2 = 94 / 2
+Which simplifies to:
+C + 2R = 47
+
+Now my system looks like this:
+
+1. C + R = 35
+2. C + 2R = 47
+
+If I subtract the first equation from the second, that should eliminate C and allow me to solve for R.
+
+Subtracting equation 1 from equation 2:
+(C + 2R) - (C + R) = 47 - 35
+Simplify:
+C + 2R - C - R = 12
+Which simplifies further to:
+R = 12
+
+So, there are 12 rabbits on the farm.
+
+Now that I have R, I can substitute this back into equation 1 to find C:
+
+C + R = 35
+C + 12 = 35
+Subtract 12 from both sides:
+C = 35 - 12
+Which gives:
+C = 23
+
+Therefore, there are 23 chickens and 12 rabbits on the farm.
+
+To double-check my work:
+
+- Total heads: 23 + 12 = 35 (matches given)
+- Total legs: (23 * 2) + (12 * 4) = 46 + 48 = 94 (matches given)
+
+Everything adds up correctly, so I'm confident in my solution.
+
+--- Yakuniy Javob ---
+**Step-by-Step Solution:**
+
+1. **Define Variables:**
+   - Let \( C \) represent the number of chickens.
+   - Let \( R \) represent the number of rabbits.
+
+2. **Set Up Equations Based on Given Information:**
+   - Total heads: Each chicken and each rabbit has 1 head, so:
+     \[
+     C + R = 35
+     \]
+   - Total legs: Chickens have 2 legs each, and rabbits have 4 legs each, so:
+     \[
+     2C + 4R = 94
+     \]
+
+3. **Simplify the Second Equation:**
+   Divide all terms by 2 to simplify:
+   \[
+   C + 2R = 47
+   \]
+
+4. **Subtract the First Equation from the Simplified Second Equation:**
+   \[
+   (C + 2R) - (C + R) = 47 - 35 \\
+   C + 2R - C - R = 12 \\
+   R = 12
+   \]
+
+5. **Substitute \( R = 12 \) Back into the First Equation to Find \( C \):**
+   \[
+   C + 12 = 35 \\
+   C = 35 - 12 \\
+   C = 23
+   \]
+
+6. **Conclusion:**
+   There are **23 chickens** and **12 rabbits** on the farm.
+
+**Final Answer in Uzbek:**
+
+Машинах 23, Матрицах 12.

@@ -77,6 +77,7 @@ category/model-name/
             "volumes": [
                 f"./{model['path']}:/app",
                 f"./models/{model['name']}:/app/models",
+                "~/.cache/huggingface:/root/.cache/huggingface",
             ],
             "environment": {"MODEL_NAME": model["name"], "PORT": "8000"},
             "restart": "no",

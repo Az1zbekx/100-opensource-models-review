@@ -1,0 +1,4 @@
+Examine this office environment image:
+1. List all electronic devices and furniture items present.
+2. Is the workstation currently occupied or vacant?
+3. Assess whether the workspace appears organized or cluttered.

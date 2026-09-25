@@ -1,0 +1,1 @@
+Can you explain how to set up an automated PostgreSQL database backup script using pg_dump and upload it to an encrypted S3 bucket using AWS CLI?

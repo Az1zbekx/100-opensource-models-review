@@ -1,0 +1,1 @@
+What colors of vehicles are visible in the foreground? Answer directly in bullet points.

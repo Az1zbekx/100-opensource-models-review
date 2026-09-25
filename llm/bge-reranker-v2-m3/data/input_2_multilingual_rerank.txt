@@ -1,0 +1,4 @@
+Query: "O'zbekistonda MChJ ustav fondining minimal miqdori qancha?"
+Candidate 1: "O'zbekiston Respublikasining 'Mas'uliyati cheklangan hamda qo'shimcha mas'uliyatli jamiyatlar to'g'risida'gi Qonuniga muvofiq, MChJ ustav fondining eng kam miqdori ta'sischilar tomonidan belgilanadi va qonunchilikda unga minimal chegara talab etilmaydi."
+Candidate 2: "Aksiyadorlik jamiyatlari (AJ) uchun ustav kapitalining minimal miqdori bazaviy hisoblash miqdorining 400 baravaridan kam bo'lmasligi lozim."
+Candidate 3: "Для регистрации индивидуального предпринимателя в Узбекистане необходимо подать заявление через портал интерактивных государственных услуг."

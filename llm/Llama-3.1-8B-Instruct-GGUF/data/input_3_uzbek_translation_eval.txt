@@ -1,0 +1,2 @@
+Quyidagi texnik matnni o'zbek tiliga mukammal, ravon va to'g'ri grammatikada tarjima qiling:
+"Container orchestration systems like Kubernetes manage the automated lifecycle of distributed applications, ensuring declarative self-healing, zero-downtime rolling updates, and dynamic resource autoscaling across heterogeneous bare-metal clusters."

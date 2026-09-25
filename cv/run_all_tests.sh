@@ -21,4 +21,4 @@ for model_dir in */; do
     done
     cd ..
 done
-echo "All 22 CV models successfully tested and verified!"
+echo "All 27 CV models successfully tested and verified!"

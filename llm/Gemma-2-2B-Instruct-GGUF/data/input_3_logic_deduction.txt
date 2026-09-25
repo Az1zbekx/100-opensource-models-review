@@ -1,0 +1,1 @@
+A box contains 3 red balls and 2 blue balls. If you draw two balls at random without replacement, what is the probability that both are red? Show the step-by-step calculation and final fraction.

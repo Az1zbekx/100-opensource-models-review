@@ -1,0 +1,6 @@
+Write an idiomatic, thread-safe memory cache in Rust using `Arc<RwLock<HashMap<String, String>>>`.
+
+Requirements:
+1. Implement methods for `get`, `insert`, and `remove`.
+2. Demonstrate concurrent access using multiple threads spawned with `std::thread`.
+3. Handle read-write lock contention gracefully and write comprehensive unit tests with `#[test]`.

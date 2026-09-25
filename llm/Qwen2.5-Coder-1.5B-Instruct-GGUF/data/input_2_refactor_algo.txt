@@ -1,0 +1,9 @@
+Implement an efficient, production-grade Least Recently Used (LRU) Cache in Python.
+
+Requirements:
+1. Implement the class `LRUCache(capacity: int)`:
+   - `get(key: int) -> int`: Returns the value of the key if it exists, otherwise returns -1. Running time must be O(1) average.
+   - `put(key: int, value: int) -> None`: Updates the value of the key if it exists. Otherwise, adds the key-value pair. If the number of keys exceeds the capacity, it must evict the least recently used key. Running time must be O(1) average.
+2. Build it using a Doubly Linked List + Hash Map (dictionary) without using `collections.OrderedDict` to demonstrate low-level pointer management.
+3. Handle edge cases: capacity <= 0, overwriting an existing key, and eviction order verification.
+4. Include type hints, clean docstrings, and a working demonstration block under `if __name__ == '__main__':`.

@@ -1,0 +1,2 @@
+Summarize the following incident log into 3 actionable bullet points for the on-call engineer:
+"At 03:14 UTC, node-pool-3 experienced elevated CPU throttling due to unbounded GC cycles in the auth-service container. At 03:19 UTC, automated canary rollbacks failed due to an outdated Helm chart lockfile. Engineering manually drained node-pool-3 and scaled up replica sets in node-pool-1 at 03:27 UTC. All latencies normalized by 03:32 UTC."

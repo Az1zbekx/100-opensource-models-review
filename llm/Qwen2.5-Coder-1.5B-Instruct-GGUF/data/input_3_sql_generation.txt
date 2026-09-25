@@ -1,0 +1,15 @@
+Write an advanced, optimized PostgreSQL / BigQuery analytical SQL query for an enterprise e-commerce platform.
+
+Tables schema:
+1. `users` (`user_id`, `region`, `created_at`)
+2. `orders` (`order_id`, `user_id`, `order_date`, `total_amount`, `status`)
+
+Requirements:
+1. Filter only orders with status = 'COMPLETED'.
+2. Calculate each user's:
+   - Total lifetime spend (`SUM(total_amount)`).
+   - Rolling 7-day average spend per user over their order dates using window functions (`AVG(...) OVER (...)`).
+   - Regional rank by total lifetime spend using `DENSE_RANK() OVER (PARTITION BY region ORDER BY total_spend DESC)`.
+3. Use Common Table Expressions (CTEs) for clean modular structure.
+4. Filter only the top 10% highest spenders per region using `NTILE(10)` or regional percentiles.
+5. Add explanatory SQL comments explaining the execution plan optimizations and indexing recommendations.

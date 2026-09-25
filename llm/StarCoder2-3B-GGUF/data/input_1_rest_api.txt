@@ -1,0 +1,14 @@
+# Complete this Python FastAPI service:
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: bool = None
+
+items_db = {}
+
+# Write endpoints for POST /items/ and GET /items/{item_id}:

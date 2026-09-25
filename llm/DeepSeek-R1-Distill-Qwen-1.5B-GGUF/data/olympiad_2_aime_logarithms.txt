@@ -1,0 +1,8 @@
+Solve the following competition math problem from the 2024 AIME I (American Invitational Mathematics Examination):
+
+There exist real numbers x and y, both greater than 1, such that:
+log_x(y^x) = log_y(x^4 * y) = 10
+
+Find the value of xy.
+
+Show your step-by-step algebraic manipulation, express the logarithmic equations in terms of log_x(y) or exponential forms, solve for x and y, and state the final integer value of xy inside \boxed{...}.

@@ -1,0 +1,5 @@
+Write a ClickHouse / Trino SQL distributed table schema and an analytical aggregation query for clickstream event tracking.
+
+Requirements:
+1. Define a ClickHouse table with `ReplacingMergeTree` or `MergeTree` engine, partitioned by month and ordered by `(tenant_id, event_date, user_id)`.
+2. Write a funnel analysis query calculating the conversion rate across 4 steps: (page_view -> view_item -> add_to_cart -> purchase) within a 30-minute session window using `windowFunnel`.

@@ -1,0 +1,14 @@
+You are given Bertrand's Box Paradox:
+There are three identical boxes:
+- Box 1 contains 2 gold coins.
+- Box 2 contains 2 silver coins.
+- Box 3 contains 1 gold coin and 1 silver coin.
+
+You choose a box uniformly at random, and from that chosen box, you draw one coin blindly at random. The drawn coin turns out to be GOLD.
+
+Question:
+What is the exact conditional probability that the remaining coin in the chosen box is also GOLD?
+Requirements:
+1. Explain why the naive intuitive answer of 1/2 is incorrect.
+2. Provide a rigorous formal proof using Bayes' Theorem, clearly stating the priors P(Box_i), likelihoods P(Gold | Box_i), and the total probability P(Gold).
+3. Verify the result using sample space counting of individual coin faces (6 total coin faces).

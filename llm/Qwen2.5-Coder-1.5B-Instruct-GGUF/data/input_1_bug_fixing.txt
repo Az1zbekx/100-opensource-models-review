@@ -1,0 +1,30 @@
+Analyze the following Python banking transaction code. It has a critical concurrency flaw where concurrent transfers between two accounts can result in a deadlock or race conditions:
+
+```python
+import threading
+
+class Account:
+    def __init__(self, account_id: int, balance: float):
+        self.account_id = account_id
+        self.balance = balance
+        self.lock = threading.Lock()
+
+def transfer(from_acc: Account, to_acc: Account, amount: float):
+    # Potential Deadlock: Thread 1 does transfer(A, B), Thread 2 does transfer(B, A)
+    from_acc.lock.acquire()
+    to_acc.lock.acquire()
+    try:
+        if from_acc.balance >= amount:
+            from_acc.balance -= amount
+            to_acc.balance += amount
+            return True
+        return False
+    finally:
+        to_acc.lock.release()
+        from_acc.lock.release()
+```
+
+Your task:
+1. Explain the exact mechanism of the deadlock vulnerability.
+2. Provide the production-grade, thread-safe solution using lock ordering (acquiring locks in order of `account_id`) or context managers (`with`) to completely eliminate deadlock.
+3. Write a test script with `concurrent.futures.ThreadPoolExecutor` demonstrating 100 concurrent bidirectional transfers without deadlocks.

@@ -1,0 +1,1 @@
+Compare Multi-Tenant SaaS database architecture patterns (Database-per-tenant vs Schema-per-tenant vs Shared-database-shared-schema) in terms of Data Isolation, Operational Cost, and Backup Complexity in a table.

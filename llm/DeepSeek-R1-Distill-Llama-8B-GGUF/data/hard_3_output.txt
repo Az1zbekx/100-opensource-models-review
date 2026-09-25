@@ -1,0 +1,70 @@
+=== KIRUVCHI SO'ROV ===
+Solve this logic deduction problem involving Knights, Knaves, and Spies:
+On an island:
+- Knights always tell the truth.
+- Knaves always lie.
+- Spies can either tell the truth or lie.
+
+You meet three people: A, B, and C. You know with certainty that exactly one is a Knight, one is a Knave, and one is a Spy (all three identities are distinct).
+They make the following statements:
+A says: "I am the Knight."
+B says: "A is telling the truth."
+C says: "I am not the Knave."
+
+Your task:
+1. Determine the exact identity (Knight, Knave, Spy) of A, B, and C.
+2. Provide a step-by-step proof testing all potential assignments or using logical deduction to eliminate contradictions.
+3. Explicitly explain why C cannot be the Knight, and why A cannot be the Knave.
+
+=== FIKRLASH JARAYONI (<think>) ===
+Okay, so I have this logic puzzle to solve with three people: A, B, and C. Each one is either a Knight, a Knave, or a Spy. Knights always tell the truth, Knaves always lie, and Spies can do either. I know that among A, B, and C, there's exactly one Knight, one Knave, and one Spy. Their statements are:
+
+- A says: "I am the Knight."
+- B says: "A is telling the truth."
+- C says: "I am not the Knave."
+
+I need to figure out who is who. Let me start by breaking down each statement and seeing how they can fit together.
+
+First, let's consider what each person could be.
+
+Starting with A: A says, "I am the Knight." If A is a Knight, then A tells the truth, so A must be the Knight. But then, B says that A is telling the truth. If A is the Knight, B's statement is true. But wait, if A is the Knight, then B is either a Knave or a Spy. If B is a Knave, he would be lying when he says A is truthful, which would mean A is not the Knight, but that's a contradiction because we assumed A is the Knight. If B is a Spy, he could be lying or telling the truth. If he's lying, then A is not the Knight, which again contradicts our assumption. If he's telling the truth, then A is indeed the Knight, but B would have to be a Spy, which is possible. So let's tentatively say A is the Knight, B is a Spy, and then C would have to be the Knave. But let's check if that works.
+
+If A is the Knight, then his statement is true. So B says A is telling the truth. If B is a Spy, he could be either truthful or lying. If B is a Spy and tells the truth, then his statement is true, so A is indeed the Knight. If B is a Spy and lies, then A is not the Knight, which would contradict A's statement. So B as a Spy must be telling the truth. Therefore, B is a Spy who tells the truth. Then C, being the only one left, must be the Knave.
+
+But let's check C's statement. C says, "I am not the Knave." If C is the Knave, then he must be lying. So his statement would be false, meaning he is the Knave. That fits. So that scenario works: A is Knight, B is Spy (truth-teller), and C is Knave.
+
+But wait, could there be another possibility? Let's try assuming A is a Knave. If A is a Knave, then his statement "I am the Knight" is a lie. So A is not the Knight, which is consistent. Then B says, "A is telling the truth." If A is a Knave, then B's statement is false. So B is either a Knave or a Spy. If B is a Knave, he always lies, so his statement is false, which is consistent. Then C would have to be the Spy. But let's check C's statement: C says, "I am not the Knave." If C is a Spy, he can either lie or tell the truth. So if he's a Spy and tells the truth, his statement is true, meaning he's not the Knave. If he's a Spy and lies, his statement is false, meaning he is the Knave. But we already have C as a Spy, so if he lies, he'd be the Knave, which would make him both Spy and Knave, which isn't allowed because all identities must be distinct. Therefore, if A is a Knave, B must be a Knave, but we can only have one Knave. So that's a contradiction. Therefore, A cannot be a Knave. So A must be the Knight.
+
+Wait, that seems conflicting. Let me go through that again. If A is a Knave, he lies about being the Knight, so he's not the Knight. Then B says A is telling the truth, which would be a lie, so B is either a Knave or a Spy. If B is a Knave, then B's statement is a lie, meaning A is not telling the truth, which fits because A is a Knave. Then C would have to be the Spy. But then C says, "I am not the Knave." If C is a Spy, he can either say the truth or lie. If he tells the truth, he's not the Knave, which is fine. If he lies, he is the Knave, but that would make him both Spy and Knave, which isn't allowed. So C can't be lying because that would cause a problem. Therefore, C must be telling the truth, so he's not the Knave. So in this scenario, A is Knave, B is Knave, but wait, we can only have one Knave. So that's a problem. Therefore, this scenario is impossible because we end up with two Knaves, which isn't allowed. So A cannot be the Knave. Therefore, A must be the Knight.
+
+So back to the first scenario: A is Knight, B is Spy (truth-teller), and C is Knave. Let's double-check:
+
+- A is Knight: says "I am the Knight" – true.
+- B is Spy: says "A is telling the truth" – true because A is Knight.
+- C is Knave: says "I am not the Knave" – lie, so he is the Knave.
+
+Yes, that works.
+
+But wait, could B be a Knave? Let me check that possibility. Suppose A is Knight, B is Knave, and C is Spy.
+
+If A is Knight, B is Knave, C is Spy.
+
+A says he's Knight – true.
+
+B says A is telling the truth – if B is Knave, he must lie, so his statement is false. Therefore, A is not telling the truth, but that's a contradiction because A is the Knight. Therefore, B cannot be a Knave if A is the Knight. Therefore, B must be a Spy who tells the truth.
+
+So, the only possible arrangement is A is Knight, B is Spy, C is Knave.
+
+Wait, but let's make sure there's no other way. Suppose A is Spy. If A is Spy, he can lie or tell the truth. So A says, "I am the Knight." If A is Spy and tells the truth, he's the Knight, which is possible, but then we have to check B and C.
+
+If A is Spy and tells the truth, then A is Knight. Then B says A is telling the truth. So B says A is truthful, which is true. So B could be Knight, Knave, or Spy. But we already have A as Knight, so B can't be Knight. If B is Knave, he would lie, so his statement is false, meaning A is not truthful, which contradicts A being Knight. Therefore, B cannot be Knave. So B must be Spy. Then C is Knave.
+
+C says, "I am not the Knave."
+
+=== YAKUNIY JAVOB ===
+(Model fikrlash bosqichida token limitiga yetdi)
+
+=== STATISTIKA ===
+Vaqt: 274.18s
+Tokenlar: 1536
+Tezlik: 5.60 tok/s
