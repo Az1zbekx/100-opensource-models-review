@@ -1,0 +1,2 @@
+whisper-timestamped>=1.15.0
+soundfile>=0.12.0

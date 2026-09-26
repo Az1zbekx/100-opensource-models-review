@@ -1,0 +1,4 @@
+Model: Conformer-CTC
+Audio: data/test_2_banking.wav
+Language: uz
+Transcription: Ассалому алайкум! Менинг пластик картамдан пул ечилди, лекин тўлов амалга ошмади. Илтимос, текшириб беринг.

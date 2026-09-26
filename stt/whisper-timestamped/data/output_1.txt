@@ -1,0 +1,4 @@
+Model: Whisper-Timestamped
+Audio: data/test_1_independence.wav
+Language: uz
+Transcription: Ўзбекистон мустақиллигининг ўттиз уч йиллиги муборак бўлсин!

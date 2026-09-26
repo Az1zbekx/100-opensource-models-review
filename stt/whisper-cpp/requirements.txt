@@ -1,0 +1,2 @@
+pywhispercpp>=1.0.0
+soundfile>=0.12.0
