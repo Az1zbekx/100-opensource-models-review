@@ -1,0 +1,17 @@
+## Event Sourcing vs. Traditional CRUD
+
+| Feature | Event Sourcing | Traditional CRUD |
+|---|---|---|
+| **State Storage** | Stores a history of all events that led to the current state | Stores a single, immutable snapshot of the current state |
+| **Auditability** | Highly auditable, allows tracking of every change | Limited auditability, only records changes made to the current state |
+| **Performance Trade-offs** | Potentially higher initial complexity, but can be highly efficient for complex systems | Generally simpler and faster for simple systems, but can be less efficient for complex systems |
+| **Complexity** | Higher initial complexity, requires more complex infrastructure and logic | Lower initial complexity, easier to implement and maintain |
+
+
+**Explanation:**
+
+* **Event Sourcing:** This approach stores a history of all events that have occurred in a system, allowing for a complete and auditable record of every change. This approach is often used in systems where data integrity and traceability are crucial, such as financial transactions or complex software applications. 
+* **Traditional CRUD:** This approach focuses on storing a single, immutable snapshot of the data at a given point in time. It is simpler to implement and maintain, but lacks the auditability and history that Event Sourcing provides. 
+
+
+**Note:** The trade-offs between these approaches depend heavily on the specific application and its requirements.

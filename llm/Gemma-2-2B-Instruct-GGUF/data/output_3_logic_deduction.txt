@@ -1,0 +1,18 @@
+Here's how to calculate the probability:
+
+**1. Probability of the first ball being red:**
+
+* There are 3 red balls and 5 total balls.
+* Probability of drawing a red ball first: 3/5
+
+**2. Probability of the second ball being red (given the first was red):**
+
+* After taking out one red ball, there are only 2 red balls left and 4 total balls.
+* Probability of drawing another red ball: 2/4 = 1/2
+
+**3. Combined Probability:**
+
+* To get the probability of both events happening, we multiply the individual probabilities: 
+   (3/5) * (1/2) = 3/10
+
+**Therefore, the probability of drawing two red balls in a row without replacement is 3/10.**

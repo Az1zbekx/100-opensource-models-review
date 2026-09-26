@@ -1,0 +1,102 @@
+```python
+import threading
+import queue
+
+class MetricsCollector:
+    """
+    Thread-safe in-memory metrics aggregator with bounded memory.
+
+    Args:
+        capacity (int): Maximum number of metrics to store.
+    """
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self._lock = threading.Lock()
+        self._metrics = {}  # Use a dictionary for efficient key-based access
+        self._queue = queue.Queue(maxsize=capacity)
+
+    def record(self, metric_name: str, value: float) -> None:
+        """Records a metric event."""
+        with self._lock:
+            self._queue.put((metric_name, value))
+
+    def get_stats(self, metric_name: str) -> dict:
+        """
+        Returns the aggregated statistics for the given metric.
+
+        Args:
+            metric_name (str): The name of the metric.
+
+        Returns:
+            dict: A dictionary containing the count, sum, min, max, and avg of the metric.
+        """
+        with self._lock:
+            stats = {}
+            while not self._queue.empty():
+                metric_name, value = self._queue.get()
+                stats[metric_name] = self._aggregate(metric_name, value, stats)
+            return stats
+
+    def _aggregate(self, metric_name: str, value: float, stats: dict) -> dict:
+        """
+        Calculates the aggregated statistics for the given metric.
+
+        Args:
+            metric_name (str): The name of the metric.
+            value (float): The latest value of the metric.
+            stats (dict): The existing aggregated statistics.
+
+        Returns:
+            dict: The updated aggregated statistics.
+        """
+        # Implement your aggregation logic here.
+        # For simplicity, this example just adds the value to the existing stats.
+        stats[metric_name] = {
+            "count": stats.get("count", 0) + 1,
+            "sum": stats.get("sum", 0) + value,
+            "min": stats.get("min", float("inf")) if stats.get("min") == float("inf") else min(stats.get("min", float("inf")), value),
+            "max": stats.get("max", float("-inf")) if stats.get("max") == float("-inf") else max(stats.get("max", float("-inf")), value),
+            "avg": stats.get("avg", 0) / (stats.get("count", 0) + 1) if stats.get("count", 0) > 0 else 0,
+        }
+        return stats
+
+```
+
+**Explanation:**
+
+1. **Thread Safety:**
+   - `_lock`: A `threading.Lock` is used to ensure thread-safe access to the shared state (metrics dictionary and queue).
+   - `with self._lock:`: Ensures that the code within the lock block is executed atomically, preventing race conditions.
+
+2. **Memory Bounded:**
+   - `_queue`: A `queue.Queue` is used to store metrics. 
+   - The queue has a maximum capacity of `capacity`, ensuring that only a limited number of metrics are stored in memory.
+   - The `_queue.get()` method retrieves metrics from the queue, allowing for efficient access and aggregation.
+
+
+**Usage:**
+
+```python
+# Create a MetricsCollector instance with a capacity of 100
+collector = MetricsCollector(capacity=100)
+
+# Record metrics
+collector.record("cpu_usage", 0.2)
+collector.record("memory_usage", 50)
+collector.record("network_latency", 10)
+
+# Get the statistics for the "cpu_usage" metric
+stats = collector.get_stats("cpu_usage")
+print(stats)
+```
+
+
+**Important Notes:**
+
+- The `_aggregate` method is a placeholder for your specific aggregation logic. You need to implement the logic for calculating the desired metrics (e.g., sum, min, max, avg) based on your requirements.
+- This implementation uses a simple queue and dictionary for demonstration. You can choose a different data structure or implement more sophisticated aggregation logic based on your specific needs. 
+
+
+
+Let me know if you have any specific aggregation logic you'd like to implement.

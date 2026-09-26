@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_architecture_summary.txt",
+    "duration_s": 18.88,
+    "tokens": 282,
+    "speed_tok_s": 14.94,
+    "output_file": "output_1_architecture_summary.txt"
+  },
+  {
+    "test": "input_2_uzbek_comprehension.txt",
+    "duration_s": 22.52,
+    "tokens": 305,
+    "speed_tok_s": 13.54,
+    "output_file": "output_2_uzbek_comprehension.txt"
+  },
+  {
+    "test": "input_3_logic_deduction.txt",
+    "duration_s": 12.22,
+    "tokens": 178,
+    "speed_tok_s": 14.56,
+    "output_file": "output_3_logic_deduction.txt"
+  },
+  {
+    "test": "input_4_code_concurrency_python.txt",
+    "duration_s": 64.87,
+    "tokens": 971,
+    "speed_tok_s": 14.97,
+    "output_file": "output_4_code_concurrency_python.txt"
+  }
+]

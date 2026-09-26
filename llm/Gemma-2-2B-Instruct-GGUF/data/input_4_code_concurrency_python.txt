@@ -1,0 +1,7 @@
+Write a Python thread-safe bounded in-memory metrics aggregator class `MetricsCollector`.
+Requirements:
+1. Method `record(metric_name: str, value: float)` to record a metric event.
+2. Method `get_stats(metric_name: str) -> dict` returning `{"count": int, "sum": float, "min": float, "max": float, "avg": float}`.
+3. Thread-safety: use `threading.Lock` to guard state mutations.
+4. Memory bounded: strictly maintain O(1) space per metric by updating running aggregates rather than appending to a raw history list.
+Provide concise, production-ready Python code with docstrings.
