@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_system_architecture.txt",
+    "duration_s": 89.3,
+    "tokens": 517,
+    "speed_tok_s": 5.79,
+    "output_file": "output_1_system_architecture.txt"
+  },
+  {
+    "test": "input_2_french_english_technical.txt",
+    "duration_s": 27.58,
+    "tokens": 148,
+    "speed_tok_s": 5.37,
+    "output_file": "output_2_french_english_technical.txt"
+  },
+  {
+    "test": "input_3_sql_optimization.txt",
+    "duration_s": 75.34,
+    "tokens": 451,
+    "speed_tok_s": 5.99,
+    "output_file": "output_3_sql_optimization.txt"
+  },
+  {
+    "test": "input_4_uzbek_distributed_saga.txt",
+    "duration_s": 256.55,
+    "tokens": 1500,
+    "speed_tok_s": 5.85,
+    "output_file": "output_4_uzbek_distributed_saga.txt"
+  }
+]

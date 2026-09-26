@@ -1,0 +1,34 @@
+Based on the given query, there are two potential indexing bottlenecks that could be improved to optimize the performance:
+
+1. Lack of a composite index on the `customers` table:
+   The query is performing a `LEFT JOIN` on the `customers` and `orders` tables, filtering the results based on the `created_at` and `status` columns from the `orders` table, and aggregating the results by `id` and `email` from the `customers` table. To optimize this, create a composite index on the `customers` table with the following columns in this order:
+
+```sql
+CREATE INDEX idx_customers_created_at_id_email ON customers
+(created_at, id, email);
+```
+
+2. Lack of an index on the `status` column in the `orders` table:
+   The query is filtering the `orders` table based on the `status` column, which is not indexed. Add an index on the `status` column in the `orders` table:
+
+```sql
+CREATE INDEX idx_orders_status ON orders (status);
+```
+
+With these indexes in place, the query should perform better due to reduced disk I/O and faster data retrieval.
+
+Optimized query:
+
+```sql
+SELECT c.id, c.email, COUNT(o.id) as order_count, SUM(o.amount) as total_spent
+FROM customers c
+LEFT JOIN orders o ON c.id = o.customer_id
+AND o.status = 'COMPLETED'
+AND c.created_at >= '2023-01-01'
+INDEX (c.created_at, c.id, c.email)
+INDEX (o.status)
+GROUP BY c.id, c.email
+HAVING SUM(o.amount) > 5000
+ORDER BY total_spent DESC
+LIMIT 50;
+```

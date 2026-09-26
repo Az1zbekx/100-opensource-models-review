@@ -1,0 +1,7 @@
+O'zbekiston to'lov va bank tizimida (fintech) mikroservislar arxitekturasi: Distributed Saga Pattern (Orchestration vs Choreography).
+
+Mavzu: Foydalanuvchi hisobidan pul yechildi, lekin qabul qiluvchi bank tizimi xatosi tufayli karta to'ldirilmadi.
+Quyidagilarni batafsil, aniq va muhandislik nuqtai nazaridan o'zbek tilida bayon qiling:
+1. Orchestration va Choreography yondashuvlarining asosiy farqi va qaysi biri bank audit talablariga mos kelishi.
+2. Kompensatsion tranzaksiya (Compensating Transaction) qanday ishga tushishi va idempotency (takroriy so'rovlar xavfsizligi) kaliti qanday ta'minlanishi.
+3. Network Partition yoki xizmat qulaganda (split-brain) tranzaksiyalar konsistentligini (Eventual Consistency) kafolatlash usuli.

@@ -1,0 +1,18 @@
+1. Rate Limiting Strategy:
+   For handling high request volumes of 50,000 requests/sec, a combination of both token bucket and sliding window counter strategies can be used to ensure efficient rate limiting.
+
+   - Token Bucket: This strategy allows a certain number of requests per time window. It's suitable for handling bursty traffic. In our case, we can use a large bucket size (e.g., 10,000 tokens) and a refresh rate (e.g., 1 second) to accommodate the high request volume.
+
+   - Sliding Window Counter (Redis): This strategy keeps track of the number of requests within a specific time window. It's useful for enforcing a strict limit on the number of requests per time period. Redis can be used for implementing this strategy due to its high performance and in-memory data structure.
+
+2. JWT Authentication Verification and Token Revocation Handling:
+   - JWT Verification: Use a library like `jsonwebtoken` for Node.js or `python-jwt` for Python to verify the signature, expiration, and issuer of the JWT.
+
+   - Token Revocation: Implement a revocation list in Redis to store invalidated tokens. When a token is verified, check if it exists in the revocation list. If it does, reject the request.
+
+3. Circuit Breaker Implementation:
+   - Use a circuit breaker library like `hystrix` for Java, `resilience4j` for Java, or `circuitbreaker` for Python to handle cascading downstream failures.
+
+   - Configure the circuit breaker to open when a certain number of consecutive failures occur (e.g., 5 failures in 10 seconds). During the open state, the circuit breaker will return a fallback response to prevent further requests from being sent to the downstream service.
+
+   - After a certain time (e.g., 30 seconds), the circuit breaker will transition to the half-open state, allowing a small number of requests (e.g., 10) to be sent to the downstream service. If these requests succeed, the circuit breaker will transition back to the closed state, allowing normal traffic to resume. If they fail, the circuit breaker will remain open for another 30 seconds.
