@@ -297,3 +297,12 @@ yolo export model=yolov8m.pt format=openvino half=True
 ## License
 
 YOLOv8 is distributed under the **AGPL-3.0 License** by Ultralytics. Commercial enterprise licensing is available via [Ultralytics Commercial License](https://www.ultralytics.com/license).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8m.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

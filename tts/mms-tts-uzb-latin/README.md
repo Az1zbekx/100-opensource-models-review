@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `MMS-TTS-UZB (Latin)` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Official Uzbek Latin text-to-speech audio synthesis (Government & Fintech)** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/facebook/mms-tts-uzb-script_latin](https://huggingface.co/facebook/mms-tts-uzb-script_latin)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/facebookresearch/fairseq/tree/main/examples/mms](https://github.com/facebookresearch/fairseq/tree/main/examples/mms)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

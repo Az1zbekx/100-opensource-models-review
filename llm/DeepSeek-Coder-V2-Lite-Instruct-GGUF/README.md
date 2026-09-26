@@ -183,3 +183,12 @@ Modelning zaif va kuchli tomonlari:
 ## Xulosa
 
 `DeepSeek-Coder-V2-Lite-Instruct-GGUF` — zamonaviy dasturiy ta'minot kompaniyalarida lokal AI-assistent (GitHub Copilot alternativi) sifatida qo'llash uchun eng mukammal va resurs tejamkor ochiq manbali modellardan biridir. Uning MoE arxitekturasi kam quvvatli apparat vositalarida ham yuqori intellekt darajasini kafolatlaydi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Instruct-GGUF](https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/deepseek-ai/DeepSeek-Coder-V2](https://github.com/deepseek-ai/DeepSeek-Coder-V2)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

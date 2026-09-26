@@ -241,3 +241,12 @@ yolo export model=cv/yolo11n-pose/yolo11n-pose.pt format=ncnn imgsz=640
 - **Official Ultralytics Documentation:** [docs.ultralytics.com/models/yolo11](https://docs.ultralytics.com/models/yolo11/)
 - **Ultralytics GitHub Repository:** [github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - **License:** Ultralytics AGPL-3.0 (with commercial enterprise licensing options available).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

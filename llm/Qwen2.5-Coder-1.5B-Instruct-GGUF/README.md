@@ -116,3 +116,12 @@ docker run --rm \
 * **Hugging Face Model GGUF:** [Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF)
 * **Qwen2.5-Coder Rasmiy Blog:** [Qwen2.5-Coder: Powerful, Diverse, Practical](https://qwenlm.github.io/blog/qwen2.5-coder/)
 * **Qwen2.5-Coder GitHub:** [QwenLM/Qwen2.5-Coder](https://github.com/QwenLM/Qwen2.5-Coder) (15k+ Stars)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/QwenLM/Qwen2.5-Coder](https://github.com/QwenLM/Qwen2.5-Coder)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

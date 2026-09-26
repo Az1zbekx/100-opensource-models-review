@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Whisper-Medium` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Production-grade call-center analytics and complex multi-speaker transcription** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/openai/whisper-medium](https://huggingface.co/openai/whisper-medium)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/openai/whisper](https://github.com/openai/whisper)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

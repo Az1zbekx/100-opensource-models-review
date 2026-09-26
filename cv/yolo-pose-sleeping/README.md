@@ -130,3 +130,12 @@ Ushbu modul `data/` papkasidagi 3 xil real keysli sinov tasvirlari ustida to'liq
 * **YOLO11 Pose Estimation Qo'llanmasi:** [Ultralytics Pose Tasks & Models](https://docs.ultralytics.com/tasks/pose/).
 * **COCO Keypoints Dataset:** [MS COCO Keypoint Detection Task](https://cocodataset.org/#keypoints-2017) (17 ta inson skelet nuqtasi standarti).
 * **Model Og'irliklari (Weights):** [YOLO11n-Pose PyTorch Checkpoint (`yolo11n-pose.pt`)](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n-pose.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n-pose.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

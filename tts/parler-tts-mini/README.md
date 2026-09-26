@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Parler-TTS-Mini` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Controllable speech generation guided by natural language prompts (gender, tone, pace)** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/parler-tts/parler-tts-mini-v1](https://huggingface.co/parler-tts/parler-tts-mini-v1)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/huggingface/parler-tts](https://github.com/huggingface/parler-tts)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

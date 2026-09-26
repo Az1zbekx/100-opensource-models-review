@@ -323,3 +323,12 @@ yolo export model=yolo11n.pt format=openvino
 YOLO11 is released by Ultralytics under the **AGPL-3.0 License**. 
 - Open-source and academic use is free under AGPL-3.0 copyleft terms.
 - For proprietary commercial closed-source software, refer to the [Ultralytics Enterprise Licensing Program](https://www.ultralytics.com/license).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

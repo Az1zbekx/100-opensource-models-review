@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Whisper-Timestamped` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Accurate word-level timestamping and subtitle synchronization without hallucinations** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/linto-ai/whisper-timestamped](https://github.com/linto-ai/whisper-timestamped)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/openai/whisper-small](https://huggingface.co/openai/whisper-small)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

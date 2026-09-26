@@ -284,3 +284,12 @@ python deploy/ONNX/export_onnx.py --weights yolov6s.pt --device cpu
 ## License
 
 YOLOv6 is licensed under the **GPL-3.0 License** by Meituan. Commercial enterprise licensing can be reviewed via the authors' GitHub repository.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/meituan/YOLOv6](https://github.com/meituan/YOLOv6)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/meituan/YOLOv6/releases/download/0.4.0/yolov6s.pt](https://github.com/meituan/YOLOv6/releases/download/0.4.0/yolov6s.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

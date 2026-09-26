@@ -118,3 +118,12 @@ Ushbu modul `data/` papkasidagi 3 xil real keysli sinov tasvirlari ustida to'liq
 * **ByteTrack Ilmiy Maqolasi (ECCV 2022):** [ByteTrack: Multi-Object Tracking by Associating Every Detection Box](https://arxiv.org/abs/2110.06864) (Yifu Zhang et al.).
 * **Ultralytics Multi-Object Tracking:** [Ultralytics Track Documentation](https://docs.ultralytics.com/modes/track/) (ByteTrack & BoT-SORT qo'llanmasi).
 * **MOTChallenge Benchmark:** [MOT17 & MOT20 Leaderboard](https://motchallenge.net/) — ByteTrack yetakchi o'rinlarda.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ifzhang/ByteTrack](https://github.com/ifzhang/ByteTrack)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

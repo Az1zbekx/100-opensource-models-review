@@ -296,3 +296,12 @@ yolo export model=yolo11s.pt format=onnx simplify=True
 ## License
 
 Distributed under the **AGPL-3.0 License** by Ultralytics. Commercial enterprise licensing is available via [Ultralytics Licensing](https://www.ultralytics.com/license).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

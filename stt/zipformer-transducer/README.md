@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Zipformer-Transducer` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Next-gen Kaldi Zipformer multi-rate transducer with exceptional parameter efficiency** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/k2-fsa/icefall](https://github.com/k2-fsa/icefall)
+- **Qo'shimcha Manba / Upstream:** [https://k2-fsa.github.io/icefall/recipes/librispeech/zipformer.html](https://k2-fsa.github.io/icefall/recipes/librispeech/zipformer.html)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

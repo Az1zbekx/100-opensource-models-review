@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Sherpa-ONNX-STT` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Offline edge embedded speech recognition for Linux, Android, and IoT SBCs** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/k2-fsa/sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)
+- **Qo'shimcha Manba / Upstream:** [https://k2-fsa.github.io/sherpa/onnx/](https://k2-fsa.github.io/sherpa/onnx/)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

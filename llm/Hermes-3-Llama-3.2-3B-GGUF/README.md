@@ -171,3 +171,12 @@ docker run --rm -it -v ~/.cache/huggingface:/root/.cache/huggingface hermes-3-ll
 - [Nous Research Rasmiy Veb-sayti](https://nousresearch.com/)
 - [Hermes-3 Texnik Hisoboti va Blogi](https://nousresearch.com/hermes3/)
 - [Hugging Face Hermes-3-Llama-3.2-3B GGUF Repozitoriysi](https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B-GGUF)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B-GGUF](https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B](https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

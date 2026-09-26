@@ -242,3 +242,12 @@ To launch the real-time webcam feed with interactive HUD on your laptop display:
 ## License
 
 The code and weights for Depth Anything V2 are licensed under the **Apache 2.0 License**, permitting commercial usage, modifications, and redistribution.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/depth-anything/Depth-Anything-V2-Small](https://huggingface.co/depth-anything/Depth-Anything-V2-Small)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/DepthAnything/Depth-Anything-V2](https://github.com/DepthAnything/Depth-Anything-V2)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

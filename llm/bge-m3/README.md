@@ -159,3 +159,12 @@ print(embs.shape)  # torch.Size([1, 1024])
 ```bash
 docker compose run --rm bge_m3 python3 run_benchmarks.py
 ```
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/FlagOpen/FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

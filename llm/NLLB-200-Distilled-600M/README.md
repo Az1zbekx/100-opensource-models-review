@@ -130,3 +130,12 @@ print(tokenizer.batch_decode(tokens, skip_special_tokens=True)[0])
 ```bash
 docker compose run --rm nllb_200_distilled_600m python3 run_benchmarks.py
 ```
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/facebook/nllb-200-distilled-600M](https://huggingface.co/facebook/nllb-200-distilled-600M)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/facebookresearch/fairseq/tree/nllb](https://github.com/facebookresearch/fairseq/tree/nllb)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

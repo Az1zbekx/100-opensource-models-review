@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Wav2Vec2-XLSR-UZ` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **End-to-end self-supervised acoustic CTC model fine-tuned for Uzbek speech** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/facebook/wav2vec2-large-xlsr-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/facebookresearch/fairseq/tree/main/examples/wav2vec](https://github.com/facebookresearch/fairseq/tree/main/examples/wav2vec)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

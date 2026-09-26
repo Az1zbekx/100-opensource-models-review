@@ -162,3 +162,12 @@ Inference testing was performed using real highway toll plazas, border checkpoin
 - **GPU Inference Latency**: 2.9 ms / frame.
 - **CPU Inference Latency**: 18.2 ms / frame.
 - **Operational Reliability**: Zero crash rate over 72-hour continuous RTSP stress tests.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov3-tiny.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov3-tiny.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

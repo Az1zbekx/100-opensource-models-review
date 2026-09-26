@@ -134,3 +134,12 @@ docker compose run --rm moondream2_gguf python3 demo.py --chat
 ```bash
 docker compose run --rm moondream2_gguf python3 run_benchmarks.py
 ```
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/vikhyatk/moondream2](https://huggingface.co/vikhyatk/moondream2)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/vikhyat/moondream](https://github.com/vikhyat/moondream)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

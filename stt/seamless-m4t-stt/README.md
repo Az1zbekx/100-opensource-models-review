@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `SeamlessM4T-STT` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Multilingual automatic speech recognition and speech-to-text translation across 100+ languages** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/facebook/seamless-m4t-v2-large](https://huggingface.co/facebook/seamless-m4t-v2-large)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/facebookresearch/seamless_communication](https://github.com/facebookresearch/seamless_communication)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `SpeechT5-TTS` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Unified encoder-decoder framework with customizable x-vector speaker embeddings** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/microsoft/speecht5_tts](https://huggingface.co/microsoft/speecht5_tts)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/microsoft/SpeechT5](https://github.com/microsoft/SpeechT5)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

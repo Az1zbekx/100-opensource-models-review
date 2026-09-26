@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Data2Vec-Audio-Large` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Unified multi-modal self-supervised architecture applied to speech recognition** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/facebook/data2vec-audio-large-960h](https://huggingface.co/facebook/data2vec-audio-large-960h)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/facebookresearch/fairseq/tree/main/examples/data2vec](https://github.com/facebookresearch/fairseq/tree/main/examples/data2vec)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

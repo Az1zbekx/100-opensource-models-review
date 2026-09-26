@@ -165,3 +165,12 @@ Inference testing was executed using real municipal intersection CCTV / elevated
 - **GPU Inference Latency**: 4.8 ms / frame.
 - **Pipeline Throughput**: 180+ FPS with end-to-end collision hazard vector calculations.
 - **Power Consumption**: Approx. 18 Watts system draw.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5su.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5su.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

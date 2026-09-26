@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `MetaVoice-1B` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Conversational 1.2B foundation model trained on 100k hours of expressive dialogue** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/metavoiceio/metavoice-1B-v0.1](https://huggingface.co/metavoiceio/metavoice-1B-v0.1)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/metavoiceio/metavoice-src](https://github.com/metavoiceio/metavoice-src)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

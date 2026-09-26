@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Fish-Speech-1.5` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Dual-autoregressive multi-lingual voice generator with low memory consumption** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/fishaudio/fish-speech-1.5](https://huggingface.co/fishaudio/fish-speech-1.5)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/fishaudio/fish-speech](https://github.com/fishaudio/fish-speech)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

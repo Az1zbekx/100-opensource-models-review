@@ -197,3 +197,12 @@ docker compose run --rm starcoder2_3b_gguf python3 demo.py --prompt "def quick_s
 - [StarCoder2 Rasmiy Ilmiy Maqolasi (arXiv:2402.19173)](https://arxiv.org/abs/2402.19173)
 - [BigCode Loyihasi va The Stack v2 Ma'lumotlar To'plami](https://www.bigcode-project.org/)
 - [Hugging Face StarCoder2-3B Repozitoriysi](https://huggingface.co/bigcode/starcoder2-3b)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/starcoder2-3b-GGUF](https://huggingface.co/bartowski/starcoder2-3b-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/bigcode-project/starcoder2](https://github.com/bigcode-project/starcoder2)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

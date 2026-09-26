@@ -163,3 +163,12 @@ docker run --rm -it -v ~/.cache/huggingface:/root/.cache/huggingface llama-3.2-1
 - [Meta AI Llama 3.2 Rasmiy E'loni](https://ai.meta.com/blog/llama-3-2-connect-2024/)
 - [Llama 3.2 Model Kartochkasi va Hujjatlari](https://llama.meta.com/)
 - [Hugging Face Llama-3.2-1B-Instruct GGUF](https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF](https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

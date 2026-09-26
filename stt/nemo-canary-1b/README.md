@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `NeMo-Canary-1B` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Multitask speech transcription and translation with punctuation and capitalization** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/nvidia/canary-1b](https://huggingface.co/nvidia/canary-1b)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/NVIDIA/NeMo](https://github.com/NVIDIA/NeMo)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

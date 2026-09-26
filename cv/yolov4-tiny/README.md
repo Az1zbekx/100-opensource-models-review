@@ -162,3 +162,12 @@ Inference testing was conducted using authentic aerial drone and low-altitude mi
 - **Host Machine**: Acer Aspire A715-42G (AMD Ryzen 5 5500U, 16GB DDR4, NVIDIA GeForce GTX 1650 4GB VRAM, Ubuntu 26.04 LTS).
 - **CPU Inference Latency**: 26.0 ms / frame (OpenCV DNN single-thread optimized).
 - **Total System Power Draw**: < 10 Watts (ideal for battery-powered drone payloads).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

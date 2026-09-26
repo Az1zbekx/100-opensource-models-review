@@ -156,3 +156,12 @@ docker run --rm \
 * **Asl Llama-3.1 Maqolasi:** [The Llama 3 Herd of Models (Meta AI)](https://arxiv.org/abs/2407.21783)
 * **DeepSeek-R1 Ilmiy Maqolasi:** [DeepSeek-R1: Incentivizing Reasoning Capability via RL](https://arxiv.org/abs/2501.12948)
 * **Llama.cpp GitHub:** [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Llama-8B-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

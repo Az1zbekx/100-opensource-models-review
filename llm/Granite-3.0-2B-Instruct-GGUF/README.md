@@ -156,3 +156,12 @@ docker compose run --rm granite_3_0_2b_instruct_gguf python3 demo.py --chat
 ```bash
 docker compose run --rm granite_3_0_2b_instruct_gguf python3 run_benchmarks.py
 ```
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/granite-3.0-2b-instruct-GGUF](https://huggingface.co/bartowski/granite-3.0-2b-instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/ibm-granite/granite-3.0-2b-instruct](https://huggingface.co/ibm-granite/granite-3.0-2b-instruct)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

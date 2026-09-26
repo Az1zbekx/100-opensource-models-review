@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `SeamlessM4T-TTS` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Expressive multilingual multi-task text-to-speech across 35+ languages** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/facebook/seamless-m4t-v2-large](https://huggingface.co/facebook/seamless-m4t-v2-large)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/facebookresearch/seamless_communication](https://github.com/facebookresearch/seamless_communication)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

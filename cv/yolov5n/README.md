@@ -165,3 +165,12 @@ Inference testing was conducted using real indoor workplace and educational faci
 - **GPU Inference Latency**: 2.8 ms / frame.
 - **Average Active Power Consumption**: 14 Watts total system draw during inference.
 - **Model Efficiency Factor**: Over 350 inferences per second per watt.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5nu.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5nu.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

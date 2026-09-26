@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `OpenVoice-v2` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Instant versatile voice cloning with independent control over tone color and emotion** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/myshell-ai/OpenVoice-v2](https://huggingface.co/myshell-ai/OpenVoice-v2)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/myshell-ai/OpenVoice](https://github.com/myshell-ai/OpenVoice)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

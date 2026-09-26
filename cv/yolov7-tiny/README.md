@@ -285,3 +285,12 @@ python export.py --weights yolov7-tiny.pt --grid --simplify
 ## License
 
 YOLOv7 is licensed under the **GPL-3.0 License** by WongKinYiu and AlexeyAB. Commercial enterprise licensing can be reviewed via the authors' project repository.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-tiny.pt](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-tiny.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Vosk-API-UZ` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Lightweight Kaldi-based offline speech recognizer (~50MB model) for mobile and Raspberry Pi** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://alphacephei.com/vosk/models](https://alphacephei.com/vosk/models)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/alphacep/vosk-api](https://github.com/alphacep/vosk-api)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

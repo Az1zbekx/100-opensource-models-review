@@ -150,3 +150,12 @@ docker compose run --rm qwen2_vl_2b_instruct_gguf python3 demo.py \
 ```bash
 docker compose run --rm qwen2_vl_2b_instruct_gguf python3 run_benchmarks.py
 ```
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/QwenLM/Qwen2-VL](https://github.com/QwenLM/Qwen2-VL)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

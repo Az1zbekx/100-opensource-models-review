@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Whisper-Tiny` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Ultra-lightweight real-time transcription on low-end CPUs and IoT hardware** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/openai/whisper-tiny](https://huggingface.co/openai/whisper-tiny)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/openai/whisper](https://github.com/openai/whisper)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

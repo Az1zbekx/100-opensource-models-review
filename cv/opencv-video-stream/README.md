@@ -135,3 +135,12 @@ Ushbu modul `data/` papkasidagi 3 xil real kadrlar ustida to'liq tekshirildi:
 * **OpenCV Video I/O Hujjatlari:** [OpenCV VideoCapture Class Reference](https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html).
 * **Hardware Video Acceleration:** [OpenCV HW Acceleration (VAAPI / CUDA)](https://docs.opencv.org/4.x/d0/da7/videoio_overview.html).
 * **MediaMTX RTSP Server:** [bluenviron/mediamtx](https://github.com/bluenviron/mediamtx) — Zero-latency RTSP/WebRTC router.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/opencv/opencv](https://github.com/opencv/opencv)
+- **Qo'shimcha Manba / Upstream:** [https://opencv.org](https://opencv.org)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

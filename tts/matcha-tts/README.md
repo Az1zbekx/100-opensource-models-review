@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Matcha-TTS` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Fast, high-quality, lightweight non-autoregressive ODE flow matching** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/shivammehta25/Matcha-TTS](https://huggingface.co/shivammehta25/Matcha-TTS)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/shivammehta25/Matcha-TTS](https://github.com/shivammehta25/Matcha-TTS)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

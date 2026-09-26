@@ -122,3 +122,12 @@ Ushbu modul `data/` papkasidagi 3 xil real keysli sinov tasvirlari ustida to'liq
 * **Ultralytics YOLO11 Hujjatlari:** [YOLO11 Architecture & Performance](https://docs.ultralytics.com/models/yolo11/).
 * **MS COCO Dataset:** [Common Objects in Context (COCO)](https://cocodataset.org/) — 80 klassli standart dataset.
 * **Model Og'irliklari (Weights):** [YOLO11n PyTorch Checkpoint (`yolo11n.pt`)](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

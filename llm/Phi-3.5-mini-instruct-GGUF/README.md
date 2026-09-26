@@ -165,3 +165,12 @@ docker run --rm -it -v ~/.cache/huggingface:/root/.cache/huggingface phi-3.5-min
 - [Microsoft Phi-3.5 Texnik Hisoboti va Blogi](https://azure.microsoft.com/en-us/blog/introducing-phi-3-5-mini/)
 - [Microsoft Research Phi Seriyasi GitHub](https://github.com/microsoft/Phi-3CookBook)
 - [Hugging Face bartowski/Phi-3.5-mini-instruct-GGUF](https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF](https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/microsoft/Phi-3.5-mini-instruct](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

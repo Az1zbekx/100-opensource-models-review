@@ -299,3 +299,12 @@ yolo export model=yolov10n.pt format=openvino half=True
 ## License
 
 YOLOv10 is distributed under the **AGPL-3.0 License**. For commercial licensing details, consult the [Ultralytics Licensing Portal](https://www.ultralytics.com/license) and the authors at Tsinghua University.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/THU-MIG/yolov10](https://github.com/THU-MIG/yolov10)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/jameslahm/yolov10/releases/download/v1.0/yolov10n.pt](https://github.com/jameslahm/yolov10/releases/download/v1.0/yolov10n.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

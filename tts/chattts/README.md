@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `ChatTTS` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Conversational dialogue synthesis optimized for LLM agents with laughter and filler words** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/2noise/ChatTTS](https://huggingface.co/2noise/ChatTTS)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/2noise/ChatTTS](https://github.com/2noise/ChatTTS)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

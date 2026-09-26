@@ -103,3 +103,12 @@ python3 demo.py --audio data/test_1_independence.wav --output data/output_1.txt 
    - `small` *(Recommended)*: Ideal sweet spot between high Uzbek vocabulary accuracy and CPU speed.
    - `medium` / `large-v3`: Recommended only if deployed on a dedicated GPU instance.
 3. **Pipelining with LLM:** Pair Faster-Whisper output directly into `Qwen2.5-1.5B-Instruct` to build completely offline, private voice-controlled assistants.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/Systran/faster-whisper-small](https://huggingface.co/Systran/faster-whisper-small)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

@@ -163,3 +163,12 @@ The pipeline was verified on 3 real-world industrial logistics, freight terminal
 - **GPU Inference Latency**: 8.2 ms / frame.
 - **Pipeline Throughput**: 110+ FPS with live industrial HUD rendering.
 - **Power Consumption**: Approx. 26 Watts system draw.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5mu.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5mu.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

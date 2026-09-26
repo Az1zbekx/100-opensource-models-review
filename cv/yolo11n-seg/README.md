@@ -202,3 +202,12 @@ yolo export model=yolo11n-seg.pt format=openvino half=True
 - **Ultralytics Repository:** [github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - **Official Documentation:** [docs.ultralytics.com/models/yolo11](https://docs.ultralytics.com/models/yolo11/)
 - **Model License:** AGPL-3.0 (Ultralytics Open Source License)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

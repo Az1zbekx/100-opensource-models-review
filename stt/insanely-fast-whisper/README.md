@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Insanely-Fast-Whisper` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Batched ultra-fast pipeline inference using Flash Attention 2 and Hugging Face Optimum** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/Vaibhavs10/insanely-fast-whisper](https://github.com/Vaibhavs10/insanely-fast-whisper)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/openai/whisper-large-v3](https://huggingface.co/openai/whisper-large-v3)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

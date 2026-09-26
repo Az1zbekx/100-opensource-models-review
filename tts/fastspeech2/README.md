@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `FastSpeech2` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Deterministic ultra-fast non-autoregressive speech synthesis without word skipping** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/espnet/espnet](https://github.com/espnet/espnet)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/espnet/fastspeech2](https://huggingface.co/espnet/fastspeech2)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

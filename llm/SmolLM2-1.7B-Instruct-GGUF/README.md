@@ -166,3 +166,12 @@ docker run --rm -it -v ~/.cache/huggingface:/root/.cache/huggingface smollm2-1.7
 - [Hugging Face SmolLM2 Texnik E'loni](https://huggingface.co/blog/smollm2)
 - [SmolLM2 GitHub Repozitoriysi](https://github.com/huggingface/smollm)
 - [Hugging Face SmolLM2-1.7B-Instruct GGUF](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/huggingface/smollm](https://github.com/huggingface/smollm)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

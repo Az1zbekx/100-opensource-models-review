@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `VALL-E-X` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Zero-shot cross-lingual speech synthesis and speech-to-speech translation** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/Plachtaa/VALL-E-X](https://github.com/Plachtaa/VALL-E-X)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/microsoft/unilm/tree/master/valle](https://github.com/microsoft/unilm/tree/master/valle)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

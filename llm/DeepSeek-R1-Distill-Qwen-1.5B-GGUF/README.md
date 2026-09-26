@@ -191,3 +191,12 @@ docker run --rm \
 * **Asl DeepSeek-R1 Ilmiy Maqolasi (arXiv 2025):** [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948).
 * **DeepSeek Rasmiy GitHub:** [deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) (60k+ Stars).
 * **Llama.cpp Inference Engine:** [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) (GGUF kvantlash texnologiyasi).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-1.5B-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

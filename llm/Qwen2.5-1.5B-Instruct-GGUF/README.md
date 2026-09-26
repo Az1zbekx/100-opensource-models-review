@@ -212,3 +212,12 @@ docker compose run --rm qwen2_5_1_5b_instruct_gguf python3 run_benchmark_suite.p
 - [Alibaba Qwen2.5 Rasmiy Blog va Texnik Hisobot](https://qwenlm.github.io/blog/qwen2.5/)
 - [HuggingFace Qwen2.5-1.5B-Instruct-GGUF Repozitoriysi](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF)
 - [llama.cpp Rasmiy GitHub Loyihasi](https://github.com/ggerganov/llama.cpp)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/QwenLM/Qwen2.5](https://github.com/QwenLM/Qwen2.5)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

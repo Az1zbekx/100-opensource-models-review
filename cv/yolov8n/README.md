@@ -502,3 +502,12 @@ For official licensing information, see:
 
 - [Ultralytics License Information](https://www.ultralytics.com/license)
 - [Ultralytics Pricing and License Plans](https://www.ultralytics.com/pricing)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

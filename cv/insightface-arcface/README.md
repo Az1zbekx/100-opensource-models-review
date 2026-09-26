@@ -123,3 +123,12 @@ Ushbu modul `data/` papkasidagi 3 xil real keysli sinov tasvirlari ustida to'liq
 * **SCRFD Yuz Detektori Maqolasi (ICLR 2022):** [Sample and Computation Redistribution for Efficient Face Detection](https://arxiv.org/abs/2105.04714).
 * **Rasmiy Model Og'irliklari:** [InsightFace Model Zoo (Buffalo_L)](https://github.com/deepinsight/insightface/tree/master/python-package#model-zoo).
 * **O'qitilgan Dataset:** [Glint360k Large-Scale Face Recognition Dataset](https://github.com/deepinsight/insightface/tree/master/recognition/partial_fc#glint360k).
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/deepinsight/insightface](https://github.com/deepinsight/insightface)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/deepinsight/insightface/tree/master/python-package](https://github.com/deepinsight/insightface/tree/master/python-package)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

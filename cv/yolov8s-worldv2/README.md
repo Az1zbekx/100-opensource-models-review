@@ -205,3 +205,12 @@ model.export(format='onnx', opset=12, simplify=True)
 - **Ultralytics YOLO-World Documentation:** [docs.ultralytics.com/models/yolo-world](https://docs.ultralytics.com/models/yolo-world/)
 - **Original Research Paper:** *YOLO-World: Real-Time Open-Vocabulary Object Detection* (Tencent AI Lab)
 - **License:** AGPL-3.0 (Ultralytics Open Source License)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/AILab-CVC/YOLO-World](https://github.com/AILab-CVC/YOLO-World)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

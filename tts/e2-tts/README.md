@@ -97,3 +97,12 @@ Sinovlar 4 ta o'zbek tilidagi amaliy ssenariy asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `E2-TTS` o'z yo'nalishida yuqori samaradorlik ko'rsatdi. Agar loyihangizda **Duration-free non-autoregressive speech synthesis with instant alignment** talab etilsa, bu model narx/sifat mutanosibligi bo'yicha eng ma'qul tanlovlardan biridir.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/SWivid/E2-TTS](https://huggingface.co/SWivid/E2-TTS)
+- **Qo'shimcha Manba / Upstream:** [https://github.com/SWivid/F5-TTS](https://github.com/SWivid/F5-TTS)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

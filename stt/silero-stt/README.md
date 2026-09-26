@@ -96,3 +96,12 @@ Sinovlar 4 ta autentik o'zbek tilidagi amaliy audio yozuvlar asosida o'tkazildi:
 ## 7. Xulosa va PM Xulosasi
 
 `Silero-STT` o'zbek tili nutqini tanib olishda yuqori natija berdi. Ushbu model **Enterprise-grade compact models running on single CPU thread (<30MB) with real-time streaming** vazifalarida barqaror va arzon yechim bo'lib xizmat qiladi.
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://github.com/snakers4/silero-models](https://github.com/snakers4/silero-models)
+- **Qo'shimcha Manba / Upstream:** [https://pytorch.org/hub/snakers4_silero-models_stt/](https://pytorch.org/hub/snakers4_silero-models_stt/)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.

@@ -176,3 +176,12 @@ docker compose run --rm llama_guard_3_1b_gguf python3 demo.py --prompt "How to e
 - [Meta AI Llama Guard 3 Rasmiy Maqolasi va Hujjatlari](https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/)
 - [Hugging Face Llama-Guard-3-1B Repozitoriysi](https://huggingface.co/meta-llama/Llama-Guard-3-1B)
 - [QuantFactory Llama-Guard-3-1B GGUF](https://huggingface.co/QuantFactory/Llama-Guard-3-1B-GGUF)
+
+
+---
+
+## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+
+- **Asosiy Repozitoriy / Model Hub:** [https://huggingface.co/bartowski/Llama-Guard-3-1B-GGUF](https://huggingface.co/bartowski/Llama-Guard-3-1B-GGUF)
+- **Qo'shimcha Manba / Upstream:** [https://huggingface.co/meta-llama/Llama-Guard-3-1B](https://huggingface.co/meta-llama/Llama-Guard-3-1B)
+- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
