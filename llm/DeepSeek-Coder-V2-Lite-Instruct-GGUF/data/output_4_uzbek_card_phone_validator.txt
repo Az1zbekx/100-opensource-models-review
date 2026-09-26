@@ -1,0 +1,117 @@
+```python
+def validate_and_mask_card(card_number: str) -> dict:
+    """
+    Berilgan karta raqamini tozalaydi, Luhn algoritmi bilan tekshiradi va kartaning turini aniqlaydi.
+    Kartaning o'rtadagi 8 ta raqamini yulduzcha (`*`) bilan berkitadi.
+
+    Args:
+        card_number (str): Tozalash va masklash uchun karta raqami.
+
+    Returns:
+        dict: Tozalangan va masklangan karta raqami, kartaning turi, xatoliklar (agar bo'lsa).
+    """
+    # Tozalash
+    card_number = card_number.replace(" ", "")
+
+    # Luhn algoritmi bilan tekshirish
+    if not is_valid_luhn(card_number):
+        return {"error": "Karta raqami Luhn algoritmi bilan tekshirilganda xatolik yuz berdi."}
+
+    # Kartaning turini aniqlash
+    card_type = identify_card_type(card_number)
+    if not card_type:
+        return {"error": "Karta turi aniqlanmadi."}
+
+    # Masklash
+    masked_card = mask_card(card_number)
+
+    return {
+        "card_number": masked_card,
+        "card_type": card_type,
+        "error": None
+    }
+
+def is_valid_luhn(card_number: str) -> bool:
+    """
+    Luhn algoritmi bo'yicha karta raqamini tekshiradi.
+
+    Args:
+        card_number (str): Tozalash va masklash uchun karta raqami.
+
+    Returns:
+        bool: Luhn algoritmi bo'yicha tekshirish natijasi.
+    """
+    # Luhn algoritmi bo'yicha tekshirish
+    sum = 0
+    num_digits = len(card_number)
+    is_second = False
+
+    for i in range(num_digits - 1, -1, -1):
+        digit = int(card_number[i])
+
+        if is_second:
+            digit = digit * 2
+            if digit > 9:
+                digit = digit - 9
+
+        sum += digit
+        is_second = not is_second
+
+    return (sum % 10) == 0
+
+def identify_card_type(card_number: str) -> str:
+    """
+    Kartaning turini aniqlaydi.
+
+    Args:
+        card_number (str): Tozalash va masklash uchun karta raqami.
+
+    Returns:
+        str: Kartaning turi yoki None agar turi aniqlanmasa.
+    """
+    # Kartaning turini aniqlash
+    if len(card_number) == 16 and card_number.startswith(("8600", "9860")):
+        return "Humo"
+    elif len(card_number) == 16 and card_number.startswith("4"):
+        return "Visa"
+    elif len(card_number) == 16 and card_number.startswith(("51", "52", "53", "54", "55")):
+        return "Mastercard"
+    elif len(card_number) == 16 and card_number.startswith("62"):
+        return "Uzcard"
+    else:
+        return None
+
+def mask_card(card_number: str) -> str:
+    """
+    Kartaning o'rtadagi 8 ta raqamini yulduzcha (`*`) bilan berkitadi.
+
+    Args:
+        card_number (str): Tozalash va masklash uchun karta raqami.
+
+    Returns:
+        str: Masklangan karta raqami.
+    """
+    # Masklash
+    masked_card = card_number[:4] + " **** **** " + card_number[-4:]
+    return masked_card
+
+def validate_and_format_phone(phone: str) -> dict:
+    """
+    Berilgan telefon raqamini tozalaydi va standart formatga keltiradi.
+
+    Args:
+        phone (str): Tozalash va formatlash uchun telefon raqami.
+
+    Returns:
+        dict: Tozalangan va formatlangan telefon raqami, xatoliklar (agar bo'lsa).
+    """
+    # Tozalash
+    phone = phone.replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
+
+    # Formatlash
+    if not phone.startswith("+998"):
+        return {"error": "Telefon raqami +998 prefiksida bo'lishi kerak."}
+
+    if len(phone) == 12:
+        operator_code = phone[3:5]
+        if operator_code in ("90", "

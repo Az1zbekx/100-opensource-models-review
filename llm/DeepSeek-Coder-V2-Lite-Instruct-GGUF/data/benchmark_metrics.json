@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_async_pipeline.txt",
+    "duration_s": 46.05,
+    "tokens": 552,
+    "speed_tok_s": 11.99,
+    "output_file": "output_1_async_pipeline.txt"
+  },
+  {
+    "test": "input_2_rust_concurrency.txt",
+    "duration_s": 41.01,
+    "tokens": 608,
+    "speed_tok_s": 14.82,
+    "output_file": "output_2_rust_concurrency.txt"
+  },
+  {
+    "test": "input_3_sql_distributed.txt",
+    "duration_s": 48.07,
+    "tokens": 703,
+    "speed_tok_s": 14.63,
+    "output_file": "output_3_sql_distributed.txt"
+  },
+  {
+    "test": "input_4_uzbek_card_phone_validator.txt",
+    "duration_s": 93.69,
+    "tokens": 1200,
+    "speed_tok_s": 12.81,
+    "output_file": "output_4_uzbek_card_phone_validator.txt"
+  }
+]

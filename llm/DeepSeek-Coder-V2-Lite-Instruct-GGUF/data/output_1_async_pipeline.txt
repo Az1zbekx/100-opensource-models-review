@@ -1,0 +1,62 @@
+Here's a basic outline of the structure:
+
+```python
+import asyncio
+from typing import List, Any
+
+async def producer(queue: asyncio.Queue, id: int) -> None:
+    while True:
+        # Produce an item
+        item = await produce_item(id)
+        # Add item to the queue
+        await queue.put(item)
+        # Log performance
+        log_performance(f"Producer {id} produced item {item}")
+        # Simulate varying production times
+        await asyncio.sleep(0.1 + (id % 3) * 0.1)
+
+async def consumer(queue: asyncio.Queue, id: int) -> None:
+    while True:
+        # Get an item from the queue
+        item = await queue.get()
+        # Process the item
+        await process_item(item)
+        # Log performance
+        log_performance(f"Consumer {id} processed item {item}")
+        # Acknowledge the item
+        queue.task_done()
+
+async def main() -> None:
+    queue = asyncio.Queue(maxsize=100)
+    producers = [producer(queue, i) for i in range(3)]
+    consumers = [consumer(queue, i) for i in range(5)]
+    
+    # Start producer tasks
+    await asyncio.gather(*producers)
+    
+    # Wait until the queue is fully processed
+    await queue.join()
+    
+    # Initiate shutdown
+    for consumer_task in consumers:
+        queue.put_nowait(None)  # Sentinel to stop consumers
+    await asyncio.gather(*consumers)
+
+# Helper functions (you can implement these as needed)
+async def produce_item(id: int) -> Any:
+    return f"Item-{id}"
+
+async def process_item(item: Any) -> None:
+    # Simulate processing time
+    await asyncio.sleep(0.2)
+
+def log_performance(message: str) -> None:
+    print(f"Performance: {message}")
+
+# Entry point
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+This code provides a basic structure. You need to implement the helper functions `produce_item`, `process_item`, and `log_performance` as per your specific requirements. Make sure to handle exceptions and ensure clean shutdowns.
+```

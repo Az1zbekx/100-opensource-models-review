@@ -1,0 +1,6 @@
+O'zbekistondagi bank kartalari (Uzcard: 8600, Humo: 9860, Visa: 4..., Mastercard: 5...) va mobil telefon raqamlarini (+998...) tekshiruvchi hamda maxfiylashtiruvchi (masking: masalan 8600 12** **** 3456) Python yordamchi modulini yozing.
+
+Talablar:
+1. Funksiya: `validate_and_mask_card(card_number: str) -> dict`: Karta raqamini probellardan tozalab, Luhn algoritmi bilan tekshiradi, kartaning turini (Uzcard, Humo, Visa, Mastercard) aniqlaydi va o'rtadagi 8 ta raqamni yulduzcha (`*`) bilan berkitadi.
+2. Funksiya: `validate_and_format_phone(phone: str) -> dict`: +998 prefiksini va mobil operator kodini (90/91 Beeline, 93/94 Ucell, 97/88 Mobiuz, 99/95 Uztelecom) aniqlab, standart formatga keltiradi.
+3. Kodingiz ishlab chiqarish darajasida (clean code), type hinting va o'zbek tilidagi chiroyli docstringlar bilan ta'minlansin.

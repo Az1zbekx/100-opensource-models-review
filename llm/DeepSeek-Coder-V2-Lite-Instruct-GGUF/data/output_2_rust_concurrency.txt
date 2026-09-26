@@ -1,0 +1,71 @@
+Here's a basic implementation:
+```rust
+use std::sync::{Arc, RwLock};
+use std::collections::HashMap;
+use std::thread;
+
+struct ThreadSafeCache {
+    cache: Arc<RwLock<HashMap<String, String>>>,
+}
+
+impl ThreadSafeCache {
+    fn new() -> Self {
+        ThreadSafeCache {
+            cache: Arc::new(RwLock::new(HashMap::new())),
+        }
+    }
+
+    fn get(&self, key: &str) -> Option<String> {
+        let cache = self.cache.read().unwrap();
+        cache.get(key).cloned()
+    }
+
+    fn insert(&self, key: String, value: String) {
+        let mut cache = self.cache.write().unwrap();
+        cache.insert(key, value);
+    }
+
+    fn remove(&self, key: &str) -> Option<String> {
+        let mut cache = self.cache.write().unwrap();
+        cache.remove(key)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_get_insert_remove() {
+        let cache = ThreadSafeCache::new();
+        cache.insert("key1".to_string(), "value1".to_string());
+        assert_eq!(cache.get("key1"), Some("value1".to_string()));
+        assert_eq!(cache.remove("key1"), Some("value1".to_string()));
+        assert_eq!(cache.get("key1"), None);
+    }
+
+    #[test]
+    fn test_concurrent_access() {
+        let cache = ThreadSafeCache::new();
+        let mut handles = vec![];
+
+        for i in 0..10 {
+            let cache_clone = Arc::clone(&cache);
+            let handle = thread::spawn(move || {
+                cache_clone.insert(format!("key{}", i), format!("value{}", i));
+            });
+            handles.push(handle);
+        }
+
+        for handle in handles {
+            handle.join().unwrap();
+        }
+
+        for i in 0..10 {
+            assert_eq!(cache.get(&format!("key{}", i)), Some(format!("value{}", i)));
+        }
+    }
+}
+```
+
+This implementation ensures thread safety using `Arc<RwLock<HashMap<String, String>>>`, and includes basic unit tests to demonstrate its correctness. You can expand on this by adding more sophisticated error handling, metrics, or other features as needed.

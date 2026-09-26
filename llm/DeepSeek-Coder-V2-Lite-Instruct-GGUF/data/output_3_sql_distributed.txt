@@ -1,0 +1,74 @@
+Here's the SQL schema and query:
+
+### SQL Schema
+```sql
+CREATE TABLE clickstream_events (
+    tenant_id UInt64,
+    event_date Date,
+    user_id UInt64,
+    event_type String,
+    event_time DateTime,
+    page_url String,
+    item_id String,
+    item_price Float64
+) ENGINE = ReplacingMergeTree(event_time)
+PARTITION BY toYYYYMM(event_date)
+ORDER BY (tenant_id, event_date, user_id);
+```
+
+### Analytical Query
+```sql
+WITH funnel_steps AS (
+    SELECT
+        tenant_id,
+        user_id,
+        event_date,
+        event_type,
+        event_time,
+        page_url,
+        item_id,
+        item_price,
+        toStartOfInterval(event_time, INTERVAL 30 MINUTE) AS session_time
+    FROM clickstream_events
+    WHERE event_type IN ('page_view', 'view_item', 'add_to_cart', 'purchase')
+),
+funnel_sessions AS (
+    SELECT
+        tenant_id,
+        user_id,
+        event_date,
+        session_time,
+        event_type,
+        lead(event_type) OVER (PARTITION BY tenant_id, user_id ORDER BY session_time) AS next_event_type
+    FROM funnel_steps
+),
+funnel_analysis AS (
+    SELECT
+        tenant_id,
+        user_id,
+        event_date,
+        windowFunnel(30, 0)(event_type, next_event_type) AS funnel_steps
+    FROM funnel_sessions
+    GROUP BY tenant_id, user_id, event_date
+)
+SELECT
+    event_date,
+    tenant_id,
+    funnel_steps[1] AS page_view,
+    funnel_steps[2] AS view_item,
+    funnel_steps[3] AS add_to_cart,
+    funnel_steps[4] AS purchase,
+    COUNT(DISTINCT user_id) AS users,
+    SUM(funnel_steps[1]) AS page_views,
+    SUM(funnel_steps[2]) AS view_items,
+    SUM(funnel_steps[3]) AS add_to_carts,
+    SUM(funnel_steps[4]) AS purchases,
+    (SUM(funnel_steps[2]) / SUM(funnel_steps[1])) AS view_item_rate,
+    (SUM(funnel_steps[3]) / SUM(funnel_steps[2])) AS add_to_cart_rate,
+    (SUM(funnel_steps[4]) / SUM(funnel_steps[3])) AS purchase_rate
+FROM funnel_analysis
+GROUP BY event_date, tenant_id
+ORDER BY event_date, tenant_id;
+```
+
+This schema and query are designed to track clickstream events efficiently in a distributed environment using ClickHouse, allowing for detailed funnel analysis to measure the effectiveness of user journeys.
