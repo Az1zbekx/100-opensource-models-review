@@ -1,0 +1,8 @@
+Sure, here's a Markdown table summarizing the architectural differences between Event Sourcing and Traditional CRUD:
+
+| Comparison Criterion | Event Sourcing | Traditional CRUD |
+| --- | --- | --- |
+| **State Storage** | Event Sourcing stores the state of the system in a series of events. Each event represents a change to the system's state. Traditional CRUD stores the state in a single, monolithic database. | Traditional CRUD stores the state in a single, monolithic database. |
+| **Auditability** | Event Sourcing provides strong auditing capabilities. Each event is a record of a change to the system's state. Traditional CRUD does not provide strong auditing capabilities. | Traditional CRUD does not provide strong auditing capabilities. |
+| **Performance Trade-offs** | Event Sourcing can lead to higher performance due to the event-driven approach. Traditional CRUD can lead to performance issues due to the need to query the entire database for each request. | Traditional CRUD can lead to performance issues due to the need to query the entire database for each request. |
+| **Complexity** | Event Sourcing is more complex due to the event-driven approach. Traditional CRUD is simpler due to the monolithic database. | Traditional CRUD is simpler due to the monolithic database. |

@@ -1,0 +1,1 @@
+Write a memory-efficient generator in Python that streams lines from a 50GB CSV file and filters out invalid rows where the email field is malformed. Use type hints, error handling, and explain why the memory consumption stays strictly under 15MB.
