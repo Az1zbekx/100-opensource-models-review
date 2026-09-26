@@ -1,0 +1,30 @@
+Adım adım ilkeleri inceleyelim:
+
+1. Olmalar soni noklar sonidan 3 barobar ko'p:
+Bir savatda 30 olmalar var. Bu olmalardan soni noklar (30/2) = 15 olmalar var. Bu 15 olmalar, 3 barobar ko'p eder, bu da 15 * 3 = 45 barobar eder.
+
+2. Shaftolilar soni esa noklar sonidan 5 taga kam:
+Bir savatda 30 olmalar var, bu da 15 shaftolilar soni var (çünkü her olma 2 shaftoli). Bu 15 shaftolilar, 5 taga kam eder, bu da 15 * 5 = 75 taga kam eder.
+
+Şimdi, savatda har bir mevadan nechtadan borligini aniqlanmasını hesaplayalım:
+
+Olmalar borları: 45 barobar
+Shaftoliler borları: 75 taga kam
+
+Ancak, bir mevada bir bara ve bir taga kadar borlanmaz, bu da 1 mevada kadar borlanmaz.
+
+Öncelikle, baroların taglarının sayısını bulalım:
+
+45 bar = 45 * 2 tag = 90 tag
+
+Şimdi, barolar ve tagların sayısını bir mevada kadar borlanmak için birleştirelim:
+
+90 tag + 75 tag = 165 tag
+
+Şimdi, 165 tag bir mevada kadar borlanabilen sayısını bulalım:
+
+165 tag / 1 mevada = 165 mevadan
+
+Dolayısıyla, savatda har bir mevadan nechtadan borligini aniqlayacak 165 mevadan.
+
+Yanıt: 165

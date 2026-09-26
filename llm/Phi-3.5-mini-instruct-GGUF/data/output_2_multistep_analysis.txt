@@ -1,0 +1,38 @@
+1. Leader Election Mechanics and Split-Brain Resolution:
+
+Raft:
+- Raft simplifies the leader election process by electing a single leader for managing log replication.
+- The leader election is initiated by a random timeout if no leader is present. Candidates send heartbeats to the other nodes to assert their leadership.
+- If a leader fails, a new election is triggered, ensuring a new leader is elected.
+- Split-brain resolution is handled by the leader's authority; if a leader does not hear from a follower for a certain period, it assumes the follower has failed and removes it from the cluster.
+
+Paxos:
+- Paxos operates in multiple instances of Phase 1, Phase 2, and Phase 3, with Phase 1 leaders being elected in a similar manner to Raft.
+- Phase 1 leaders propose values, and Phase 2 leaders accept these values.
+- Split-brain resolution is more complex due to the multiple instances of Phase 1 and Phase 2.
+- The system can tolerate multiple leaders, but this can lead to inconsistencies if not managed carefully.
+
+2. Log Replication and State Machine Safety Under Network Partitions:
+
+Raft:
+- Raft ensures log replication by having the leader append entries to the log and replicate them to followers.
+- The leader waits for a majority of followers to append the log entries before committing them, ensuring safety under network partitions.
+- If a network partition occurs, the cluster will split into two, each with its own leader. The partition with the majority of nodes will continue to operate normally, while the minority partition will not be able to commit new entries.
+
+Paxos:
+- Paxos ensures log replication by having Phase 2 leaders accept values proposed by Phase 1 leaders.
+- The system can tolerate network partitions, but it requires a majority of nodes to agree on the proposed values.
+- If a network partition occurs, the cluster will split into two, each with its own Phase 1 and Phase 2 leaders. The partition with the majority of nodes will continue to operate normally, while the minority partition will not be able to propose new values.
+
+3. Practical Implementation Trade-offs:
+
+Etcd chose Raft over Multi-Paxos due to several reasons:
+
+- Simplicity: Raft has a simpler leader election mechanism and is easier to understand and implement.
+- Performance: Raft has better performance in terms of leader election and log replication due to its simplified design.
+- Scalability: Raft can scale better than Multi-Paxos, as it allows for easy addition of new nodes without significant changes to the system.
+- Consistency: Raft provides strong consistency guarantees, which is crucial for distributed databases.
+
+Multi-Paxos, on the other hand, is more complex and can be harder to implement and maintain. It also has some scalability limitations, as adding new nodes can require significant changes to the system.
+
+In conclusion, Raft and Paxos are both effective distributed database consensus algorithms, but Raft offers a simpler, more scalable, and easier-to-implement solution with strong consistency guarantees. This is why systems like Etcd have chosen Raft over Multi-Paxos.

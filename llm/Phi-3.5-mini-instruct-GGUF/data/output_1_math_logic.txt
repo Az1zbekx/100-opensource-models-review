@@ -1,0 +1,31 @@
+To find the probability that all 3 drawn balls are of different colors, we need to consider the total number of ways to draw 3 balls of different colors and divide it by the total number of ways to draw any 3 balls from the bag.
+
+Step 1: Calculate the total number of ways to draw 3 balls from the bag.
+There are a total of 12 balls in the bag (5 red + 4 green + 3 blue). We can use the combination formula to find the number of ways to draw 3 balls from 12:
+
+C(12, 3) = 12! / (3! * (12-3)!) = (12 * 11 * 10) / (3 * 2 * 1) = 220
+
+Step 2: Calculate the number of ways to draw 3 balls of different colors.
+We need to consider the following combinations:
+- 1 red, 1 green, and 1 blue ball
+- 1 red, 1 green, and 1 yellow ball (there are no yellow balls in the bag, so this combination is not possible)
+- 1 red, 1 green, and 1 purple ball (there are no purple balls in the bag, so this combination is not possible)
+
+Since there are no yellow or purple balls in the bag, we only need to consider the combination of 1 red, 1 green, and 1 blue ball.
+
+There are 5 red balls, 4 green balls, and 3 blue balls. We can use the combination formula to find the number of ways to draw one ball of each color:
+
+C(5, 1) * C(4, 1) * C(3, 1) = (5! / (1! * (5-1)!)) * (4! / (1! * (4-1)!)) * (3! / (1! * (3-1)!))
+= (5 * 4 * 3) = 60
+
+Step 3: Calculate the probability.
+Now, we can find the probability by dividing the number of ways to draw 3 balls of different colors by the total number of ways to draw any 3 balls from the bag:
+
+Probability = (Number of ways to draw 3 balls of different colors) / (Total number of ways to draw any 3 balls)
+= 60 / 220
+
+To simplify the fraction, we can divide both the numerator and the denominator by their greatest common divisor, which is 20:
+
+60 / 220 = (60/20) / (220/20) = 3 / 11
+
+So, the exact probability that all 3 drawn balls are of different colors is 3/11.

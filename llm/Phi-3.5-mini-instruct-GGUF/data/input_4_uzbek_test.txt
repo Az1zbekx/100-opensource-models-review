@@ -1,0 +1,5 @@
+Quyidagi mantiqiy masalani qadamma-qadam, qat'iy mantiqiy xulosalar bilan yeching:
+Bir savatda jami 30 ta meva (olma, nok va shaftoli) bor.
+1. Olmalar soni noklar sonidan 3 barobar ko'p.
+2. Shaftolilar soni esa noklar sonidan 5 taga kam.
+Savatda har bir mevadan nechtadan borligini aniqlang. Matematik tenglamalarni tuzing va yeching.

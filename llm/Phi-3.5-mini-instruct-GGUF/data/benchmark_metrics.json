@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_math_logic.txt",
+    "duration_s": 65.04,
+    "tokens": 628,
+    "speed_tok_s": 9.66,
+    "output_file": "output_1_math_logic.txt"
+  },
+  {
+    "test": "input_2_multistep_analysis.txt",
+    "duration_s": 84.94,
+    "tokens": 745,
+    "speed_tok_s": 8.77,
+    "output_file": "output_2_multistep_analysis.txt"
+  },
+  {
+    "test": "input_3_code_synthesis.txt",
+    "duration_s": 100.95,
+    "tokens": 936,
+    "speed_tok_s": 9.27,
+    "output_file": "output_3_code_synthesis.txt"
+  },
+  {
+    "test": "input_4_uzbek_test.txt",
+    "duration_s": 55.83,
+    "tokens": 524,
+    "speed_tok_s": 9.39,
+    "output_file": "output_4_uzbek_test.txt"
+  }
+]
