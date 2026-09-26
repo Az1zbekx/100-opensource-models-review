@@ -1,0 +1,6 @@
+Query: How to parse JSON in Node.js asynchronously from a file stream?
+Latency: 651.2ms
+Ranked Candidates:
+  [62.90%] Use stream-json or JSONStream packages in Node.js to pipe a fs.createReadStream into a parser to handle multi-gigabyte JSON files without memory bloat.
+  [19.61%] JSON.stringify() converts a JavaScript object into a JSON string synchronously.
+  [ 0.28%] In Python, use json.loads() or json.load() to deserialize JSON formatted strings or file pointers.

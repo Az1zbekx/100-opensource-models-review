@@ -1,0 +1,7 @@
+Query: How to fix a Python KeyError when accessing a dictionary?
+Latency: 654.5ms
+Ranked Candidates:
+  [95.36%] To avoid KeyError in Python, use the .get(key, default) method or check if 'key in my_dict' before accessing.
+  [ 5.89%] A dictionary in Python is an unordered collection of data values used to store data values like a map.
+  [ 0.11%] In Python, a ValueError is raised when an operation receives an argument that has the right type but an inappropriate value.
+  [ 0.00%] To generate cryptographic keys in Python, use the cryptography library's Fernet module.

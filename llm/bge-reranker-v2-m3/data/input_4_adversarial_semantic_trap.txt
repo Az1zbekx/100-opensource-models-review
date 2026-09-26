@@ -1,0 +1,5 @@
+Query: "Did the company make a financial profit and positive earnings this quarter?"
+Candidate 1: "The company reported record quarterly net revenue and strong net profitability of 10 million dollars."
+Candidate 2: "The company reported a devastating quarterly net loss of 10 million dollars and negative operational cash flow."
+Candidate 3: "The company announced a new office opening in Berlin with 50 new software engineering hires."
+Candidate 4: "PostgreSQL database vacuuming recovers dead tuples to optimize table storage."

@@ -1,0 +1,32 @@
+[
+  {
+    "test": "input_1_hard_negatives.txt",
+    "duration_s": 0.65,
+    "top_score_pct": 95.36,
+    "top_correct": true,
+    "output_file": "output_1_hard_negatives.txt"
+  },
+  {
+    "test": "input_2_multilingual_rerank.txt",
+    "duration_s": 0.71,
+    "top_score_pct": 99.13,
+    "top_correct": true,
+    "output_file": "output_2_multilingual_rerank.txt"
+  },
+  {
+    "test": "input_3_code_doc_rerank.txt",
+    "duration_s": 0.65,
+    "top_score_pct": 62.9,
+    "top_correct": true,
+    "output_file": "output_3_code_doc_rerank.txt"
+  },
+  {
+    "test": "input_4_adversarial_semantic_trap.txt",
+    "duration_s": 0.51,
+    "positive_score_pct": 10.68,
+    "loss_negative_score_pct": 0.22,
+    "margin_delta_pct": 10.46,
+    "top_correct": true,
+    "output_file": "output_4_adversarial_semantic_trap.txt"
+  }
+]
