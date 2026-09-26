@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_crosslingual_search.txt",
+    "duration_s": 0.5,
+    "top_match_score": 0.5792,
+    "top_match_correct": true,
+    "output_file": "output_1_crosslingual_search.txt"
+  },
+  {
+    "test": "input_2_long_context_doc.txt",
+    "duration_s": 0.57,
+    "vector_dim": 1024,
+    "l2_norm": 1.0,
+    "output_file": "output_2_long_context_doc.txt"
+  },
+  {
+    "test": "input_3_fine_grained_distinction.txt",
+    "duration_s": 0.53,
+    "pair_a_similarity": 0.8115,
+    "pair_b_similarity": 0.7149,
+    "output_file": "output_3_fine_grained_distinction.txt"
+  },
+  {
+    "test": "input_4_uzbek_law_retrieval.txt",
+    "duration_s": 0.6,
+    "top_match_score": 0.6713,
+    "top_match_correct": true,
+    "output_file": "output_4_uzbek_law_retrieval.txt"
+  }
+]

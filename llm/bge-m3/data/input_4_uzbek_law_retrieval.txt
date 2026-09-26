@@ -1,0 +1,5 @@
+Query: "Mehnat shartnomasini xodimning tashabbusi bilan bekor qilish tartibi va muddatlari qanday?"
+Target_1: "Xodim noaniq muddatli mehnat shartnomasini, shuningdek muddati tugashidan oldin muddatli mehnat shartnomasini ikki hafta oldin ish beruvchini yozma ravishda ogohlantirib bekor qilishga haqli."
+Target_2: "Xodimlarga yillik asosiy mehnat ta'tili davomiyligi kamida yigirma bir kalendar kundan iborat bo'lishi kafolatlanadi."
+Target_3: "Dasturchilar masofadan ishlash rejimida Git orqali kodlarni doimiy ravishda pull request qilib tekshiruvdan o'tkazishlari lozim."
+Target_4: "Ish beruvchi xodimga ish haqini har yarim oyda kamida bir marta to'lashi shart, kechiktirilgan har bir kun uchun kompensatsiya to'lanadi."

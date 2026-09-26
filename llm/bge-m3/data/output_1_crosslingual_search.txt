@@ -1,0 +1,6 @@
+Query: Taqsimlangan tranzaksiyalarda ACID xususiyatlari qanday ta'minlanadi?
+Latency: 497.1ms
+Rankings:
+  [0.5792] Distributed transactions utilize the Two-Phase Commit (2PC) protocol and Paxos consensus to ensure atomicity and consistency across database shards.
+  [0.3658] CSS Flexbox and Grid layouts enable responsive web design across modern mobile browsers.
+  [0.3134] Python list comprehensions provide a concise way to create new lists from existing iterables.

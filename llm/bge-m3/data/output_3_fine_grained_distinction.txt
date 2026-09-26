@@ -1,0 +1,9 @@
+Pair A (Revenue vs Loss):
+  Sentence 1: The company reported record quarterly net revenue of 10 million dollars.
+  Sentence 2: The company reported a devastating quarterly net loss of 10 million dollars.
+  Similarity: 0.8115
+
+Pair B (Auth Success vs Failure):
+  Sentence 1: User authentication succeeded and an access token was generated.
+  Sentence 2: User authentication failed and an access denied error was logged.
+  Similarity: 0.7149
