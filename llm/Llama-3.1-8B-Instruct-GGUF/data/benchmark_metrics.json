@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_linux_internals.txt",
+    "duration_s": 218.63,
+    "tokens": 1200,
+    "speed_tok_s": 5.49,
+    "output_file": "output_1_linux_internals.txt"
+  },
+  {
+    "test": "input_2_enterprise_rag_eval.txt",
+    "duration_s": 48.8,
+    "tokens": 243,
+    "speed_tok_s": 4.98,
+    "output_file": "output_2_enterprise_rag_eval.txt"
+  },
+  {
+    "test": "input_3_uzbek_translation_eval.txt",
+    "duration_s": 19.52,
+    "tokens": 102,
+    "speed_tok_s": 5.23,
+    "output_file": "output_3_uzbek_translation_eval.txt"
+  },
+  {
+    "test": "input_4_multi_step_reasoning_finance.txt",
+    "duration_s": 39.94,
+    "tokens": 156,
+    "speed_tok_s": 3.91,
+    "output_file": "output_4_multi_step_reasoning_finance.txt"
+  }
+]

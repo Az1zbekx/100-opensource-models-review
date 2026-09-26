@@ -1,0 +1,10 @@
+{
+  "breakdown": [
+    {"tx_id": 1, "type": "credit", "amount": 4000.0, "fee": 60.0},
+    {"tx_id": 2, "type": "debit", "amount": 5000.0, "fee": 40.0},
+    {"tx_id": 3, "type": "credit", "amount": 3000.0, "fee": 36.0},
+    {"tx_id": 4, "type": "debit", "amount": 2000.0, "fee": 12.0}
+  ],
+  "total_volume": 14000.0,
+  "total_fees": 148.0
+}

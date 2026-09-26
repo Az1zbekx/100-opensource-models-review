@@ -1,0 +1,1 @@
+Kubernetes kabi konteynerlashtirish tizimlari tarqatilgan dasturlar uchun avtomatlashtirilgan hayot siklini boshqaruvi, deklarativ o'z-o'zi tiklash, nol vaqtda ro'lash yoki yangilash va heterogen metall klasterlar uchun dinamik resurslar avtomatik kengaytirishni ta'minlaydi.
