@@ -1,0 +1,34 @@
+[
+  {
+    "test": "input_1_traffic_vqa.txt",
+    "image": "test_intersection.jpg",
+    "duration_s": 76.53,
+    "tokens": 115,
+    "speed_tok_s": 1.5,
+    "output_file": "output_1_traffic_vqa.txt"
+  },
+  {
+    "test": "input_2_office_audit.txt",
+    "image": "test_office.jpg",
+    "duration_s": 76.32,
+    "tokens": 209,
+    "speed_tok_s": 2.74,
+    "output_file": "output_2_office_audit.txt"
+  },
+  {
+    "test": "input_3_spatial_reasoning.txt",
+    "image": "test_intersection.jpg",
+    "duration_s": 65.3,
+    "tokens": 0,
+    "speed_tok_s": 0.0,
+    "output_file": "output_3_spatial_reasoning.txt"
+  },
+  {
+    "test": "input_4_uzbek_multimodal_analysis.txt",
+    "image": "test_office.jpg",
+    "duration_s": 84.12,
+    "tokens": 216,
+    "speed_tok_s": 2.57,
+    "output_file": "output_4_uzbek_multimodal_analysis.txt"
+  }
+]
