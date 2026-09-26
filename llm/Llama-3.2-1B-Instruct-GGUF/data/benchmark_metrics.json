@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_system_summary.txt",
+    "duration_s": 3.92,
+    "tokens": 114,
+    "speed_tok_s": 29.11,
+    "output_file": "output_1_system_summary.txt"
+  },
+  {
+    "test": "input_2_uzbek_test.txt",
+    "duration_s": 1.12,
+    "tokens": 31,
+    "speed_tok_s": 27.72,
+    "output_file": "output_2_uzbek_test.txt"
+  },
+  {
+    "test": "input_3_code_json.txt",
+    "duration_s": 3.58,
+    "tokens": 113,
+    "speed_tok_s": 31.6,
+    "output_file": "output_3_code_json.txt"
+  },
+  {
+    "test": "input_4_service_contract.txt",
+    "duration_s": 8.25,
+    "tokens": 261,
+    "speed_tok_s": 31.64,
+    "output_file": "output_4_service_contract.txt"
+  }
+]

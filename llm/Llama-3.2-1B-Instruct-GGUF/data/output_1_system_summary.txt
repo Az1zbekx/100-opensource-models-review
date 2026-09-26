@@ -1,0 +1,5 @@
+Here are 3 actionable bullet points for the on-call engineer:
+
+• **Elevated CPU throttling detected**: Investigate and resolve the issue with elevated CPU usage in node-pool-3 due to unbounded GC cycles in the auth-service container.
+• **Canary rollbacks failed**: Identify and resolve the outdated Helm chart lockfile causing automated canary rollbacks to fail on node-pool-3.
+• **Node-pool-1 scaled up**: Scale up replica sets in node-pool-1 to mitigate the impact of the issue on the system.

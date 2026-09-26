@@ -1,0 +1,14 @@
+Here is the JSON payload:
+
+```json
+{
+  "event": "Schedule a team sync on Friday at 4 PM in room 302 with Alice and Bob to review Q3 sprint metrics.",
+  "day": "Friday",
+  "time": "4 PM",
+  "location": "room 302",
+  "attendees": ["Alice", "Bob"],
+  "objective": "review Q3 sprint metrics"
+}
+```
+
+This JSON payload is concise and easy to read, and it accurately conveys the information in a clear and structured format.

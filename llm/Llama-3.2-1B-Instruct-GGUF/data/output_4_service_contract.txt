@@ -1,0 +1,15 @@
+I'd be happy to help you analyze the Service Level Agreement (SLA) clause.
+
+**1. What exact credit applies if downtime in a 30-day month is 8 hours (uptime = 98.89%)?**
+
+According to the SLA, if uptime falls between 99.00% and 99.94%, the customer is entitled to a 10% service credit. Since the uptime is 8 hours (98.89%) which falls between 99.00% and 99.94%, the customer is entitled to a 10% service credit.
+
+**10% service credit = 0.10 x 98.89% = 9.89%**
+
+So, the exact credit the customer is entitled to is 9.89% of the monthly service fee.
+
+**2. Can the customer terminate the contract under this scenario?**
+
+According to the SLA, the customer can terminate the contract within 14 business days without early termination penalty if the uptime falls below 99.00%. Since the uptime is 8 hours (98.89%) which is below 99.00%, the customer can terminate the contract within 14 business days without early termination penalty.
+
+**Termination deadline: 14 business days from the date of the uptime failure**
