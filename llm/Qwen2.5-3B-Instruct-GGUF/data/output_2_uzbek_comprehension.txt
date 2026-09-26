@@ -1,0 +1,17 @@
+Bu biznes vaziyatining tahlilini unutmaymiz:
+
+1. **Yo'l Tirbandliklari**: Yo'l tirbandliklari 17:00 dan 20:00 gacha bo'lgan, shuningdek 2 barobar oshib ketmoqda. Bu biror yillik qismi yechimni bajarishda maliyotga muhim o'zgarishlar bo'lib, kompaniya orasidagi soatlar va tufayli yetkazib berish vaqtlari o'zaro aniqlanadi.
+
+2. **Texnologik Yechimlar**: Kompaniya texnologik yechimlar qilishda qisqa tavsiya berish mumkin. Misol bo'lishi mumkin:
+
+   - **Automatizatsiya**: Yo'l tirbandliklarni o'zrocha o'zgartirish va automatizatsiya qilish. Bu yechim, yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llashga qarab, soatlar o'zaro aniqlanadi va tufayli yetkazib berish vaqtlari aniqlanadi.
+   
+   - **Tirbandliklarni O'zrocha O'zgartirish**: Yo'l tirbandliklarni o'zrocha o'zgartirish va o'zrocha o'zgartirish qilish. Bu yechim, yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llashga qarab, soatlar o'zaro aniqlanadi va tufayli yetkazib berish vaqtlari aniqlanadi.
+   
+   - **Yo'l Tirbandliklarni O'zrocha O'zgartirish va Qo'llash**: Yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llash qilish. Bu yechim, yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llashga qarab, soatlar o'zaro aniqlanadi va tufayli yetkazib berish vaqtlari aniqlanadi.
+
+3. **Logistik Yechimlar**: Kompaniya logistik yechimlar qilishda qisqa tavsiya berish mumkin. Misol bo'lishi mumkin:
+
+   - **Yo'l Tirbandliklarni O'zrocha O'zgartirish va Qo'llash**: Yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llash qilish. Bu yechim, yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llashga qarab, soatlar o'zaro aniqlanadi va tufayli yetkazib berish vaqtlari aniqlanadi.
+   
+   - **Yo'l Tirbandliklarni O'zrocha O'zgartirish va Qo'llash**: Yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llash qilish. Bu yechim, yo'l tirbandliklarni o'zrocha o'zgartirish va qo'llashga qarab, soatlar o'zaro aniqlanadi va t

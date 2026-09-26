@@ -1,0 +1,12 @@
+{
+  "order_id": 98421,
+  "product_name": "Samsung Galaxy S24",
+  "delivery_address": {
+    "city": "Toshkent",
+    "district": "Chilonzor",
+    "details": "9-mavzu 12-uy"
+  },
+  "preferred_time": "18:30",
+  "contact_phone": "+998901234567",
+  "customer_notes": "Kuryer kelishidan oldin qo'ng'iroq qilsa yaxshi bo'lishi kerak"
+}

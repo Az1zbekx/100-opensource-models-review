@@ -1,0 +1,24 @@
+To determine if all Bloops are definitely Lizzies based on the given premises, we can use a formal syllogistic reasoning approach. Here are the premises provided:
+
+1. All Bloops are Razzies.
+2. All Razzies are Lizzies.
+
+We can represent these premises as follows:
+
+1. \( \text{Bloop} \rightarrow \text{Razzie} \)
+2. \( \text{Razzie} \rightarrow \text{Lizzy} \)
+
+We need to determine if the conclusion \( \text{Bloop} \rightarrow \text{Lizzy} \) holds true.
+
+To do this, we can use the transitive property of implication. The transitive property states that if \( A \rightarrow B \) and \( B \rightarrow C \), then \( A \rightarrow C \).
+
+Applying this property to our premises:
+
+1. \( \text{Bloop} \rightarrow \text{Razzie} \)
+2. \( \text{Razzie} \rightarrow \text{Lizzy} \)
+
+By the transitive property, we can conclude:
+
+3. \( \text{Bloop} \rightarrow \text{Lizzy} \)
+
+Therefore, based on the given premises, it is indeed true that all Bloops are definitely Lizzies.

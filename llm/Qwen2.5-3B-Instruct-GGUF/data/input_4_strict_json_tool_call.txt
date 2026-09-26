@@ -1,0 +1,19 @@
+Parse the following Uzbek customer request into a strict JSON payload for an automated e-commerce CRM dispatch API:
+"Assalomu alaykum, men kecha buyurtma qilgan #98421 raqamli Samsung Galaxy S24 telefonimni Toshkent shahri Chilonzor 9-mavze 12-uyga soat 18:30 dan keyin yetkazib berishingizni so'rayman. Agar kuryer kelishidan oldin +998901234567 raqamiga qo'ng'iroq qilsa yaxshi bo'lardi."
+
+Strict JSON Schema:
+```json
+{
+  "order_id": 98421,
+  "product_name": "...",
+  "delivery_address": {
+    "city": "...",
+    "district": "...",
+    "details": "..."
+  },
+  "preferred_time": "...",
+  "contact_phone": "...",
+  "customer_notes": "..."
+}
+```
+Output strictly valid JSON with no conversational preamble or markdown backticks outside the json block.
