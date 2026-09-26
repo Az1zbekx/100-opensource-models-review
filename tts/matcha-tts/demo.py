@@ -61,7 +61,7 @@ def main(input_file: str, output_file: str):
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    default_input = os.path.join(script_dir, "data", "input_1.txt")
+    default_input = os.path.join(script_dir, "data", "input_1_formal_announcement.txt")
     default_output = os.path.join(script_dir, "data", "output_1.wav")
     parser = argparse.ArgumentParser(description="Matcha-TTS TTS Demo")
     parser.add_argument("--input", type=str, default=default_input, help="Path to input text")

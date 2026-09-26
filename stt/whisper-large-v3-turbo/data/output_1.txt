@@ -1,4 +1,0 @@
-Model: Whisper-Large-v3-Turbo
-Audio: /home/az1z6ekx/100-opensource-models-review/stt/whisper-large-v3-turbo/data/test_1_independence.wav
-Language: uz
-Transcription: Ўзбекистон мустақиллигининг ўттиз уч йиллиги муборак бўлсин!

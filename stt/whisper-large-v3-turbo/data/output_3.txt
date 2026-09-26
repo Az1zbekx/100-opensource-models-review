@@ -1,4 +1,0 @@
-Model: Whisper-Large-v3-Turbo
-Audio: data/test_3_navigation.wav
-Language: uz
-Transcription: Тошкент шаҳри Амир Темур хиёбонига энг тез йўналишни кўрсатинг.

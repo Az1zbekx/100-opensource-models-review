@@ -75,7 +75,7 @@ def main(audio_file: str, output_file: str, language: str):
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     default_audio = os.path.join(script_dir, "data", "test_1_independence.wav")
-    default_output = os.path.join(script_dir, "data", "output_1.txt")
+    default_output = os.path.join(script_dir, "data", "output_1_independence.txt")
     parser = argparse.ArgumentParser(description="Silero-STT STT Demo")
     parser.add_argument("--audio", type=str, default=default_audio, help="Input audio file")
     parser.add_argument("--output", type=str, default=default_output, help="Output text file")

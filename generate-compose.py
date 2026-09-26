@@ -14,13 +14,13 @@ def find_models():
     """Finds models in the folders"""
     models = []
     port = 8001
-    # Scan root category directories
-    root_dirs = ["nlp", "tts", "stt", "llm", "vision", "audio", "models"]
+    # Scan root category directories containing Dockerized models
+    root_dirs = ["llm", "tts", "stt"]
     for category_dir in root_dirs:
         if not os.path.isdir(category_dir):
             continue
-        # Scan each model folder inside the category
-        for model_name in os.listdir(category_dir):
+        # Scan each model folder alphabetically
+        for model_name in sorted(os.listdir(category_dir)):
             model_path = os.path.join(category_dir, model_name)
             # Check if it's a directory with a Dockerfile
             if os.path.isdir(model_path):
