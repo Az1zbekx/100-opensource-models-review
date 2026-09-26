@@ -1,0 +1,11 @@
+| Architecture Pattern | Data Isolation | Operational Cost | Backup Complexity |
+|---|---|---|---|
+| Database-per-tenant | High | High | High |
+| Schema-per-tenant | Medium | Medium | Medium |
+| Shared-database-shared-schema | Low | Low | Low |
+
+Explanation:
+
+* Database-per-tenant: Each tenant has its own dedicated database, providing the highest level of data isolation. However, this pattern can be more expensive due to the need for separate database instances and may have higher backup complexity due to the need to backup and restore individual databases.
+* Schema-per-tenant: Each tenant has its own schema within a shared database, providing a good level of data isolation while reducing costs compared to the database-per-tenant pattern. Backup complexity is also reduced compared to the database-per-tenant pattern.
+* Shared-database-shared-schema: All tenants share a single database and schema, providing the lowest level of data isolation but also the lowest cost and backup complexity. This pattern is suitable for applications with low data sensitivity and where cost and simplicity are prioritized over data isolation.

@@ -1,0 +1,7 @@
+Quorum is maintained in this scenario because there are still at least 3 nodes online that can communicate with each other. Even though two nodes have lost power and one node is experiencing high network latency, the system can still function as long as these nodes are not the majority of the cluster.
+
+The concept of quorum in a server cluster typically refers to the minimum number of nodes that must be available and able to communicate with each other for the cluster to function. In this case, the cluster requires at least 3 nodes to maintain quorum. With 5 nodes online, there are more than enough nodes to meet this requirement.
+
+The two nodes that lost power are not contributing to the cluster's functionality, as they are not able to communicate with the other nodes. The node with high network latency may be experiencing some delays in communication, but it is still able to communicate with the other nodes. Therefore, the cluster can maintain quorum as long as these nodes do not become the majority of the cluster.
+
+In summary, quorum is maintained in this scenario because there are still at least 3 nodes online that can communicate with each other, and the two nodes that lost power and the node with high network latency are not contributing to the cluster's functionality.

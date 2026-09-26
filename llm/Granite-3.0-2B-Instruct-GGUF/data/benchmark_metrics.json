@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_architecture_summary.txt",
+    "duration_s": 13.76,
+    "tokens": 238,
+    "speed_tok_s": 17.29,
+    "output_file": "output_1_architecture_summary.txt"
+  },
+  {
+    "test": "input_2_uzbek_comprehension.txt",
+    "duration_s": 14.72,
+    "tokens": 262,
+    "speed_tok_s": 17.8,
+    "output_file": "output_2_uzbek_comprehension.txt"
+  },
+  {
+    "test": "input_3_logic_deduction.txt",
+    "duration_s": 14.36,
+    "tokens": 257,
+    "speed_tok_s": 17.89,
+    "output_file": "output_3_logic_deduction.txt"
+  },
+  {
+    "test": "input_4_sql_rbac_policy.txt",
+    "duration_s": 29.24,
+    "tokens": 494,
+    "speed_tok_s": 16.9,
+    "output_file": "output_4_sql_rbac_policy.txt"
+  }
+]

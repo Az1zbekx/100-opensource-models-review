@@ -1,0 +1,6 @@
+Write a PostgreSQL schema demonstrating Row-Level Security (RLS) for a multi-tenant corporate documents table `tenant_documents`.
+Requirements:
+1. Table `tenant_documents` with columns: `id SERIAL PRIMARY KEY`, `tenant_id UUID NOT NULL`, `document_name TEXT NOT NULL`, `classification TEXT CHECK (classification IN ('PUBLIC', 'INTERNAL', 'RESTRICTED'))`, `created_at TIMESTAMPTZ DEFAULT now()`.
+2. Execute `ALTER TABLE tenant_documents ENABLE ROW LEVEL SECURITY;`.
+3. Create an RLS policy `tenant_isolation_policy` ensuring tenants can only SELECT and INSERT rows matching `current_setting('app.current_tenant_id', true)::uuid`.
+4. Provide a brief explanation of how application connection pools set this session variable safely.

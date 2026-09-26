@@ -1,0 +1,13 @@
+1. "Enterprise software must maintain tamper-evident audit logs" - This means that the software should keep a record of all activities that occur within the system.
+
+2. "of all privileged access actions" - This refers to actions that require special permissions or access levels, such as administrative tasks.
+
+3. "including timestamp" - Each log entry should have a date and time stamp to track when the action was performed.
+
+4. "user identity" - The software should log the identity of the user who performed the action, such as their username or ID.
+
+5. "IP address" - The software should also log the IP address of the user who performed the action, which can help identify the location of the user.
+
+6. "and changed resource states" - The software should log any changes made to resources, such as files, databases, or system settings.
+
+In summary, the software should maintain a detailed record of all privileged access actions, including the time the action was performed, the user who performed it, the IP address of the user, and any changes made to resources. This log should be tamper-evident, meaning that any attempts to alter or delete the log should be detectable.

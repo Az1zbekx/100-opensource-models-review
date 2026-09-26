@@ -1,0 +1,42 @@
+1. PostgreSQL schema for `tenant_documents` table:
+
+```sql
+CREATE TABLE tenant_documents (
+  id SERIAL PRIMARY KEY,
+  tenant_id UUID NOT NULL,
+  document_name TEXT NOT NULL,
+  classification TEXT CHECK (classification IN ('PUBLIC', 'INTERNAL', 'RESTRICTED')),
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+```
+
+2. Enable row-level security for the `tenant_documents` table:
+
+```sql
+ALTER TABLE tenant_documents ENABLE ROW LEVEL SECURITY;
+```
+
+3. Create an RLS policy `tenant_isolation_policy`:
+
+```sql
+CREATE POLICY tenant_isolation_policy ON tenant_documents
+USING (tenant_id = current_setting('app.current_tenant_id', true)::uuid)
+FOR SELECT, INSERT
+WITH CHECK (classification IN ('PUBLIC', 'INTERNAL', 'RESTRICTED'));
+```
+
+Explanation for the application connection pool:
+
+The application connection pool should set the `app.current_tenant_id` session variable before establishing a connection to the database. This can be done in a few ways:
+
+- If the application is a web application, the session variable can be set in the request context before querying the database.
+- If the application is a background job or a serverless function, the session variable can be set in the function's context before querying the database.
+
+To ensure the session variable is set safely, the application should follow these best practices:
+
+- Use a secure method to generate or retrieve the `app.current_tenant_id` value, such as a secure random generator or a secure key-value store.
+- Validate the `app.current_tenant_id` value to ensure it is a valid UUID and belongs to an existing tenant.
+- Use a secure communication channel, such as HTTPS, to transmit the `app.current_tenant_id` value between the application and the database.
+- Regularly rotate the `app.current_tenant_id` value to prevent unauthorized access to the database.
+
+By following these best practices, the application can ensure that the `app.current_tenant_id` session variable is set safely and securely, which in turn ensures that the RLS policy is enforced correctly and the data is protected from unauthorized access.
