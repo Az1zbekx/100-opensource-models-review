@@ -1,0 +1,23 @@
+1. Mijozning hissiy holati: "Katta" (Severity: High)
+2. Tizimda chaqirilishi kerak bo'lgan 3 ta avtomatik harakat:
+
+Action Dispatch:
+- karta bloklash: {"action": "block_card", "reason": "customer's request"}
+- tranzaksiya auditi: {"action": "audit_transaction", "reason": "verify transaction details"}
+- keshbek/refund arizasi: {"action": "submit_refund_request", "reason": "customer's refund request"}
+
+3. Mijozga yuboriladigan xushmuomala, xotirjam qiluvchi rasmiy javob matni (O'zbek tilida):
+
+Salom, [Mijoz ismi]!
+
+Biz sizning xatining oldini olish uchun tez-tez ishlaymiz. Sizning 450,000 so'mlik to'lovning to'liq to'lanmaganligi haqida xabar bering. Biz sizning masalani hal qilish uchun qanday qilib yordam beramizki, shu jumladan kartangizni bloklangan holda yoki tranzaksiyaning xulosasini tekshirishni talab qilamiz.
+
+Biz sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz.
+
+Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz.
+
+Biz sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz.
+
+Biz sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz.
+
+Biz sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uchun kartangizni bloklaymiz. Sizning to'lovni to'liq to'lanmaganligi haqida xabar berishizning oldini olish uch

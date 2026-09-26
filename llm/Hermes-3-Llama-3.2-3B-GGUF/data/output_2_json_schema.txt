@@ -1,0 +1,17 @@
+{
+  "order_intent": "BUY",
+  "items": [
+    {
+      "name": "MacBook Air M2 16GB",
+      "quantity": 3,
+      "specs": null
+    },
+    {
+      "name": "Apple Magic Mouse",
+      "quantity": 2,
+      "specs": null
+    }
+  ],
+  "urgency": "HIGH",
+  "payment_method": null
+}

@@ -1,0 +1,8 @@
+Siz O'zbekistondagi yirik fintech (to'lov tizimi) kompaniyasining avtonom AI yordamchisisiz.
+Mijozdan quyidagi xabar keldi:
+"Mening kartamdan bugun erta tongda 450,000 so'm yechib olindi, lekin xarid qilgan do'konimda to'lov o'tmadi deb qaytarishmadi. Pulim qayerda? Iltimos kartamni vaqtincha bloklang va pulni qaytarishga ariza oching!"
+
+Vazifa:
+1. Mijozning hissiy holatini (sentiment) va muammo jiddiyligini (severity) baholang.
+2. Tizimda chaqirilishi kerak bo'lgan 3 ta avtomatik harakatni (Action Dispatch: karta bloklash, tranzaksiya auditi, keshbek/refund arizasi) JSON formatida bering.
+3. Mijozga yuboriladigan xushmuomala, xotirjam qiluvchi rasmiy javob matnini o'zbek tilida yozing.

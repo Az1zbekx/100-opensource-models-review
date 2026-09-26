@@ -1,0 +1,23 @@
+Here is a prioritized 4-step diagnostic and remediation plan for the incident:
+
+1. Check Redis server status and memory usage:
+   - Execute `redis-cli -h <redis_host> info` to check Redis server status and memory usage.
+   - Look for lines like "used_memory" and "used_memory_rss" to determine memory usage.
+   - If memory usage is high, consider increasing Redis memory allocation.
+
+2. Review Redis log for error messages:
+   - Execute `dmesg | grep redis` to review Redis log for any error messages.
+   - Look for messages indicating memory issues, disk I/O problems, or other potential causes.
+   - If error messages are found, investigate the specific error and take appropriate action.
+
+3. Analyze Redis performance metrics:
+   - Execute `redis-cli -h <redis_host> monitor` to monitor Redis performance in real-time.
+   - Observe latency spikes and identify any specific commands or operations causing high latency.
+   - If latency is consistently high for certain commands, consider optimizing those commands or increasing Redis server resources.
+
+4. Check Redis server hardware and disk I/O:
+   - Execute `top` to monitor Redis server system resources and identify any resource constraints.
+   - Look for high CPU or disk I/O usage, which may indicate hardware limitations.
+   - If hardware limitations are identified, consider upgrading the Redis server hardware or optimizing disk I/O.
+
+By following this plan, you can systematically diagnose the issue, identify the root cause, and take appropriate remediation steps to resolve the high latency in the Redis cache.

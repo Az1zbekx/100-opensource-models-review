@@ -1,0 +1,30 @@
+[
+  {
+    "test": "input_1_tool_calling.txt",
+    "duration_s": 9.22,
+    "tokens": 65,
+    "speed_tok_s": 7.05,
+    "output_file": "output_1_tool_calling.txt"
+  },
+  {
+    "test": "input_2_json_schema.txt",
+    "duration_s": 9.36,
+    "tokens": 89,
+    "speed_tok_s": 9.51,
+    "output_file": "output_2_json_schema.txt"
+  },
+  {
+    "test": "input_3_agent_reasoning.txt",
+    "duration_s": 27.69,
+    "tokens": 319,
+    "speed_tok_s": 11.52,
+    "output_file": "output_3_agent_reasoning.txt"
+  },
+  {
+    "test": "input_4_uzbek_agent.txt",
+    "duration_s": 86.77,
+    "tokens": 1024,
+    "speed_tok_s": 11.8,
+    "output_file": "output_4_uzbek_agent.txt"
+  }
+]

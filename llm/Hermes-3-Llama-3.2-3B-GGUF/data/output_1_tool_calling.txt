@@ -1,0 +1,1 @@
+Based on the customer's issue, the first tool that should be dispatched is "search_database". The reason is to check the customer's failed transactions to identify the cause of the unexpected deduction. Once the failed transactions are identified, the "trigger_sms_alert" tool can be used to send an urgent SMS notification to the customer.
