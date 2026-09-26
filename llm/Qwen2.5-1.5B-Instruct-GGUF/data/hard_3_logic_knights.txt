@@ -1,0 +1,16 @@
+Solve this logic deduction problem involving Knights, Knaves, and Spies:
+On an island:
+- Knights always tell the truth.
+- Knaves always lie.
+- Spies can either tell the truth or lie.
+
+You meet three people: A, B, and C. You know with certainty that exactly one is a Knight, one is a Knave, and one is a Spy (all three identities are distinct).
+They make the following statements:
+A says: "I am the Knight."
+B says: "A is telling the truth."
+C says: "I am not the Knave."
+
+Your task:
+1. Determine the exact identity (Knight, Knave, Spy) of A, B, and C.
+2. Provide a step-by-step proof testing all potential assignments or using logical deduction to eliminate contradictions.
+3. Explicitly explain why C cannot be the Knight, and why A cannot be the Knave.

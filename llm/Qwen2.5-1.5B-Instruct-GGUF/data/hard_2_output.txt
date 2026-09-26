@@ -1,0 +1,21 @@
+1. **Why does naive sorting fail the requirements?**
+
+Naive sorting would fail the requirements because it has a time complexity of O(N log N), which is not O(N) as required. Additionally, it would require O(N) space, which is also not O(N). Sorting is not an efficient way to solve this problem, especially when the goal is to achieve O(N) time and O(N) space complexity.
+
+2. **Disprove the junior developer's argument using rigorous amortized analysis.**
+
+The junior developer's argument is incorrect because the while loop does not run N times in the worst case. Instead, the number of times each number is visited across all operations is exactly 2. Here's why:
+
+- For each number `num` in the set, the algorithm first checks if `num - 1` is in the set. If it is not, then `num` is the start of a sequence.
+- The algorithm then enters a while loop that increments `num` until `num + 1` is not in the set. This means that `num` is visited exactly twice: once when it is checked to see if `num - 1` is in the set, and once when it is incremented until `num + 1` is not in the set.
+
+Therefore, the worst-case time complexity is O(N), and the space complexity is O(N), which satisfies the requirements.
+
+3. **What happens if the `num - 1 not in num_set` check is omitted? What would the time complexity degrade to, and why?**
+
+If the `num - 1 not in num_set` check is omitted, the algorithm would degrade to a linear time complexity of O(N), but the space complexity would still be O(N). Here's why:
+
+- The algorithm would still iterate through each number in the set exactly once, but it would no longer check if `num - 1` is in the set. This means that each number is visited exactly once.
+- The while loop would still increment `num` until `num + 1` is not in the set, but this check is no longer necessary. Therefore, the algorithm would still run in O(N) time, but it would no longer require O(N) space.
+
+The time complexity would degrade to O(N), but the space complexity would still be O(N).

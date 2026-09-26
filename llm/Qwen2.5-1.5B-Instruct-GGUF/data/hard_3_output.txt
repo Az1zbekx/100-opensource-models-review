@@ -1,0 +1,61 @@
+### Step-by-Step Solution
+
+1. **Identify the identities of A, B, and C:**
+
+   - We know that exactly one of them is a Knight, one is a Knave, and one is a Spy.
+   - A says: "I am the Knight."
+   - B says: "A is telling the truth."
+   - C says: "I am not the Knave."
+
+2. **Analyze A's statement:**
+   - If A is a Knight, then A's statement is true, which means A is indeed the Knight.
+   - If A is a Knave, then A's statement is false, which means A is not the Knight.
+   - If A is a Spy, then A's statement is ambiguous, but we can still use it to help deduce the identities of B and C.
+
+3. **Analyze B's statement:**
+   - If A is the Knight, then B's statement is false, which means A is not telling the truth.
+   - If A is the Knave, then B's statement is true, which means A is telling the truth.
+   - If A is the Spy, then B's statement is ambiguous, but we can still use it to help deduce the identities of B and C.
+
+4. **Analyze C's statement:**
+   - If A is the Knight, then C's statement is true, which means C is not the Knave.
+   - If A is the Knave, then C's statement is false, which means C is the Knave.
+   - If A is the Spy, then C's statement is ambiguous, but we can still use it to help deduce the identities of B and C.
+
+5. **Eliminate possibilities:**
+
+   - Since A is the Knight, B's statement must be false, which means A is not telling the truth. Therefore, B cannot be the Knave (since B would be telling the truth if A were the Knave).
+   - Since A is the Knight, C's statement must be true, which means C is not the Knave.
+
+6. **Determine the identities:**
+
+   - Since A is the Knight, B cannot be the Knave (as B would be telling the truth if A were the Knave).
+   - Since A is the Knight, C cannot be the Knave (as C would be telling the truth if A were the Knave).
+   - Therefore, B must be the Knave and C must be the Spy.
+
+### Conclusion
+
+- A is the Knight.
+- B is the Knave.
+- C is the Spy.
+
+### Proof:
+
+1. **A is the Knight:**
+   - If A is the Knight, then A's statement "I am the Knight" is true.
+   - This means A is indeed the Knight.
+
+2. **B is the Knave:**
+   - If B is the Knave, then B's statement "A is telling the truth" is false.
+   - This means A is not telling the truth.
+   - Since A is the Knight, A is telling the truth, which is consistent with B being the Knave.
+
+3. **C is the Spy:**
+   - If C is the Spy, then C's statement "I am not the Knave" is true.
+   - This means C is not the Knave.
+   - Since C is the Spy, C is telling the truth, which is consistent with B being the Knave.
+
+Thus, the identities are:
+- A is the Knight.
+- B is the Knave.
+- C is the Spy.

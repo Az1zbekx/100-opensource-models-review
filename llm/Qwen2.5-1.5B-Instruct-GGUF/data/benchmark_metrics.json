@@ -1,0 +1,44 @@
+[
+  {
+    "test": "hard_2_algo_amortized.txt",
+    "duration_s": 19.08,
+    "tokens": 481,
+    "speed_tok_s": 25.21,
+    "output_file": "hard_2_output.txt"
+  },
+  {
+    "test": "hard_3_logic_knights.txt",
+    "duration_s": 30.42,
+    "tokens": 741,
+    "speed_tok_s": 24.36,
+    "output_file": "hard_3_output.txt"
+  },
+  {
+    "test": "hard_4_uzbek_logic_puzzle.txt",
+    "duration_s": 42.42,
+    "tokens": 1024,
+    "speed_tok_s": 24.14,
+    "output_file": "hard_4_output.txt"
+  },
+  {
+    "test": "olympiad_1_aime_game_theory.txt",
+    "duration_s": 24.96,
+    "tokens": 625,
+    "speed_tok_s": 25.04,
+    "output_file": "olympiad_1_output.txt"
+  },
+  {
+    "test": "olympiad_2_aime_logarithms.txt",
+    "duration_s": 35.06,
+    "tokens": 879,
+    "speed_tok_s": 25.07,
+    "output_file": "olympiad_2_output.txt"
+  },
+  {
+    "test": "olympiad_3_math_legendre.txt",
+    "duration_s": 40.4,
+    "tokens": 1024,
+    "speed_tok_s": 25.35,
+    "output_file": "olympiad_3_output.txt"
+  }
+]

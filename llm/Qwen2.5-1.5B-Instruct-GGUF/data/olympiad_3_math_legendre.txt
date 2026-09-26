@@ -1,0 +1,5 @@
+Solve the following Number Theory problem from the MATH Benchmark (Level 5):
+
+Find the least positive integer n such that the decimal representation of n! (n factorial) ends in exactly 100 zeroes.
+
+Show your step-by-step analysis using Legendre's Formula for counting factors of 5 in n!, compute the exact values, and state the final integer answer inside \boxed{...}.

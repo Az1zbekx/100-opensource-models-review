@@ -1,0 +1,33 @@
+To determine the number of positive integers \( n \leq 2024 \) for which Bob has a winning strategy, we need to analyze the game-theoretic properties of the game. Specifically, we need to identify the positions (P-positions) and the moves (N-positions) that lead to a win.
+
+### Step 1: Identify P-positions and N-positions
+A P-position is a position from which the player can force a win. An N-position is a position from which the player can force a loss.
+
+### Step 2: Determine the winning and losing positions
+- A P-position is a position where the player can force a win. This means that the player can always move to an N-position.
+- An N-position is a position where the player can force a loss. This means that the player can always move to a P-position.
+
+### Step 3: Analyze the game
+The game involves removing either 1 token or 4 tokens from the stack. This means that the number of tokens removed on each turn is either 1 or 4. The key insight is that the game is symmetric in the sense that the parity of the number of tokens removed determines the parity of the number of tokens left.
+
+### Step 4: Determine the modular pattern
+We need to determine the positions modulo 5. This is because the number of tokens removed is either 1 or 4, and these are equivalent to 1 and 4 modulo 5. Therefore, the game is equivalent to a game where the number of tokens removed is equivalent to 1 or 4 modulo 5.
+
+### Step 5: Identify the winning and losing positions modulo 5
+- A position is a P-position if it is equivalent to 0 modulo 5.
+- A position is an N-position if it is equivalent to 1 or 4 modulo 5.
+
+### Step 6: Count the number of P-positions
+The number of P-positions modulo 5 is the number of integers from 1 to 2024 that are equivalent to 0 modulo 5. This is given by:
+\[ \left\lfloor \frac{2024}{5} \right\rfloor = 404 \]
+
+### Step 7: Count the number of N-positions
+The number of N-positions modulo 5 is the number of integers from 1 to 2024 that are equivalent to 1 or 4 modulo 5. This is given by:
+\[ 2024 - 404 = 1620 \]
+
+### Step 8: Determine the number of winning positions
+The number of winning positions is the number of P-positions, which is 404.
+
+### Final Answer
+The number of positive integers \( n \leq 2024 \) for which there exists a strategy for Bob that guarantees that Bob will win the game regardless of Alice's play is:
+\[ \boxed{404} \]

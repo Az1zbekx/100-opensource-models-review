@@ -1,0 +1,66 @@
+To find the least positive integer \( n \) such that the decimal representation of \( n! \) ends in exactly 100 zeroes, we need to count the number of factors of 5 in \( n! \). This is given by Legendre's formula:
+
+\[
+e_5(n!) = \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{25} \right\rfloor + \left\lfloor \frac{n}{125} \right\rfloor + \cdots
+\]
+
+We need this sum to equal 100. Let's start by estimating the value of \( n \).
+
+First, we estimate \( n \) by solving the equation:
+
+\[
+\left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{25} \right\rfloor + \left\lfloor \frac{n}{125} \right\rfloor + \cdots = 100
+\]
+
+We can approximate \( n \) by solving:
+
+\[
+\frac{n}{5} + \frac{n}{25} + \frac{n}{125} + \cdots = 100
+\]
+
+This is a geometric series with the first term \( \frac{n}{5} \) and common ratio \( \frac{1}{5} \). The sum of the series is:
+
+\[
+\frac{n}{5} \left(1 + \frac{1}{5} + \frac{1}{25} + \cdots \right) = \frac{n}{5} \cdot \frac{1}{1 - \frac{1}{5}} = \frac{n}{5} \cdot \frac{5}{4} = \frac{n}{4}
+\]
+
+So, we have:
+
+\[
+\frac{n}{4} \approx 100 \implies n \approx 400
+\]
+
+Now, we need to check if \( n = 400 \) gives us exactly 100 zeroes. We compute the number of factors of 5 in \( 400! \):
+
+\[
+e_5(400!) = \left\lfloor \frac{400}{5} \right\rfloor + \left\lfloor \frac{400}{25} \right\rfloor + \left\lfloor \frac{400}{125} \right\rfloor + \left\lfloor \frac{400}{625} \right\rfloor + \cdots
+\]
+
+\[
+= 80 + 16 + 3 + 0 + \cdots = 99
+\]
+
+Since 99 is not 100, we need to check the next integer, \( n = 401 \):
+
+\[
+e_5(401!) = \left\lfloor \frac{401}{5} \right\rfloor + \left\lfloor \frac{401}{25} \right\rfloor + \left\lfloor \frac{401}{125} \right\rfloor + \left\lfloor \frac{401}{625} \right\rfloor + \cdots
+\]
+
+\[
+= 80 + 16 + 3 + 0 + \cdots = 99
+\]
+
+Since 99 is not 100, we need to check the next integer, \( n = 402 \):
+
+\[
+e_5(402!) = \left\lfloor \frac{402}{5} \right\rfloor + \left\lfloor \frac{402}{25} \right\rfloor + \left\lfloor \frac{402}{125} \right\rfloor + \left\lfloor \frac{402}{625} \right\rfloor + \cdots
+\]
+
+\[
+= 80 + 16 + 3 + 0 + \cdots = 99
+\]
+
+Since 99 is not 100, we need to check the next integer, \( n = 403 \):
+
+\[
+e_5(403!) = \left\lfloor \frac{403}{5} \right\rfloor + \left\lfloor \frac{403}{25} \right\rfloor + \left\lfloor \frac{403}{125} \right\rfloor + \left\lfloor \frac{

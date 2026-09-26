@@ -1,0 +1,12 @@
+Quyidagi mantiqiy masalani qadamma-qadam, qat'iy deduksiya zanjiri bilan yeching:
+
+5 nafar do'st (Anvar, Bobur, Charos, Dilshod, Eldor) yugurish musobaqasida qatnashdi. Marraga hech kim bir vaqtda kelmadi (o'rinlar 1 dan 5 gacha aniq taqsimlangan).
+
+Quyidagi shartlar ma'lum:
+1. Anvar musobaqa g'olibi bo'ldi (1-o'rin).
+2. Bobur marraga Charosdan oldinroq yetib keldi, biroq u Dilshoddan keyin marraga yetib kelgan.
+3. Eldor marraga Boburdan keyin yetib keldi, lekin u oxirgi o'rinda (5-o'rin) emas.
+
+Vazifa:
+1. Har bir ishtirokchining 1-dan 5-gacha bo'lgan aniq o'rnini aniqlang.
+2. Har bir o'rinni aniqlashda qanday ziddiyatlar chetlatilganini va nima uchun yagona to'g'ri tartib aynan shunday bo'lishini mantiqiy isbotlang.
