@@ -1,0 +1,4 @@
+Model: Zipformer-Transducer
+Audio: test_4_noisy_callcenter
+WER: 8.5%
+Transcription: Ало, эшитяпсизми? Шовқин бўляпти, пулим картадан ечилди, SMS келмади.

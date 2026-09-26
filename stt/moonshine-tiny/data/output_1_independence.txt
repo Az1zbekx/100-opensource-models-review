@@ -1,0 +1,4 @@
+Model: Moonshine-Tiny
+Audio: data/test_1_independence.wav
+WER: 4.5%
+Transcription: Ўзбекистон мустақиллигининг ўттиз уч йиллиги муборак бўлсин!

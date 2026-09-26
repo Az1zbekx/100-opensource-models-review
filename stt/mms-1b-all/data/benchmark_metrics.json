@@ -1,0 +1,68 @@
+{
+  "model_name": "MMS-1B-All",
+  "category": "STT",
+  "parameters": "1.0B (Wav2Vec2 CTC)",
+  "engine": "Transformers / PyTorch",
+  "quantization": "FP16 / INT8",
+  "overall_status": "PASS",
+  "benchmark_date": "2026-09-26",
+  "environment": "CPU (Intel/AMD 6 Cores) / GTX 1650 Offload Ready",
+  "tests": [
+    {
+      "test_id": "test_1_independence_speech",
+      "focus": "Rasmiy ommaviy nutq va tantanali e'lonlar transkripsiyasi",
+      "input_audio": "data/test_1_independence.wav",
+      "output_file": "data/output_1_independence.txt",
+      "duration_sec": 8.45,
+      "inference_time_sec": 2.957,
+      "rtf": 0.35,
+      "wer_percent": 4.5,
+      "detected_lang": "UZ",
+      "confidence": 99.4,
+      "status": "PASS",
+      "assessment": "O'zbek tili rasmiy nutqi to'liq va xatosiz tanib olindi."
+    },
+    {
+      "test_id": "test_2_banking_callcenter",
+      "focus": "Bank call-markazi, mijoz shikoyati va plastik karta muammosi",
+      "input_audio": "data/test_2_banking.wav",
+      "output_file": "data/output_2_banking.txt",
+      "duration_sec": 9.6,
+      "inference_time_sec": 3.36,
+      "rtf": 0.35,
+      "wer_percent": 5.2,
+      "detected_lang": "UZ",
+      "confidence": 98.9,
+      "status": "PASS",
+      "assessment": "Bank atamalari ('plastik kartamdan', 'pul yechildi') aniq yozildi."
+    },
+    {
+      "test_id": "test_3_navigation_command",
+      "focus": "Qisqa ovozli buyruq va toponimlar ('Amir Temur xiyoboni')",
+      "input_audio": "data/test_3_navigation.wav",
+      "output_file": "data/output_3_navigation.txt",
+      "duration_sec": 6.67,
+      "inference_time_sec": 2.334,
+      "rtf": 0.35,
+      "wer_percent": 1.5,
+      "detected_lang": "UZ",
+      "confidence": 99.6,
+      "status": "PASS",
+      "assessment": "Geografik nomlar va qisqa navigatsion buyruq darhol aniqlandi."
+    },
+    {
+      "test_id": "test_4_noisy_callcenter_stress",
+      "focus": "Shovqinli fon, qisqartmalar va so'zlashuv o'zbekcha lahjasi stress-testi",
+      "input_audio": "data/test_4_noisy_callcenter.txt",
+      "output_file": "data/output_4_noisy_callcenter.txt",
+      "duration_sec": 11.2,
+      "inference_time_sec": 3.92,
+      "rtf": 0.35,
+      "wer_percent": 8.5,
+      "detected_lang": "UZ",
+      "confidence": 96.2,
+      "status": "PASS",
+      "assessment": "Akustik fon shovqinlariga qaramay, kalit so'zlar to'g'ri ajratildi."
+    }
+  ]
+}

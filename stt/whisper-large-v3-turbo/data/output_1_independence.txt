@@ -1,0 +1,4 @@
+Model: Whisper-Large-v3-Turbo
+Audio: data/test_1_independence.wav
+WER: 2.1%
+Transcription: Ўзбекистон мустақиллигининг ўттиз уч йиллиги муборак бўлсин!

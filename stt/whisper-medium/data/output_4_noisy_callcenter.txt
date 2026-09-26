@@ -1,0 +1,4 @@
+Model: Whisper-Medium
+Audio: test_4_noisy_callcenter
+WER: 4.8%
+Transcription: Ало, эшитяпсизми? Шовқин бўляпти, пулим картадан ечилди, SMS келмади.

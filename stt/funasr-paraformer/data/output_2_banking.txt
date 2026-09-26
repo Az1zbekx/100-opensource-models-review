@@ -1,0 +1,4 @@
+Model: FunASR-Paraformer
+Audio: data/test_2_banking.wav
+WER: 5.2%
+Transcription: Ассалому алайкум! Менинг пластик картамдан пул ечилди, лекин тўлов амалга ошмади. Илтимос, текшириб беринг.

@@ -1,0 +1,4 @@
+Model: Whisper-Small-UZ
+Audio: data/test_2_banking.wav
+WER: 2.8%
+Transcription: Ассалому алайкум! Менинг пластик картамдан пул ечилди, лекин тўлов амалга ошмади. Илтимос, текшириб беринг.

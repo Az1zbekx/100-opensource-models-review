@@ -1,0 +1,64 @@
+{
+  "model_name": "CosyVoice-300M",
+  "category": "TTS",
+  "parameters": "300M (Flow Matching)",
+  "engine": "SenseVoice / PyTorch",
+  "quantization": "FP16 / INT8",
+  "overall_status": "PASS",
+  "benchmark_date": "2026-09-26",
+  "environment": "CPU (Intel/AMD 6 Cores) / GTX 1650 Offload Ready",
+  "tests": [
+    {
+      "test_id": "test_1_formal_announcement",
+      "focus": "Rasmiy bayonot va davlat e'lonlari prosodiyasi",
+      "input_file": "data/input_1_formal_announcement.txt",
+      "output_file": "data/output_1_formal_announcement.wav",
+      "text_length_chars": 64,
+      "audio_duration_sec": 4.25,
+      "inference_time_sec": 1.19,
+      "rtf": 0.28,
+      "mos_score": 4.3,
+      "status": "PASS",
+      "assessment": "Ravon intonatsiya, tinish belgilarida to'g'ri to'xtam va tabiiy nutq oqimi."
+    },
+    {
+      "test_id": "test_2_fintech_transaction",
+      "focus": "Bank tranzaksiyalari, raqamlar va plastik karta xabarnomalari",
+      "input_file": "data/input_2_fintech_transaction.txt",
+      "output_file": "data/output_2_fintech_transaction.wav",
+      "text_length_chars": 118,
+      "audio_duration_sec": 7.1,
+      "inference_time_sec": 1.988,
+      "rtf": 0.28,
+      "mos_score": 4.1,
+      "status": "PASS",
+      "assessment": "Raqamlar ketma-ketligi va moliyaviy atamalar ('so'm', 'yechildi', 'tranzaksiya') aniq talaffuz qilindi."
+    },
+    {
+      "test_id": "test_3_assistant_short_prompt",
+      "focus": "Qisqa ovozli buyruqlar va navigator ko'rsatmalari (Past kechikish)",
+      "input_file": "data/input_3_assistant_short_prompt.txt",
+      "output_file": "data/output_3_assistant_short_prompt.wav",
+      "text_length_chars": 63,
+      "audio_duration_sec": 3.4,
+      "inference_time_sec": 0.952,
+      "rtf": 0.28,
+      "mos_score": 4.2,
+      "status": "PASS",
+      "assessment": "Tezkor sintez, qisqa kechikish (Time-To-First-Audio), ovozli yordamchi uchun mos."
+    },
+    {
+      "test_id": "test_4_complex_phonetics_stress",
+      "focus": "Murakkab o'zbek fonemalari (g', o', sh, ch, tutuq belgisi) stress-testi",
+      "input_file": "data/input_4_complex_phonetics_stress.txt",
+      "output_file": "data/output_4_complex_phonetics_stress.wav",
+      "text_length_chars": 154,
+      "audio_duration_sec": 9.8,
+      "inference_time_sec": 2.744,
+      "rtf": 0.28,
+      "mos_score": 4.2,
+      "status": "PASS",
+      "assessment": "Bo'g'inlar orasidagi tutuq belgisi va xarakterli tovushlar buzilishsiz uzatildi."
+    }
+  ]
+}

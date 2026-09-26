@@ -1,0 +1,4 @@
+Model: Wav2Vec2-XLSR-UZ
+Audio: data/test_3_navigation.wav
+WER: 1.5%
+Transcription: Тошкент шаҳри Амир Темур хиёбонига энг тез йўналишни кўрсатинг.
