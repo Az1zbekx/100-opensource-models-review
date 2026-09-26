@@ -1,0 +1,73 @@
+SELECT
+        id,
+        created_at,
+        acquisition_channel,
+        ROW_NUMBER() OVER (PARTITION BY id ORDER BY created_at ASC) AS first_order_number
+    FROM
+        customers
+),
+customer_last_order AS (
+    SELECT
+        id,
+        created_at,
+        acquisition_channel,
+        ROW_NUMBER() OVER (PARTITION BY id ORDER BY created_at DESC) AS last_order_number
+    FROM
+        customers
+),
+customer_lifetime_value AS (
+    SELECT
+        id,
+        created_at,
+        acquisition_channel,
+        CASE
+            WHEN first_order_number = 1 AND last_order_number = 1 THEN 'new'
+            WHEN first_order_number = 1 AND last_order_number > 1 THEN 'repeat'
+            WHEN first_order_number > 1 AND last_order_number = 1 THEN 'churn'
+            WHEN first_order_number > 1 AND last_order_number > 1 THEN 'repeat'
+        END AS customer_status,
+        CASE
+            WHEN first_order_number = 1 THEN created_at
+            ELSE NULL
+        END AS first_order_date,
+        CASE
+            WHEN last_order_number = 1 THEN created_at
+            ELSE NULL
+        END AS last_order_date,
+        CASE
+            WHEN first_order_number = 1 THEN total_amount
+            ELSE NULL
+        END AS first_order_amount,
+        CASE
+            WHEN last_order_number = 1 THEN total_amount
+            ELSE NULL
+        END AS last_order_amount
+    FROM
+        customer_first_order
+    LEFT JOIN
+        customer_last_order
+    USING
+        (id)
+    LEFT JOIN
+        orders
+    USING
+        (id)
+),
+customer_lifetime_value_30_days AS (
+    SELECT
+        *,
+        CASE
+            WHEN first_order_date IS NULL THEN NULL
+            WHEN last_order_date IS NULL THEN NULL
+            WHEN last_order_date - first_order_date > 30 THEN NULL
+            ELSE last_order_date
+        END AS last_order_date_30_days
+    FROM
+        customer_lifetime_value
+),
+customer_lifetime_value_30_days_status AS (
+    SELECT
+        *,
+        CASE
+            WHEN last_order_date_30_days IS NULL THEN 'no_30_days'
+            WHEN customer_status = '

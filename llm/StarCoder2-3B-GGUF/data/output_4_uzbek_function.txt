@@ -1,0 +1,21 @@
+if re.match(r"\+998\d{9}", phone):
+        return phone
+    else:
+        raise ValueError("Noto'g'ri raqam!")
+
+print(format_uzbek_phone("+998901234567"))
+print(format_uzbek_phone("+99890123456"))
+print(format_uzbek_phone("+9989012345678"))
+print(format_uzbek_phone("+99890123456789"))
+print(format_uzbek_phone("+998901234567890"))
+print(format_uzbek_phone("+9989012345678901"))
+print(format_uzbek_phone("+99890123456789012"))
+print(format_uzbek_phone("+998901234567890123"))
+print(format_uzbek_phone("+9989012345678901234"))
+print(format_uzbek_phone("+99890123456789012345"))
+print(format_uzbek_phone("+998901234567890123456"))
+print(format_uzbek_phone("+9989012345678901234567"))
+print(format_uzbek_phone("+99890123456789012345678"))
+print(format_uzbek_phone("+998901234567890123456789"))
+print(format_uzbek_phone("+9989012345678901234567890"))
+print(format_uzbek_phone("+99890123456

@@ -1,0 +1,8 @@
+# O'zbekiston telefon raqamlarini (+998 90 123 45 67) tozalovchi va formatlovchi funksiya:
+import re
+
+def format_uzbek_phone(phone: str) -> str:
+    """
+    Kiritilgan har qanday telefon raqamini +998XXXXXXXXX standart formatga keltiradi.
+    Agar raqam noto'g'ri bo'lsa, ValueError qaytaradi.
+    """

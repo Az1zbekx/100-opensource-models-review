@@ -1,0 +1,23 @@
+[
+  {
+    "test": "input_2_binary_search_tree.txt",
+    "duration_s": 38.97,
+    "tokens": 512,
+    "speed_tok_s": 13.14,
+    "output_file": "output_2_binary_search_tree.txt"
+  },
+  {
+    "test": "input_3_sql_joins.txt",
+    "duration_s": 37.96,
+    "tokens": 512,
+    "speed_tok_s": 13.49,
+    "output_file": "output_3_sql_joins.txt"
+  },
+  {
+    "test": "input_4_uzbek_function.txt",
+    "duration_s": 39.19,
+    "tokens": 512,
+    "speed_tok_s": 13.06,
+    "output_file": "output_4_uzbek_function.txt"
+  }
+]

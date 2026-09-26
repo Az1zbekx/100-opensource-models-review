@@ -1,0 +1,67 @@
+t.mu.Lock()
+	defer t.mu.Unlock()
+	t.root = insert(t.root, key, val)
+}
+
+func insert(n *Node, key int, val string) *Node {
+	if n == nil {
+		return &Node{key, val, nil, nil}
+	}
+	if key < n.Key {
+		n.Left = insert(n.Left, key, val)
+	} else {
+		n.Right = insert(n.Right, key, val)
+	}
+	return n
+}
+
+// Get returns the value associated with the given key
+func (t *ThreadSafeBST) Get(key int) string {
+	t.mu.RLock()
+	defer t.mu.RUnlock()
+	return get(t.root, key)
+}
+
+func get(n *Node, key int) string {
+	if n == nil {
+		return ""
+	}
+	if key < n.Key {
+		return get(n.Left, key)
+	} else if key > n.Key {
+		return get(n.Right, key)
+	} else {
+		return n.Value
+	}
+}
+
+// Delete removes the value associated with the given key
+func (t *ThreadSafeBST) Delete(key int) {
+	t.mu.Lock()
+	defer t.mu.Unlock()
+	t.root = delete(t.root, key)
+}
+
+func delete(n *Node, key int) *Node {
+	if n == nil {
+		return nil
+	}
+	if key < n.Key {
+		n.Left = delete(n.Left, key)
+	} else if key > n.Key {
+		n.Right = delete(n.Right, key)
+	} else {
+		if n.Left == nil {
+			return n.Right
+		} else if n.Right == nil {
+			return n.Left
+		} else {
+			n.Right = deleteMin(n.Right)
+		}
+	}
+	return n
+}
+
+func deleteMin(n *Node) *Node {
+	if n.Left == nil {
+		return n.Right
