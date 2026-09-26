@@ -1,0 +1,5 @@
+Source [rus_Cyrl]:
+В случае возникновения обстоятельств непреодолимой силы (форс-мажор), стороны освобождаются от ответственности за частичное или полное неисполнение обязательств по настоящему договору.
+
+Translation [uzn_Latn]:
+Chindan ham yengilmas kuch (fors-major) holatlari yuzaga kelgan taqdirda, tomonlar ushbu shartnoma bo'yicha majburiyatlarni qisman yoki to'liq bajarmaganlik uchun javobgarlikdan ozod etiladilar.

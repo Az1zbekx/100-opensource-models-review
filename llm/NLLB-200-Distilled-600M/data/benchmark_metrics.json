@@ -1,0 +1,38 @@
+[
+  {
+    "test": "input_1_uzb_to_eng.txt",
+    "src_lang": "uzn_Latn",
+    "tgt_lang": "eng_Latn",
+    "duration_s": 11.17,
+    "tokens": 28,
+    "speed_tok_s": 2.51,
+    "output_file": "output_1_uzb_to_eng.txt"
+  },
+  {
+    "test": "input_2_eng_to_uzb.txt",
+    "src_lang": "eng_Latn",
+    "tgt_lang": "uzn_Latn",
+    "duration_s": 19.45,
+    "tokens": 44,
+    "speed_tok_s": 2.26,
+    "output_file": "output_2_eng_to_uzb.txt"
+  },
+  {
+    "test": "input_3_rus_to_uzb.txt",
+    "src_lang": "rus_Cyrl",
+    "tgt_lang": "uzn_Latn",
+    "duration_s": 18.68,
+    "tokens": 48,
+    "speed_tok_s": 2.57,
+    "output_file": "output_3_rus_to_uzb.txt"
+  },
+  {
+    "test": "input_4_uzb_cyrl_to_latn.txt",
+    "src_lang": "uzn_Cyrl",
+    "tgt_lang": "uzn_Latn",
+    "duration_s": 11.73,
+    "tokens": 39,
+    "speed_tok_s": 3.32,
+    "output_file": "output_4_uzb_cyrl_to_latn.txt"
+  }
+]

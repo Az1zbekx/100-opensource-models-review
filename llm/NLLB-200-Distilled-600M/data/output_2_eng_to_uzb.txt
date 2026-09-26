@@ -1,0 +1,5 @@
+Source [eng_Latn]:
+Modern site reliability engineering demands real-time distributed tracing, automated failure recovery, and zero-downtime canary deployments.
+
+Translation [uzn_Latn]:
+Zamonaviy sayt ishonchliligi muhandisligi real vaqtda tarqatilgan izlanish, avtomatik xatolarni tiklash va to'xtatish vaqti bilan kanarlarni ishga tushirishni talab qiladi.

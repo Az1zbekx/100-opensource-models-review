@@ -1,0 +1,5 @@
+Source [uzn_Latn]:
+Bizning jamoa taqsimlangan mikroxizmatlar arxitekturasini loyihalashtirish va bulutli xizmatlar xavfsizligini ta'minlash bo'yicha katta tajribaga ega.
+
+Translation [eng_Latn]:
+Our team has extensive experience in designing distributed microservices architectures and ensuring the security of cloud services.
