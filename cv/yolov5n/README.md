@@ -169,8 +169,8 @@ Inference testing was conducted using real indoor workplace and educational faci
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5nu.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5nu.pt)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
+- **Upstream Source Repository:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5nu.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov5nu.pt)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.

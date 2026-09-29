@@ -166,8 +166,8 @@ Inference testing was conducted using authentic aerial drone and low-altitude mi
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
+- **Upstream Source Repository:** [https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.

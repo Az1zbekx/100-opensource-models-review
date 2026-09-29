@@ -209,8 +209,8 @@ model.export(format='onnx', opset=12, simplify=True)
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/AILab-CVC/YOLO-World](https://github.com/AILab-CVC/YOLO-World)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/AILab-CVC/YOLO-World](https://github.com/AILab-CVC/YOLO-World)
+- **Upstream Source Repository:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s-worldv2.pt)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.

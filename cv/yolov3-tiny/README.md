@@ -166,8 +166,8 @@ Inference testing was performed using real highway toll plazas, border checkpoin
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov3-tiny.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov3-tiny.pt)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)
+- **Upstream Source Repository:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov3-tiny.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov3-tiny.pt)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.

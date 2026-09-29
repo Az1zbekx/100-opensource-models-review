@@ -301,8 +301,8 @@ YOLOv9 is released under the **GPL-3.0 License** by the authors and accessible t
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/WongKinYiu/yolov9](https://github.com/WongKinYiu/yolov9)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov9s.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov9s.pt)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/WongKinYiu/yolov9](https://github.com/WongKinYiu/yolov9)
+- **Upstream Source Repository:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov9s.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov9s.pt)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.

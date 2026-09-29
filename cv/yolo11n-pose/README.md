@@ -245,8 +245,8 @@ yolo export model=cv/yolo11n-pose/yolo11n-pose.pt format=ncnn imgsz=640
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+- **Upstream Source Repository:** [https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.

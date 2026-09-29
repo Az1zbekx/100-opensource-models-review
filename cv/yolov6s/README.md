@@ -288,8 +288,8 @@ YOLOv6 is licensed under the **GPL-3.0 License** by Meituan. Commercial enterpri
 
 ---
 
-## 🔗 Rasmiy Manbalar va Yuklab Olish (Official Links & Weights)
+## 🔗 Official Resources & Model Downloads
 
-- **Asosiy Repozitoriy / Model Hub:** [https://github.com/meituan/YOLOv6](https://github.com/meituan/YOLOv6)
-- **Qo'shimcha Manba / Upstream:** [https://github.com/meituan/YOLOv6/releases/download/0.4.0/yolov6s.pt](https://github.com/meituan/YOLOv6/releases/download/0.4.0/yolov6s.pt)
-- **Avtomatik yuklab olish:** Demo skriptni birinchi marta ishga tushirganingizda vaznlar ushbu rasmiy manbalardan avtomatik yuklab olinadi.
+- **Primary Repository / Model Hub:** [https://github.com/meituan/YOLOv6](https://github.com/meituan/YOLOv6)
+- **Upstream Source Repository:** [https://github.com/meituan/YOLOv6/releases/download/0.4.0/yolov6s.pt](https://github.com/meituan/YOLOv6/releases/download/0.4.0/yolov6s.pt)
+- **Automatic Download:** Model weights are automatically downloaded from official sources upon initial execution of the demo script.
