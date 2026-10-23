@@ -4,12 +4,14 @@ services:
     build:
       context: ./llm/DeepSeek-Coder-V2-Lite-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8001:8000
+      - '8001:8000'
     volumes:
-    - ./llm/DeepSeek-Coder-V2-Lite-Instruct-GGUF:/app
-    - ./models/DeepSeek-Coder-V2-Lite-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/DeepSeek-Coder-V2-Lite-Instruct-GGUF:/app
+      - ./models/DeepSeek-Coder-V2-Lite-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: DeepSeek-Coder-V2-Lite-Instruct-GGUF
       PORT: '8000'
@@ -18,17 +20,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   deepseek_r1_distill_llama_8b_gguf:
     build:
       context: ./llm/DeepSeek-R1-Distill-Llama-8B-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8002:8000
+      - '8002:8000'
     volumes:
-    - ./llm/DeepSeek-R1-Distill-Llama-8B-GGUF:/app
-    - ./models/DeepSeek-R1-Distill-Llama-8B-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/DeepSeek-R1-Distill-Llama-8B-GGUF:/app
+      - ./models/DeepSeek-R1-Distill-Llama-8B-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: DeepSeek-R1-Distill-Llama-8B-GGUF
       PORT: '8000'
@@ -37,17 +41,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   deepseek_r1_distill_qwen_1_5b_gguf:
     build:
       context: ./llm/DeepSeek-R1-Distill-Qwen-1.5B-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8003:8000
+      - '8003:8000'
     volumes:
-    - ./llm/DeepSeek-R1-Distill-Qwen-1.5B-GGUF:/app
-    - ./models/DeepSeek-R1-Distill-Qwen-1.5B-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/DeepSeek-R1-Distill-Qwen-1.5B-GGUF:/app
+      - ./models/DeepSeek-R1-Distill-Qwen-1.5B-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: DeepSeek-R1-Distill-Qwen-1.5B-GGUF
       PORT: '8000'
@@ -56,17 +62,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   gemma_2_2b_instruct_gguf:
     build:
       context: ./llm/Gemma-2-2B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8004:8000
+      - '8004:8000'
     volumes:
-    - ./llm/Gemma-2-2B-Instruct-GGUF:/app
-    - ./models/Gemma-2-2B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Gemma-2-2B-Instruct-GGUF:/app
+      - ./models/Gemma-2-2B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Gemma-2-2B-Instruct-GGUF
       PORT: '8000'
@@ -75,17 +83,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   granite_3_0_2b_instruct_gguf:
     build:
       context: ./llm/Granite-3.0-2B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8005:8000
+      - '8005:8000'
     volumes:
-    - ./llm/Granite-3.0-2B-Instruct-GGUF:/app
-    - ./models/Granite-3.0-2B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Granite-3.0-2B-Instruct-GGUF:/app
+      - ./models/Granite-3.0-2B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Granite-3.0-2B-Instruct-GGUF
       PORT: '8000'
@@ -94,17 +104,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   hermes_3_llama_3_2_3b_gguf:
     build:
       context: ./llm/Hermes-3-Llama-3.2-3B-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8006:8000
+      - '8006:8000'
     volumes:
-    - ./llm/Hermes-3-Llama-3.2-3B-GGUF:/app
-    - ./models/Hermes-3-Llama-3.2-3B-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Hermes-3-Llama-3.2-3B-GGUF:/app
+      - ./models/Hermes-3-Llama-3.2-3B-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Hermes-3-Llama-3.2-3B-GGUF
       PORT: '8000'
@@ -113,17 +125,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   llama_3_1_8b_instruct_gguf:
     build:
       context: ./llm/Llama-3.1-8B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8007:8000
+      - '8007:8000'
     volumes:
-    - ./llm/Llama-3.1-8B-Instruct-GGUF:/app
-    - ./models/Llama-3.1-8B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Llama-3.1-8B-Instruct-GGUF:/app
+      - ./models/Llama-3.1-8B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Llama-3.1-8B-Instruct-GGUF
       PORT: '8000'
@@ -132,17 +146,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   llama_3_2_1b_instruct_gguf:
     build:
       context: ./llm/Llama-3.2-1B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8008:8000
+      - '8008:8000'
     volumes:
-    - ./llm/Llama-3.2-1B-Instruct-GGUF:/app
-    - ./models/Llama-3.2-1B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Llama-3.2-1B-Instruct-GGUF:/app
+      - ./models/Llama-3.2-1B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Llama-3.2-1B-Instruct-GGUF
       PORT: '8000'
@@ -151,17 +167,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   llama_guard_3_1b_gguf:
     build:
       context: ./llm/Llama-Guard-3-1B-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8009:8000
+      - '8009:8000'
     volumes:
-    - ./llm/Llama-Guard-3-1B-GGUF:/app
-    - ./models/Llama-Guard-3-1B-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Llama-Guard-3-1B-GGUF:/app
+      - ./models/Llama-Guard-3-1B-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Llama-Guard-3-1B-GGUF
       PORT: '8000'
@@ -170,17 +188,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   mistral_7b_instruct_v0_3_gguf:
     build:
       context: ./llm/Mistral-7B-Instruct-v0.3-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8010:8000
+      - '8010:8000'
     volumes:
-    - ./llm/Mistral-7B-Instruct-v0.3-GGUF:/app
-    - ./models/Mistral-7B-Instruct-v0.3-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Mistral-7B-Instruct-v0.3-GGUF:/app
+      - ./models/Mistral-7B-Instruct-v0.3-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Mistral-7B-Instruct-v0.3-GGUF
       PORT: '8000'
@@ -189,17 +209,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   moondream2_gguf:
     build:
       context: ./llm/Moondream2-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8011:8000
+      - '8011:8000'
     volumes:
-    - ./llm/Moondream2-GGUF:/app
-    - ./models/Moondream2-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Moondream2-GGUF:/app
+      - ./models/Moondream2-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Moondream2-GGUF
       PORT: '8000'
@@ -208,17 +230,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   nllb_200_distilled_600m:
     build:
       context: ./llm/NLLB-200-Distilled-600M
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8012:8000
+      - '8012:8000'
     volumes:
-    - ./llm/NLLB-200-Distilled-600M:/app
-    - ./models/NLLB-200-Distilled-600M:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/NLLB-200-Distilled-600M:/app
+      - ./models/NLLB-200-Distilled-600M:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: NLLB-200-Distilled-600M
       PORT: '8000'
@@ -227,17 +251,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   phi_3_5_mini_instruct_gguf:
     build:
       context: ./llm/Phi-3.5-mini-instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8013:8000
+      - '8013:8000'
     volumes:
-    - ./llm/Phi-3.5-mini-instruct-GGUF:/app
-    - ./models/Phi-3.5-mini-instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Phi-3.5-mini-instruct-GGUF:/app
+      - ./models/Phi-3.5-mini-instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Phi-3.5-mini-instruct-GGUF
       PORT: '8000'
@@ -246,17 +272,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   qwen2_vl_2b_instruct_gguf:
     build:
       context: ./llm/Qwen2-VL-2B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8014:8000
+      - '8014:8000'
     volumes:
-    - ./llm/Qwen2-VL-2B-Instruct-GGUF:/app
-    - ./models/Qwen2-VL-2B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Qwen2-VL-2B-Instruct-GGUF:/app
+      - ./models/Qwen2-VL-2B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Qwen2-VL-2B-Instruct-GGUF
       PORT: '8000'
@@ -265,17 +293,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   qwen2_5_1_5b_instruct_gguf:
     build:
       context: ./llm/Qwen2.5-1.5B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8015:8000
+      - '8015:8000'
     volumes:
-    - ./llm/Qwen2.5-1.5B-Instruct-GGUF:/app
-    - ./models/Qwen2.5-1.5B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Qwen2.5-1.5B-Instruct-GGUF:/app
+      - ./models/Qwen2.5-1.5B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Qwen2.5-1.5B-Instruct-GGUF
       PORT: '8000'
@@ -284,17 +314,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   qwen2_5_3b_instruct_gguf:
     build:
       context: ./llm/Qwen2.5-3B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8016:8000
+      - '8016:8000'
     volumes:
-    - ./llm/Qwen2.5-3B-Instruct-GGUF:/app
-    - ./models/Qwen2.5-3B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Qwen2.5-3B-Instruct-GGUF:/app
+      - ./models/Qwen2.5-3B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Qwen2.5-3B-Instruct-GGUF
       PORT: '8000'
@@ -303,17 +335,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   qwen2_5_coder_1_5b_instruct_gguf:
     build:
       context: ./llm/Qwen2.5-Coder-1.5B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8017:8000
+      - '8017:8000'
     volumes:
-    - ./llm/Qwen2.5-Coder-1.5B-Instruct-GGUF:/app
-    - ./models/Qwen2.5-Coder-1.5B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/Qwen2.5-Coder-1.5B-Instruct-GGUF:/app
+      - ./models/Qwen2.5-Coder-1.5B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: Qwen2.5-Coder-1.5B-Instruct-GGUF
       PORT: '8000'
@@ -322,17 +356,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   smollm2_1_7b_instruct_gguf:
     build:
       context: ./llm/SmolLM2-1.7B-Instruct-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8018:8000
+      - '8018:8000'
     volumes:
-    - ./llm/SmolLM2-1.7B-Instruct-GGUF:/app
-    - ./models/SmolLM2-1.7B-Instruct-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/SmolLM2-1.7B-Instruct-GGUF:/app
+      - ./models/SmolLM2-1.7B-Instruct-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: SmolLM2-1.7B-Instruct-GGUF
       PORT: '8000'
@@ -341,17 +377,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   starcoder2_3b_gguf:
     build:
       context: ./llm/StarCoder2-3B-GGUF
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8019:8000
+      - '8019:8000'
     volumes:
-    - ./llm/StarCoder2-3B-GGUF:/app
-    - ./models/StarCoder2-3B-GGUF:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/StarCoder2-3B-GGUF:/app
+      - ./models/StarCoder2-3B-GGUF:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: StarCoder2-3B-GGUF
       PORT: '8000'
@@ -360,17 +398,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   bge_m3:
     build:
       context: ./llm/bge-m3
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8020:8000
+      - '8020:8000'
     volumes:
-    - ./llm/bge-m3:/app
-    - ./models/bge-m3:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/bge-m3:/app
+      - ./models/bge-m3:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: bge-m3
       PORT: '8000'
@@ -379,17 +419,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   bge_reranker_v2_m3:
     build:
       context: ./llm/bge-reranker-v2-m3
       dockerfile: Dockerfile
+    profiles:
+      - llm
     ports:
-    - 8021:8000
+      - '8021:8000'
     volumes:
-    - ./llm/bge-reranker-v2-m3:/app
-    - ./models/bge-reranker-v2-m3:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./llm/bge-reranker-v2-m3:/app
+      - ./models/bge-reranker-v2-m3:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: bge-reranker-v2-m3
       PORT: '8000'
@@ -398,17 +440,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   bark_small:
     build:
       context: ./tts/bark-small
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8022:8000
+      - '8022:8000'
     volumes:
-    - ./tts/bark-small:/app
-    - ./models/bark-small:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/bark-small:/app
+      - ./models/bark-small:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: bark-small
       PORT: '8000'
@@ -417,17 +461,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   chattts:
     build:
       context: ./tts/chattts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8023:8000
+      - '8023:8000'
     volumes:
-    - ./tts/chattts:/app
-    - ./models/chattts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/chattts:/app
+      - ./models/chattts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: chattts
       PORT: '8000'
@@ -436,17 +482,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   coqui_tts_vits:
     build:
       context: ./tts/coqui-tts-vits
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8024:8000
+      - '8024:8000'
     volumes:
-    - ./tts/coqui-tts-vits:/app
-    - ./models/coqui-tts-vits:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/coqui-tts-vits:/app
+      - ./models/coqui-tts-vits:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: coqui-tts-vits
       PORT: '8000'
@@ -455,17 +503,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   coqui_xtts_v2:
     build:
       context: ./tts/coqui-xtts-v2
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8025:8000
+      - '8025:8000'
     volumes:
-    - ./tts/coqui-xtts-v2:/app
-    - ./models/coqui-xtts-v2:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/coqui-xtts-v2:/app
+      - ./models/coqui-xtts-v2:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: coqui-xtts-v2
       PORT: '8000'
@@ -474,17 +524,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   cosyvoice_300m:
     build:
       context: ./tts/cosyvoice-300m
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8026:8000
+      - '8026:8000'
     volumes:
-    - ./tts/cosyvoice-300m:/app
-    - ./models/cosyvoice-300m:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/cosyvoice-300m:/app
+      - ./models/cosyvoice-300m:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: cosyvoice-300m
       PORT: '8000'
@@ -493,17 +545,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   e2_tts:
     build:
       context: ./tts/e2-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8027:8000
+      - '8027:8000'
     volumes:
-    - ./tts/e2-tts:/app
-    - ./models/e2-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/e2-tts:/app
+      - ./models/e2-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: e2-tts
       PORT: '8000'
@@ -512,17 +566,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   espeak_ng:
     build:
       context: ./tts/espeak-ng
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8028:8000
+      - '8028:8000'
     volumes:
-    - ./tts/espeak-ng:/app
-    - ./models/espeak-ng:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/espeak-ng:/app
+      - ./models/espeak-ng:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: espeak-ng
       PORT: '8000'
@@ -531,17 +587,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   f5_tts:
     build:
       context: ./tts/f5-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8029:8000
+      - '8029:8000'
     volumes:
-    - ./tts/f5-tts:/app
-    - ./models/f5-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/f5-tts:/app
+      - ./models/f5-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: f5-tts
       PORT: '8000'
@@ -550,17 +608,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   fastspeech2:
     build:
       context: ./tts/fastspeech2
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8030:8000
+      - '8030:8000'
     volumes:
-    - ./tts/fastspeech2:/app
-    - ./models/fastspeech2:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/fastspeech2:/app
+      - ./models/fastspeech2:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: fastspeech2
       PORT: '8000'
@@ -569,17 +629,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   fish_speech_1_5:
     build:
       context: ./tts/fish-speech-1.5
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8031:8000
+      - '8031:8000'
     volumes:
-    - ./tts/fish-speech-1.5:/app
-    - ./models/fish-speech-1.5:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/fish-speech-1.5:/app
+      - ./models/fish-speech-1.5:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: fish-speech-1.5
       PORT: '8000'
@@ -588,17 +650,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   glow_tts:
     build:
       context: ./tts/glow-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8032:8000
+      - '8032:8000'
     volumes:
-    - ./tts/glow-tts:/app
-    - ./models/glow-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/glow-tts:/app
+      - ./models/glow-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: glow-tts
       PORT: '8000'
@@ -607,17 +671,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   matcha_tts:
     build:
       context: ./tts/matcha-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8033:8000
+      - '8033:8000'
     volumes:
-    - ./tts/matcha-tts:/app
-    - ./models/matcha-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/matcha-tts:/app
+      - ./models/matcha-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: matcha-tts
       PORT: '8000'
@@ -626,17 +692,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   meta_voice_1b:
     build:
       context: ./tts/meta-voice-1b
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8034:8000
+      - '8034:8000'
     volumes:
-    - ./tts/meta-voice-1b:/app
-    - ./models/meta-voice-1b:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/meta-voice-1b:/app
+      - ./models/meta-voice-1b:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: meta-voice-1b
       PORT: '8000'
@@ -645,17 +713,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   mms_tts_kaz:
     build:
       context: ./tts/mms-tts-kaz
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8035:8000
+      - '8035:8000'
     volumes:
-    - ./tts/mms-tts-kaz:/app
-    - ./models/mms-tts-kaz:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/mms-tts-kaz:/app
+      - ./models/mms-tts-kaz:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: mms-tts-kaz
       PORT: '8000'
@@ -664,36 +734,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
-  mms_tts_uzb:
-    build:
-      context: ./tts/mms-tts-uzb
-      dockerfile: Dockerfile
-    ports:
-    - 8036:8000
-    volumes:
-    - ./tts/mms-tts-uzb:/app
-    - ./models/mms-tts-uzb:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
-    environment:
-      MODEL_NAME: mms-tts-uzb
-      PORT: '8000'
-    restart: 'no'
-    container_name: model-mms-tts-uzb
-    stdin_open: true
-    tty: true
-    networks:
-    - models-network
+      - models-network
   mms_tts_uzb_latin:
     build:
       context: ./tts/mms-tts-uzb-latin
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8037:8000
+      - '8036:8000'
     volumes:
-    - ./tts/mms-tts-uzb-latin:/app
-    - ./models/mms-tts-uzb-latin:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/mms-tts-uzb-latin:/app
+      - ./models/mms-tts-uzb-latin:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: mms-tts-uzb-latin
       PORT: '8000'
@@ -702,17 +755,40 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
+  mms_tts_uzb:
+    build:
+      context: ./tts/mms-tts-uzb
+      dockerfile: Dockerfile
+    profiles:
+      - tts
+    ports:
+      - '8037:8000'
+    volumes:
+      - ./tts/mms-tts-uzb:/app
+      - ./models/mms-tts-uzb:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      MODEL_NAME: mms-tts-uzb
+      PORT: '8000'
+    restart: 'no'
+    container_name: model-mms-tts-uzb
+    stdin_open: true
+    tty: true
+    networks:
+      - models-network
   openvoice_v2:
     build:
       context: ./tts/openvoice-v2
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8038:8000
+      - '8038:8000'
     volumes:
-    - ./tts/openvoice-v2:/app
-    - ./models/openvoice-v2:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/openvoice-v2:/app
+      - ./models/openvoice-v2:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: openvoice-v2
       PORT: '8000'
@@ -721,17 +797,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   parler_tts_mini:
     build:
       context: ./tts/parler-tts-mini
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8039:8000
+      - '8039:8000'
     volumes:
-    - ./tts/parler-tts-mini:/app
-    - ./models/parler-tts-mini:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/parler-tts-mini:/app
+      - ./models/parler-tts-mini:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: parler-tts-mini
       PORT: '8000'
@@ -740,17 +818,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   piper_tts:
     build:
       context: ./tts/piper-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8040:8000
+      - '8040:8000'
     volumes:
-    - ./tts/piper-tts:/app
-    - ./models/piper-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/piper-tts:/app
+      - ./models/piper-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: piper-tts
       PORT: '8000'
@@ -759,17 +839,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   seamless_m4t_tts:
     build:
       context: ./tts/seamless-m4t-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8041:8000
+      - '8041:8000'
     volumes:
-    - ./tts/seamless-m4t-tts:/app
-    - ./models/seamless-m4t-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/seamless-m4t-tts:/app
+      - ./models/seamless-m4t-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: seamless-m4t-tts
       PORT: '8000'
@@ -778,17 +860,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   sherpa_onnx_offline_tts:
     build:
       context: ./tts/sherpa-onnx-offline-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8042:8000
+      - '8042:8000'
     volumes:
-    - ./tts/sherpa-onnx-offline-tts:/app
-    - ./models/sherpa-onnx-offline-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/sherpa-onnx-offline-tts:/app
+      - ./models/sherpa-onnx-offline-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: sherpa-onnx-offline-tts
       PORT: '8000'
@@ -797,17 +881,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   speecht5_tts:
     build:
       context: ./tts/speecht5-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8043:8000
+      - '8043:8000'
     volumes:
-    - ./tts/speecht5-tts:/app
-    - ./models/speecht5-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/speecht5-tts:/app
+      - ./models/speecht5-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: speecht5-tts
       PORT: '8000'
@@ -816,17 +902,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   styletts2:
     build:
       context: ./tts/styletts2
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8044:8000
+      - '8044:8000'
     volumes:
-    - ./tts/styletts2:/app
-    - ./models/styletts2:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/styletts2:/app
+      - ./models/styletts2:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: styletts2
       PORT: '8000'
@@ -835,17 +923,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   tacotron2:
     build:
       context: ./tts/tacotron2
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8045:8000
+      - '8045:8000'
     volumes:
-    - ./tts/tacotron2:/app
-    - ./models/tacotron2:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/tacotron2:/app
+      - ./models/tacotron2:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: tacotron2
       PORT: '8000'
@@ -854,17 +944,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   tortoise_tts:
     build:
       context: ./tts/tortoise-tts
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8046:8000
+      - '8046:8000'
     volumes:
-    - ./tts/tortoise-tts:/app
-    - ./models/tortoise-tts:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/tortoise-tts:/app
+      - ./models/tortoise-tts:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: tortoise-tts
       PORT: '8000'
@@ -873,17 +965,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   valle_x:
     build:
       context: ./tts/valle-x
       dockerfile: Dockerfile
+    profiles:
+      - tts
     ports:
-    - 8047:8000
+      - '8047:8000'
     volumes:
-    - ./tts/valle-x:/app
-    - ./models/valle-x:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./tts/valle-x:/app
+      - ./models/valle-x:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: valle-x
       PORT: '8000'
@@ -892,17 +986,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   fasterwhisper:
     build:
       context: ./stt/FasterWhisper
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8048:8000
+      - '8048:8000'
     volumes:
-    - ./stt/FasterWhisper:/app
-    - ./models/FasterWhisper:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/FasterWhisper:/app
+      - ./models/FasterWhisper:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: FasterWhisper
       PORT: '8000'
@@ -911,17 +1007,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   conformer_ctc:
     build:
       context: ./stt/conformer-ctc
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8049:8000
+      - '8049:8000'
     volumes:
-    - ./stt/conformer-ctc:/app
-    - ./models/conformer-ctc:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/conformer-ctc:/app
+      - ./models/conformer-ctc:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: conformer-ctc
       PORT: '8000'
@@ -930,17 +1028,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   data2vec_audio_large:
     build:
       context: ./stt/data2vec-audio-large
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8050:8000
+      - '8050:8000'
     volumes:
-    - ./stt/data2vec-audio-large:/app
-    - ./models/data2vec-audio-large:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/data2vec-audio-large:/app
+      - ./models/data2vec-audio-large:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: data2vec-audio-large
       PORT: '8000'
@@ -949,17 +1049,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   funasr_paraformer:
     build:
       context: ./stt/funasr-paraformer
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8051:8000
+      - '8051:8000'
     volumes:
-    - ./stt/funasr-paraformer:/app
-    - ./models/funasr-paraformer:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/funasr-paraformer:/app
+      - ./models/funasr-paraformer:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: funasr-paraformer
       PORT: '8000'
@@ -968,17 +1070,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   hubert_large_ls960:
     build:
       context: ./stt/hubert-large-ls960
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8052:8000
+      - '8052:8000'
     volumes:
-    - ./stt/hubert-large-ls960:/app
-    - ./models/hubert-large-ls960:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/hubert-large-ls960:/app
+      - ./models/hubert-large-ls960:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: hubert-large-ls960
       PORT: '8000'
@@ -987,17 +1091,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   insanely_fast_whisper:
     build:
       context: ./stt/insanely-fast-whisper
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8053:8000
+      - '8053:8000'
     volumes:
-    - ./stt/insanely-fast-whisper:/app
-    - ./models/insanely-fast-whisper:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/insanely-fast-whisper:/app
+      - ./models/insanely-fast-whisper:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: insanely-fast-whisper
       PORT: '8000'
@@ -1006,17 +1112,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   mms_1b_all:
     build:
       context: ./stt/mms-1b-all
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8054:8000
+      - '8054:8000'
     volumes:
-    - ./stt/mms-1b-all:/app
-    - ./models/mms-1b-all:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/mms-1b-all:/app
+      - ./models/mms-1b-all:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: mms-1b-all
       PORT: '8000'
@@ -1025,17 +1133,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   moonshine_base:
     build:
       context: ./stt/moonshine-base
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8055:8000
+      - '8055:8000'
     volumes:
-    - ./stt/moonshine-base:/app
-    - ./models/moonshine-base:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/moonshine-base:/app
+      - ./models/moonshine-base:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: moonshine-base
       PORT: '8000'
@@ -1044,17 +1154,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   moonshine_tiny:
     build:
       context: ./stt/moonshine-tiny
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8056:8000
+      - '8056:8000'
     volumes:
-    - ./stt/moonshine-tiny:/app
-    - ./models/moonshine-tiny:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/moonshine-tiny:/app
+      - ./models/moonshine-tiny:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: moonshine-tiny
       PORT: '8000'
@@ -1063,17 +1175,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   nemo_canary_1b:
     build:
       context: ./stt/nemo-canary-1b
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8057:8000
+      - '8057:8000'
     volumes:
-    - ./stt/nemo-canary-1b:/app
-    - ./models/nemo-canary-1b:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/nemo-canary-1b:/app
+      - ./models/nemo-canary-1b:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: nemo-canary-1b
       PORT: '8000'
@@ -1082,17 +1196,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   seamless_m4t_stt:
     build:
       context: ./stt/seamless-m4t-stt
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8058:8000
+      - '8058:8000'
     volumes:
-    - ./stt/seamless-m4t-stt:/app
-    - ./models/seamless-m4t-stt:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/seamless-m4t-stt:/app
+      - ./models/seamless-m4t-stt:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: seamless-m4t-stt
       PORT: '8000'
@@ -1101,17 +1217,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   sensevoice_small:
     build:
       context: ./stt/sensevoice-small
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8059:8000
+      - '8059:8000'
     volumes:
-    - ./stt/sensevoice-small:/app
-    - ./models/sensevoice-small:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/sensevoice-small:/app
+      - ./models/sensevoice-small:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: sensevoice-small
       PORT: '8000'
@@ -1120,17 +1238,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   sherpa_onnx_offline_stt:
     build:
       context: ./stt/sherpa-onnx-offline-stt
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8060:8000
+      - '8060:8000'
     volumes:
-    - ./stt/sherpa-onnx-offline-stt:/app
-    - ./models/sherpa-onnx-offline-stt:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/sherpa-onnx-offline-stt:/app
+      - ./models/sherpa-onnx-offline-stt:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: sherpa-onnx-offline-stt
       PORT: '8000'
@@ -1139,17 +1259,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   silero_stt:
     build:
       context: ./stt/silero-stt
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8061:8000
+      - '8061:8000'
     volumes:
-    - ./stt/silero-stt:/app
-    - ./models/silero-stt:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/silero-stt:/app
+      - ./models/silero-stt:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: silero-stt
       PORT: '8000'
@@ -1158,17 +1280,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   vosk_api_uz:
     build:
       context: ./stt/vosk-api-uz
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8062:8000
+      - '8062:8000'
     volumes:
-    - ./stt/vosk-api-uz:/app
-    - ./models/vosk-api-uz:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/vosk-api-uz:/app
+      - ./models/vosk-api-uz:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: vosk-api-uz
       PORT: '8000'
@@ -1177,17 +1301,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   wav2vec2_large_xlsr_uz:
     build:
       context: ./stt/wav2vec2-large-xlsr-uz
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8063:8000
+      - '8063:8000'
     volumes:
-    - ./stt/wav2vec2-large-xlsr-uz:/app
-    - ./models/wav2vec2-large-xlsr-uz:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/wav2vec2-large-xlsr-uz:/app
+      - ./models/wav2vec2-large-xlsr-uz:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: wav2vec2-large-xlsr-uz
       PORT: '8000'
@@ -1196,17 +1322,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   wavlm_large:
     build:
       context: ./stt/wavlm-large
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8064:8000
+      - '8064:8000'
     volumes:
-    - ./stt/wavlm-large:/app
-    - ./models/wavlm-large:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/wavlm-large:/app
+      - ./models/wavlm-large:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: wavlm-large
       PORT: '8000'
@@ -1215,17 +1343,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_base:
     build:
       context: ./stt/whisper-base
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8065:8000
+      - '8065:8000'
     volumes:
-    - ./stt/whisper-base:/app
-    - ./models/whisper-base:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-base:/app
+      - ./models/whisper-base:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-base
       PORT: '8000'
@@ -1234,17 +1364,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_cpp:
     build:
       context: ./stt/whisper-cpp
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8066:8000
+      - '8066:8000'
     volumes:
-    - ./stt/whisper-cpp:/app
-    - ./models/whisper-cpp:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-cpp:/app
+      - ./models/whisper-cpp:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-cpp
       PORT: '8000'
@@ -1253,17 +1385,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_diarization:
     build:
       context: ./stt/whisper-diarization
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8067:8000
+      - '8067:8000'
     volumes:
-    - ./stt/whisper-diarization:/app
-    - ./models/whisper-diarization:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-diarization:/app
+      - ./models/whisper-diarization:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-diarization
       PORT: '8000'
@@ -1272,17 +1406,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_large_v3_turbo:
     build:
       context: ./stt/whisper-large-v3-turbo
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8068:8000
+      - '8068:8000'
     volumes:
-    - ./stt/whisper-large-v3-turbo:/app
-    - ./models/whisper-large-v3-turbo:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-large-v3-turbo:/app
+      - ./models/whisper-large-v3-turbo:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-large-v3-turbo
       PORT: '8000'
@@ -1291,17 +1427,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_medium:
     build:
       context: ./stt/whisper-medium
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8069:8000
+      - '8069:8000'
     volumes:
-    - ./stt/whisper-medium:/app
-    - ./models/whisper-medium:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-medium:/app
+      - ./models/whisper-medium:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-medium
       PORT: '8000'
@@ -1310,17 +1448,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_small_uz:
     build:
       context: ./stt/whisper-small-uz
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8070:8000
+      - '8070:8000'
     volumes:
-    - ./stt/whisper-small-uz:/app
-    - ./models/whisper-small-uz:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-small-uz:/app
+      - ./models/whisper-small-uz:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-small-uz
       PORT: '8000'
@@ -1329,17 +1469,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_timestamped:
     build:
       context: ./stt/whisper-timestamped
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8071:8000
+      - '8071:8000'
     volumes:
-    - ./stt/whisper-timestamped:/app
-    - ./models/whisper-timestamped:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-timestamped:/app
+      - ./models/whisper-timestamped:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-timestamped
       PORT: '8000'
@@ -1348,17 +1490,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   whisper_tiny:
     build:
       context: ./stt/whisper-tiny
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8072:8000
+      - '8072:8000'
     volumes:
-    - ./stt/whisper-tiny:/app
-    - ./models/whisper-tiny:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/whisper-tiny:/app
+      - ./models/whisper-tiny:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: whisper-tiny
       PORT: '8000'
@@ -1367,17 +1511,19 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
+      - models-network
   zipformer_transducer:
     build:
       context: ./stt/zipformer-transducer
       dockerfile: Dockerfile
+    profiles:
+      - stt
     ports:
-    - 8073:8000
+      - '8073:8000'
     volumes:
-    - ./stt/zipformer-transducer:/app
-    - ./models/zipformer-transducer:/app/models
-    - ~/.cache/huggingface:/root/.cache/huggingface
+      - ./stt/zipformer-transducer:/app
+      - ./models/zipformer-transducer:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
     environment:
       MODEL_NAME: zipformer-transducer
       PORT: '8000'
@@ -1386,8 +1532,7 @@ services:
     stdin_open: true
     tty: true
     networks:
-    - models-network
-volumes: {}
+      - models-network
 networks:
   models-network:
     driver: bridge
