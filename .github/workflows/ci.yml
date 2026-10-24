@@ -1,0 +1,26 @@
+name: CI / Benchmark Suite Integrity Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Bash scripts syntax
+        run: |
+          bash -n cv/run_all_tests.sh
+
+      - name: Verify repository binary hygiene (< 10MB check)
+        run: |
+          find . -type f -size +10M ! -path "./.git/*" | while read file; do
+            echo "ERROR: Large binary file detected: $file"
+            exit 1
+          done
+          echo "Binary hygiene check passed."
