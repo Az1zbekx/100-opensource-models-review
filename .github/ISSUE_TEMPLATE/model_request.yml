@@ -1,0 +1,44 @@
+name: 🚀 Model Benchmark Request
+description: Propose a new open-source AI model to be benchmarked and added to the suite
+title: "[Model Request]: "
+labels: ["model-request", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a new model for evaluation in the  suite!
+  - type: input
+    id: model_name
+    attributes:
+      label: Model Name & Organization
+      description: e.g. YOLO11 (Ultralytics), Llama-3.2-3B (Meta), Whisper-large-v3 (OpenAI)
+      placeholder: e.g., Qwen2.5-Coder-7B
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: AI Domain
+      description: Which subfield does this model target?
+      options:
+        - Computer Vision (CV)
+        - Natural Language Processing (NLP)
+        - Speech / Audio (TTS / STT)
+        - Multimodal / Vision-Language (VLM)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: repo_url
+    attributes:
+      label: Official Repository or HuggingFace Hub Link
+      placeholder: https://huggingface.co/... or https://github.com/...
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why should this model be included?
+      description: Mention architectural novelty, performance benchmarks, or edge deployment advantages.
+    validations:
+      required: false
