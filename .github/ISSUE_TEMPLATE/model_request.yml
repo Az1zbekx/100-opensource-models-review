@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for proposing a new model for evaluation in the  suite!
+        Thanks for proposing a new model for evaluation in the `100-opensource-models-review` suite!
   - type: input
     id: model_name
     attributes:
