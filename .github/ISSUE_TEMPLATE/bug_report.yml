@@ -1,0 +1,36 @@
+name: 🐛 Bug Report
+description: Report an execution error, dependency conflict, or broken test in a model benchmark runner
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide detailed reproduction steps so we can resolve the issue swiftly.
+  - type: input
+    id: affected_model
+    attributes:
+      label: Affected Model / Path
+      placeholder: e.g., cv/yolov8n, speech/whisper-tiny, docker-compose.yml
+    validations:
+      required: true
+  - type: textarea
+    id: error_description
+    attributes:
+      label: Error Traceback / Log Output
+      description: Paste the terminal error output or Docker container log
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Info
+      description: OS version, Python version, GPU model, CUDA version (if applicable).
+      value: |
+        - OS: Ubuntu / Linux
+        - Python version:
+        - GPU / CUDA (if applicable):
+        - Docker version (if using containers):
+    validations:
+      required: true
