@@ -1,5 +1,7 @@
 # 100 Open-Source Model Review
 
+[![CI](https://github.com/Az1zbekx/100-opensource-models-review/actions/workflows/ci.yml/badge.svg)](https://github.com/Az1zbekx/100-opensource-models-review/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This repo exists to test 100 open-source models, document the results, and keep a set of ready, verified models to reuse in future projects.
 
 **Test environment:** laptop, NVIDIA GTX 1650 (4GB VRAM) — so the tests mostly cover small/quantized models. This shows which models are practically usable under limited GPU resources (typical of many small-to-mid-size projects in the Uzbekistan market).
